@@ -1,0 +1,28 @@
+/* Grid Container */
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* Default: 1 column */
+  gap: 16px; /* Space between items */
+  width: 100%;
+  margin-bottom: 5.25rem;
+}
+
+/* Adjust columns for medium screens (tablets) */
+@media (min-width: 600px) {
+  .gridContainer {
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /* 2 columns per row on medium screens */
+  }
+}
+
+/* Adjust columns for large screens (desktops) */
+@media (min-width: 900px) {
+  .gridContainer {
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /* Keep 2 columns per row on large screens */
+  }
+}

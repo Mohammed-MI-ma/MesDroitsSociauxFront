@@ -1,0 +1,54 @@
+.headerBloc {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0.9375rem;
+  padding-right: 0.9375rem;
+  display: flex;
+  justify-content: space-between;
+  background: #e5edfa;
+}
+.pageIllustration {
+  flex: 1;
+  align-self: center;
+  width: 20.8125rem;
+  height: 16.4375rem;
+}
+.pageIllustration > img {
+  width: 100%;
+  height: 100%;
+}
+.pageDescription {
+  flex: 3;
+  color: #19355c;
+  margin-right: 2.5rem;
+  padding: 4.375rem 0;
+}
+@media (max-width: 36rem) {
+  .headerBloc > div:nth-child(2) {
+    display: none;
+  }
+  .pageHeader {
+    margin-top: 50px;
+  }
+  .pageIllustration {
+  }
+}
+
+@media (min-width: 36.063rem) and (max-width: 48rem) {
+}
+
+@media (min-width: 48.063rem) and (max-width: 62rem) {
+  .hero {
+  }
+}
+
+@media (min-width: 62.063rem) and (max-width: 75rem) {
+  .hero {
+  }
+}
+
+@media (min-width: 75.063rem) {
+  .contentBackground {
+    height: 62.5625rem;
+  }
+}

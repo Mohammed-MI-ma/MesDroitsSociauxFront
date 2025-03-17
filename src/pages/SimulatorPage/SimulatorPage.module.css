@@ -1,0 +1,12 @@
+.title {
+  text-transform: uppercase;
+  margin-bottom: 0;
+  font-weight: 900;
+  font-size: clamp(35px, 5vw, 52px);
+  line-height: clamp(40px, 5vw, 61px);
+}
+.description {
+  font-size: clamp(16px, 5vw, 27px);
+
+  line-height: clamp(20px, 5vw, 34px);
+}

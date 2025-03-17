@@ -1,0 +1,84 @@
+.ServicesBloc {
+  margin-bottom: 9.375rem;
+  width: 100%;
+  color: var(--color-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  justify-content: center;
+  background: #d3e1f5;
+  padding-bottom: 20px;
+}
+
+.servicesContainer {
+  padding-top: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  flex-direction: column;
+}
+
+.servicesContainer > button {
+  font-size: 1.4375rem;
+  padding: 3.125rem 3.125rem;
+  border-radius: 5rem;
+  font-weight: 900;
+  background-color: var(--color-primary);
+  color: white;
+}
+.servicesContainer > h3 {
+  font-size: 3rem;
+  line-height: 2.5rem;
+  margin-bottom: 4.375rem;
+  text-align: center;
+  font-weight: 900;
+  line-height: 1.2;
+}
+.servicesContent {
+  display: flex;
+  gap: 10px;
+  padding: 20px;
+}
+.servicesContent > div {
+  width: 12.25rem;
+  height: auto;
+}
+.servicesTitle {
+  font-size: 1.7rem;
+  font-weight: 900;
+}
+
+.description {
+  font-size: 12px;
+  font-weight: light;
+}
+@media (max-width: 36rem) {
+  .contentBackground {
+    height: 84.375rem;
+  }
+  .servicesContainer h3 {
+    font-size: 3.25rem;
+    line-height: 4rem;
+  }
+}
+
+@media (min-width: 36.063rem) and (max-width: 48rem) {
+}
+
+@media (min-width: 48.063rem) and (max-width: 62rem) {
+  .hero {
+  }
+}
+
+@media (min-width: 62.063rem) and (max-width: 75rem) {
+  .hero {
+  }
+}
+
+@media (min-width: 75.063rem) {
+  .contentBackground {
+    height: 62.5625rem;
+  }
+}

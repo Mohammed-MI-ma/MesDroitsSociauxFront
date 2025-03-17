@@ -1,0 +1,13 @@
+/* Wrapper for the page background */
+.wrapper {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  height: 100vh;
+  max-width: 1250px;
+}
+
+/* Header spacing */
+.bgHeader {
+  margin-bottom: 40px;
+}

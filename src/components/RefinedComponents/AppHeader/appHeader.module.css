@@ -1,0 +1,77 @@
+/* appHeader.module.css */
+.header {
+  height: 100%;
+  padding: 15px;
+  display: flex;
+  align-items: center; /* Vertically center the logo */
+}
+.navBarContainer {
+  display: flex;
+  gap: var(--gap-lg);
+  justify-content: center;
+  align-items: center;
+}
+.navBarMobile {
+  display: none;
+  background-color: var(--color-muted);
+  width: 100vw;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+  align-items: center;
+}
+
+@media (max-width: 36rem) {
+  .header {
+    max-height: 100px;
+    flex-direction: column;
+  }
+  .navBarContainer {
+    display: none;
+  }
+  .navBarMobile {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 36.063rem) and (max-width: 48rem) {
+  .header {
+    max-height: 120px;
+    flex-direction: column;
+  }
+  .navBarContainer {
+    display: none;
+  }
+  .navBarMobile {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 48.063rem) and (max-width: 62rem) {
+  .header {
+    max-height: 100px;
+    flex-direction: column;
+  }
+  .navBarContainer {
+    display: none;
+  }
+  .navBarMobile {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 62.063rem) and (max-width: 75rem) {
+  .header {
+    max-height: 90px;
+  }
+}
+
+@media (min-width: 75.063rem) {
+  .header {
+    max-height: 100px;
+  }
+}

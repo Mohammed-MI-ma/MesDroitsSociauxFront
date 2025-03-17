@@ -1,0 +1,84 @@
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  color: var(--color-primary);
+  max-width: 50%;
+  margin-inline: var(--gap-md);
+  margin-inline-start: var(--gap-md);
+  margin-inline-end: 0;
+}
+
+.heroContent h1 {
+  margin-bottom: var(--gap-xl);
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.heroContent p {
+  margin-bottom: var(--gap-lg);
+  font-size: clamp(1rem, 3vw, 1.75rem);
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.heroButton {
+  max-width: fit-content;
+  font-family: var(--font-primary);
+  background: var(--color-primary);
+  border-radius: 50px;
+  font-size: clamp(1rem, 4vw, 1.5rem);
+  padding: var(--gap-md);
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.heroButton:hover {
+  background: var(--color-secondary);
+}
+
+.whoWeAre {
+  margin-top: var(--gap-lg);
+  font-weight: 700;
+  font-family: var(--font-primary);
+}
+
+@media (max-width: 36rem) {
+  .heroContent {
+    max-width: 100%;
+  }
+  .heroContent h1 {
+    font-size: 4.25rem;
+  }
+  .heroButton {
+    max-width: fit-content;
+    font-family: var(--font-primary);
+    background: var(--color-primary);
+    border-radius: 50px;
+    font-size: 2.25rem;
+    padding: var(--gap-xl);
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+  }
+}
+
+@media (min-width: 36.063rem) and (max-width: 48rem) {
+  .hero {
+  }
+}
+
+@media (min-width: 48.063rem) and (max-width: 62rem) {
+  .hero {
+  }
+}
+
+@media (min-width: 62.063rem) and (max-width: 75rem) {
+  .hero {
+  }
+}
+
+@media (min-width: 75.063rem) {
+  .hero {
+  }
+}

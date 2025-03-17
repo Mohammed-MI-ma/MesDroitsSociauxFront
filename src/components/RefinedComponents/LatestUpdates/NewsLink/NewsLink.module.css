@@ -1,0 +1,4 @@
+.newsLink {
+  grid-area: link;
+  justify-self: end;
+}

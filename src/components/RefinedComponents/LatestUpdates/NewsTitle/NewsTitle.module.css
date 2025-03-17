@@ -1,0 +1,12 @@
+.title {
+  grid-area: title;
+}
+
+.title h2 {
+  font-size: var(--font-xl);
+}
+.redLine {
+  width: 4.0625rem;
+  margin-bottom: 2.5rem;
+  border-top: 1px solid #cb4b4b; /* Simplified unit and style */
+}

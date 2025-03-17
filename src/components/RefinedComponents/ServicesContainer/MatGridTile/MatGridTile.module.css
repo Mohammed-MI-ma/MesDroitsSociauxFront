@@ -1,0 +1,17 @@
+/* Grid Item */
+.gridItem {
+  background-color: var(--color-muted); /* Light background color */
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-left: 10px;
+  margin-right: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Adjust columns for medium screens (tablets) */
+@media (min-width: 600px) {
+}
+
+/* Adjust columns for large screens (desktops) */
+@media (min-width: 900px) {
+}

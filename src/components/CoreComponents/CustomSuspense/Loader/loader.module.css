@@ -1,0 +1,73 @@
+.sk_cube_grid {
+  width: 40px;
+  height: 40px;
+  margin: 100px auto;
+}
+
+.sk_cube_grid .sk_cube {
+  width: 33%;
+  height: 33%;
+  background-color: var(--color-primary);
+  float: left;
+  animation: sk_cubeGridScaleDelay 1.3s infinite ease-in-out;
+}
+
+.sk_cube_grid .sk_cube1 {
+  animation-delay: 0.2s;
+}
+
+.sk_cube_grid .sk_cube2 {
+  animation-delay: 0.3s;
+}
+
+.sk_cube_grid .sk_cube3 {
+  animation-delay: 0.4s;
+}
+
+.sk_cube_grid .sk_cube4 {
+  animation-delay: 0.1s;
+}
+
+.sk_cube_grid .sk_cube5 {
+  animation-delay: 0.2s;
+}
+
+.sk_cube_grid .sk_cube6 {
+  animation-delay: 0.3s;
+}
+
+.sk_cube_grid .sk_cube7 {
+  animation-delay: 0s;
+}
+
+.sk_cube_grid .sk_cube8 {
+  animation-delay: 0.1s;
+}
+
+.sk_cube_grid .sk_cube9 {
+  animation-delay: 0.2s;
+}
+
+@keyframes sk_cubeGridScaleDelay {
+  0%,
+  70%,
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+
+  35% {
+    transform: scale3d(0, 0, 1);
+  }
+}
+
+@keyframes sk_cubeGridScaleDelay {
+  0%,
+  70%,
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+
+  35% {
+    transform: scale3d(0, 0, 1);
+  }
+}

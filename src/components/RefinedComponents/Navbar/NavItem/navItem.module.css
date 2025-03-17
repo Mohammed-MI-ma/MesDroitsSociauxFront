@@ -1,0 +1,10 @@
+.button {
+  font-weight: bold;
+  border-radius: 0;
+}
+.navItem {
+  list-style-type: none;
+}
+.active {
+  border-bottom: 0.1875rem solid var(--color-secondary);
+}

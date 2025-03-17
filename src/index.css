@@ -1,0 +1,67 @@
+@import "tailwindcss";
+@font-face {
+  font-family: "PrimaryFont";
+  src: var(--primary-font);
+}
+
+:root {
+  --font-primary: "PrimaryFont", sans-serif;
+}
+:root {
+  --font-tiny: 0.625rem;
+  --font-xs: 0.725rem;
+  --font-sm: 0.875rem;
+  --font-md: 1rem;
+  --font-lg: 1.125rem;
+  --font-xl: 1.5rem;
+}
+:root {
+  --gap-tiny: 0.25rem; /* 4px converted to rem */
+  --gap-xs: 0.5rem; /* 8px converted to rem */
+  --gap-sm: 0.75rem; /* 12px converted to rem */
+  --gap-md: 1rem; /* 16px converted to rem */
+  --gap-lg: 1.5rem; /* 24px converted to rem */
+  --gap-xl: 2rem; /* 32px converted to rem */
+}
+:root {
+  --border-radius-sm: 0.25rem; /* 4px converted to rem */
+  --border-radius-md: 0.5rem; /* 8px converted to rem */
+  --border-radius-lg: 0.75rem; /* 12px converted to rem */
+}
+:root {
+  --color-primary: #19355c; /* Primary color:Dark */
+  --color-text: #2e5077; /* Text color */
+  --color-secondary: #47777b;
+  --color-muted: #ffffff;
+}
+:root {
+  --spacing-sm: 0.5rem; /* 8px converted to rem */
+  --spacing-md: 1rem; /* 16px converted to rem */
+  --spacing-lg: 1.5rem; /* 24px converted to rem */
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-size: 12px; /* Now 1rem = 12px */
+  font-family: var(--font-primary);
+  font-weight: 100;
+  user-select: none;
+  color: var(--color-secondary);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-secondary);
+  border-radius: 5px;
+}
