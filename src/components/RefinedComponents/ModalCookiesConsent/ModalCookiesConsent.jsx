@@ -31,7 +31,7 @@ const ModalCookiesConsent = () => {
   return (
     <Modal
       footer={null}
-      open={true}
+      open={false}
       title={<h2 className={styles.popinTitle}>{t("cookies.title")}</h2>}
     >
       <div className={styles.popinContent}>
