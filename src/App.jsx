@@ -11,7 +11,7 @@ import { AnimatePresence } from "framer-motion";
 
 //__CONFIGURATION
 import { FontsConfig } from "./fontsConfig.js";
-import { loadFonts, loadImages } from "./Services/index.js";
+import { loadFonts, loadImages } from "./Services";
 import frFR from "antd/es/locale/fr_FR";
 import { global_Assets } from "./config.dev.js";
 
