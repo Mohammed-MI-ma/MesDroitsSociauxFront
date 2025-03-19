@@ -10,15 +10,13 @@ const HeroContent = () => {
   return (
     <div className={style.heroContent}>
       <h1>{t("MESDROITSSOCIAUX")}</h1>
-      <p>{t("CONSULT_RIGHTS")} </p>
       <Button type="primary" className={style.heroButton}>
         {t("SEE_SIMULATORS")}
       </Button>
-      <Link to="/QuiSommesNous">
-        <Button type="link" className={style.whoWeAre}>
-          {t("WHO_ARE_WE")}
-        </Button>
-      </Link>
+
+      <p style={{ fontSize: "20px", marginTop: "20px" }}>
+        {t("CONSULT_RIGHTS")}{" "}
+      </p>
     </div>
   );
 };

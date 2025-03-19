@@ -9,7 +9,7 @@ export default async function initializeI18n() {
 
     i18n.use(Backend).init({
       fallbackLng: "fr",
-      debug: process.env.NODE_ENV === "development",
+      debug: process.env.NODE_ENV === "dev",
       interpolation: {
         escapeValue: false,
       },

@@ -20,7 +20,6 @@ const LoginButton = () => {
         <RiLoginCircleFill style={{ color: "var(--color-primary)" }} />
         <div>
           <p>{t("Seconnecter")}</p>
-          <p className={style.googlePartner}>{t("Entoutesecurite")}</p>
         </div>
       </Button>
     </Link>

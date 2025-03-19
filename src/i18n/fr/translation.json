@@ -5,7 +5,7 @@
   "Seconnecter": "Se connecter",
   "Entoutesecurite": "En toute sécurité",
   "MESDROITSSOCIAUX": "Mes Droits Sociaux",
-  "SEE_SIMULATORS": "Voir les simulateurs",
+  "SEE_SIMULATORS": "Calculer l'indice socio-économique (ISE)",
   "WHO_ARE_WE": "Qui sommes-nous?",
   "NEW_FEATURE": "Nouveauté",
   "NEWS": "ACTUALITÉS",
@@ -46,5 +46,6 @@
     "analyticsDescription": "La mesure de l'audience du site contribue à l'amélioration continue de son ergonomie, de sa navigation et de ses contenus. Les informations collectées sont anonymes.",
     "serviceAnalytics": "Service: Google Analytics",
     "viewGoogleAnalytics": "Voir Google Analytics"
-  }
+  },
+  "seo": { "LandingPage": "Accueil" }
 }
