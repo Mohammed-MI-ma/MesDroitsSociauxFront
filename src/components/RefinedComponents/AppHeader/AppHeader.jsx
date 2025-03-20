@@ -111,7 +111,7 @@ const AppHeader = ({ logoAltText }) => {
                   color: "var(--color-primary)",
                 }}
               >
-                MENU
+                {t("MENU")}
               </p>
             </div>
           </Dropdown>
