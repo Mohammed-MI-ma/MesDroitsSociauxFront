@@ -1,8 +1,6 @@
 import React from "react";
 import style from "./heroContent.module.css";
-import { Link } from "react-router-dom";
-
-import { Button } from "antd";
+import { Badge, Button } from "antd";
 import { useTranslation } from "react-i18next";
 
 const HeroContent = () => {
@@ -10,9 +8,16 @@ const HeroContent = () => {
   return (
     <div className={style.heroContent}>
       <h1>{t("MESDROITSSOCIAUX")}</h1>
-      <Button type="primary" className={style.heroButton}>
-        {t("SEE_SIMULATORS")}
-      </Button>
+      <Badge.Ribbon
+        text={t("NEW_FEATURE")}
+        color="pink"
+        placement="start"
+        style={{ top: -10 }}
+      >
+        <Button type="primary" className={style.heroButton}>
+          {t("SEE_SIMULATORS")}
+        </Button>
+      </Badge.Ribbon>
 
       <p style={{ fontSize: "20px", marginTop: "20px" }}>
         {t("CONSULT_RIGHTS")}
