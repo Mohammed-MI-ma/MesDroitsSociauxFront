@@ -10,20 +10,22 @@ const SEO = () => {
     "/": {
       title: t("seo.LandingPage"),
       description: t(
-        "Welcome to BeomCare's landing page, your trusted partner for all men's and women's care."
+        "Mes Droits Sociaux est une application marocaine permettant aux citoyens de calculer leur Indice Socio-Économique (ISE) et d'évaluer leur éligibilité aux aides sociales. Obtenez un score personnalisé grâce à notre calculateur intuitif et précis."
       ),
-      keywords:
-        "haman barber shop, men's care, women's care, appointments, reservations, BeomCare",
-      image: "https://www.beomcare.com/path/to/landing-page-image.jpg",
+      keywords: t(
+        "Mes Droits Sociaux, Indice Socio-Économique, ISE, aides sociales, calculateur ISE, score socio-économique, citoyens marocains, éligibilité aides, services sociaux, calcul des droits sociaux"
+      ),
     },
   };
 
   const defaultMeta = {
     title: t("seo.LandingPage"),
-    description: t("Your trusted partner for all men's and women's care."),
-    keywords:
-      "haman barber shop, men's care, women's care, appointments, reservations, BeomCare",
-    image: "https://www.beomcare.com/path/to/default-image.jpg",
+    description: t(
+      "Mes Droits Sociaux est une application marocaine permettant aux citoyens de calculer leur Indice Socio-Économique (ISE) et d'évaluer leur éligibilité aux aides sociales. Obtenez un score personnalisé grâce à notre calculateur intuitif et précis."
+    ),
+    keywords: t(
+      "Mes Droits Sociaux, Indice Socio-Économique, ISE, aides sociales, calculateur ISE, score socio-économique, citoyens marocains, éligibilité aides, services sociaux, calcul des droits sociaux"
+    ),
   };
 
   const meta = metaData[location.pathname] || defaultMeta;
@@ -34,7 +36,7 @@ const SEO = () => {
       <meta name="description" content={meta.description} />
       <meta name="keywords" content={meta.keywords} />
       <meta name="robots" content="index, follow" />
-      <meta name="author" content="BeomCare" />
+      <meta name="author" content="ABOUTALHA MOHAMMED" />
       <meta property="og:title" content={meta.title} />
       <meta property="og:description" content={meta.description} />
       <meta property="og:url" content={window.location.href} />

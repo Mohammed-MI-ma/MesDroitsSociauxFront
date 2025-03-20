@@ -48,7 +48,9 @@ root.render(
       <LanguageProvider>
         <CookieConsentProvider>
           <Router>
-            <App />
+            <StrictMode>
+              <App />
+            </StrictMode>
           </Router>
         </CookieConsentProvider>
       </LanguageProvider>
