@@ -23,9 +23,10 @@
 .heroButton {
   max-width: fit-content;
   background: var(--color-primary) !important;
-  font-size: clamp(1.5rem, 3vw, 1.75rem) !important;
+  font-size: clamp(1.2rem, 3vw, 1.55rem) !important;
   border-radius: var(--border-radius-lg);
   padding: var(--gap-xl) !important;
+
   cursor: pointer;
 }
 
