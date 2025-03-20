@@ -47,5 +47,6 @@
     "serviceAnalytics": "Service: Google Analytics",
     "viewGoogleAnalytics": "Voir Google Analytics"
   },
-  "seo": { "LandingPage": "Accueil" }
+  "seo": { "LandingPage": "Accueil" },
+  "disclaimer": "Avertissement : cette application n'est pas précise à 100 %, elle est uniquement une simulation et non le calcul réel de l'indice."
 }

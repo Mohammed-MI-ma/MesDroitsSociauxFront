@@ -11,9 +11,8 @@
 
 .heroContent h1 {
   margin-bottom: var(--gap-xl);
-  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-size: clamp(2rem, 5vw, 4rem);
   font-weight: 900;
-  line-height: 1.2;
 }
 
 .heroContent p {
@@ -21,6 +20,9 @@
   font-size: clamp(1rem, 3vw, 1.75rem);
   font-weight: 300;
   line-height: 1.5;
+}
+.heroContent small {
+  margin-top: var(--gap-lg);
 }
 
 .heroButton {
@@ -51,6 +53,8 @@
 @media (max-width: 36rem) {
   .heroContent {
     max-width: 100%;
+    align-items: center;
+    text-align: center;
   }
   .heroContent h1 {
     font-size: 4.25rem;

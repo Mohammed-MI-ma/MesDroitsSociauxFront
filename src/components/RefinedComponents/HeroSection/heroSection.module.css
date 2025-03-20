@@ -28,7 +28,7 @@
 }
 @media (max-width: 36rem) {
   .hero {
-    margin-top: 70px;
+    margin-top: 120px;
 
     flex-direction: column;
     height: unset;

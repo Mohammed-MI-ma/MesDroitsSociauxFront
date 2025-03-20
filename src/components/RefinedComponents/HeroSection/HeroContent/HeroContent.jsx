@@ -15,8 +15,9 @@ const HeroContent = () => {
       </Button>
 
       <p style={{ fontSize: "20px", marginTop: "20px" }}>
-        {t("CONSULT_RIGHTS")}{" "}
+        {t("CONSULT_RIGHTS")}
       </p>
+      <small> {t("disclaimer")}</small>
     </div>
   );
 };

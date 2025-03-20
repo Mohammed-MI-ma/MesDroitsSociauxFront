@@ -52,9 +52,20 @@
 }
 
 @media (max-width: 36rem) {
-  .announcementBanner > .zone1,
+  .announcementBanner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 40px;
+  }
   .announcementBanner > .zone3 {
     display: none;
+  }
+  .announcementBanner > .zone1 {
+    background-color: inherit;
+    color: var(--color-primary);
+    clip-path: none;
   }
 }
 

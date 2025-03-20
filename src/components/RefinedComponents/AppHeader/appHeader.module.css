@@ -13,9 +13,11 @@
 }
 .navBarMobile {
   display: none;
-  background-color: var(--color-muted);
+  background-color: #f1f1f1;
   width: 100vw;
   padding-top: 20px;
+  margin-top: 10px;
+
   padding-bottom: 20px;
   padding-left: 15px;
   padding-right: 15px;

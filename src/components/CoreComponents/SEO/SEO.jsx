@@ -43,27 +43,6 @@ const SEO = () => {
       <meta property="og:type" content="website" />
       <meta property="og:image" content={meta.image} />
       <link rel="canonical" href={window.location.href} />
-      <script
-        async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2694509100930247"
-        crossorigin="anonymous"
-      ></script>
-      {/* JSON-LD Structured Data */}
-      <script type="application/ld+json">
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Organization",
-          name: "BeomCare",
-          url: window.location.href,
-          logo: "https://www.beomcare.com/path/to/logo.jpg",
-          sameAs: [
-            "https://www.facebook.com/beomcare",
-            "https://www.twitter.com/beomcare",
-            "https://www.linkedin.com/company/beomcare",
-            "https://www.instagram.com/beomcare",
-          ],
-        })}
-      </script>
     </Helmet>
   );
 };
