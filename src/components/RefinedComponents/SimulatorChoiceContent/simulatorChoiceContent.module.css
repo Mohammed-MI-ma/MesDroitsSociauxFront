@@ -1,0 +1,112 @@
+.simulatorChoiceContent {
+  margin-bottom: 3.125rem;
+  padding-bottom: 3.125rem;
+  text-align: center;
+  background: #d3e1f5;
+  color: var(--color-primary);
+}
+.pageContent {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0.9375rem;
+  padding-right: 0.9375rem;
+}
+.pageContent > h3 {
+  letter-spacing: normal;
+  margin: 0 0 16px;
+  font-weight: 900;
+  font-size: clamp(20px, 5vw, 25px);
+  line-height: clamp(23px, 5vw, 45px);
+}
+.tileContainer {
+  box-shadow: 0 5px 6px -3px #0003, 0 9px 12px 1px #00000024,
+    0 3px 16px 2px #0000001f;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.25rem;
+  background-color: #fff;
+
+  justify-content: center;
+  color: var(--color-primary);
+}
+.blue {
+  background-color: var(--color-primary);
+  color: white;
+}
+.tileContainer > :nth-child(2) {
+  background-color: #0053cc;
+  padding: 0.9375rem 2rem;
+  border-radius: 0 0 0.25rem 0.25rem;
+}
+.tileContainer > :nth-child(2) > button {
+  font-size: 1.1875rem;
+  line-height: 1.375rem;
+  color: #fff;
+}
+.tileInfos {
+  padding: 1.25rem;
+  height: 13.875rem;
+}
+.tileInfos > h1 {
+  display: flex;
+  height: 3.375rem;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  font-size: clamp(16px, 5vw, 23px);
+  font-weight: 900;
+}
+.simulatorDescription {
+  display: flex;
+  align-items: center;
+  padding: 1.5625rem;
+  margin-bottom: 3.125rem;
+  background-color: #f1f1f1;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.simulatorChoiceButtons {
+  display: grid;
+  grid-template-columns: repeat(
+    2,
+    minmax(15rem, 1fr)
+  ); /* Two columns by default */
+  gap: 2rem; /* Space between items */
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 70rem; /* Limit container width */
+  margin: 0 auto; /* Centering */
+}
+@media (max-width: 36rem) {
+  .simulatorChoiceContent {
+    margin-bottom: 3.125rem;
+    padding-bottom: 1.875rem;
+  }
+  .pageContent {
+    width: calc(100% - 1.875rem);
+  }
+  .pageContent > h3 {
+    margin-bottom: 1.25rem;
+    padding-top: 1.25rem;
+  }
+  .simulatorDescription {
+    flex-direction: column;
+    padding: 0.9375rem;
+  }
+  .simulatorChoiceButtons {
+    grid-template-columns: repeat(1, minmax(15rem, 1fr)); /* Single column */
+  }
+}
+
+@media (min-width: 36.063rem) and (max-width: 48rem) {
+}
+
+@media (min-width: 48.063rem) and (max-width: 62rem) {
+}
+
+@media (min-width: 62.063rem) and (max-width: 75rem) {
+}
+
+@media (min-width: 75.063rem) {
+}

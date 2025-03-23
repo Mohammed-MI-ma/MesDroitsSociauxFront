@@ -1,8 +1,6 @@
 import React from "react";
 import HeroSection from "../../components/CoreComponents/HeroSection/HeroSection";
 
-import TadaAnimation from "../../components/CoreComponents/TadaAnimation/TadaAnimation";
-
 //__ILLUSTRATION
 import simulateur from "../../assets/images/svg/illus-votre-simulateur.svg";
 import styles from "./SimulatorPage.module.css";
@@ -16,6 +14,8 @@ import {
 } from "react-icons/bs";
 import { ImCalculator } from "react-icons/im";
 import { Badge } from "antd";
+import SimulatorChoiceContent from "../../components/RefinedComponents/SimulatorChoiceContent/SimulatorChoiceContent";
+import FAQAccodion from "../../components/CoreComponents/FAQAccodion/FAQAccodion";
 
 const SimulatorPage = () => {
   const { t } = useTranslation();
@@ -57,6 +57,14 @@ const SimulatorPage = () => {
         </>
       </HeroSection>
       <CardsLandingGroup />
+      <SimulatorChoiceContent />
+      <FAQAccodion />
+      <footer
+        className="w-full flex items-center justify-center text-center h-[300px]"
+        style={{ background: "var(--color-primary)" }}
+      >
+        <div>HEllo</div>
+      </footer>
     </main>
   );
 };

@@ -1,0 +1,11 @@
+.panelBody {
+  margin-bottom: 60px;
+}
+
+.panelBody > p {
+  padding: 0.9375rem 1.5625rem 0.625rem;
+}
+.header {
+  font-weight: 900;
+  font-size: 20px;
+}

@@ -23,10 +23,10 @@ export default defineConfig({
             "Modal",
             "Radio",
             "Group",
+            "Progress",
+            "Collapse",
           ],
-          "react-icons/io": [
-            "IoIosArrowForward", // Specify the icon you want to import here
-          ],
+          "react-icons/io": ["IoIosArrowForward", "IoMdInformationCircle"],
         },
       ],
       dts: "src/auto-imports.d.ts", // Generates a TypeScript declaration file

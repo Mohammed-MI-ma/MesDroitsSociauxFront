@@ -58,5 +58,19 @@
     "Assurance_Maladie_Obligatoire": "ASSURANCE MALADIE OBLIGATOIRE"
   },
   "SimpleRapideGratuit": "Simple, rapide et gratuit",
-  "VotreSimulationMoinsMinutes": "Votre simulation en moins de 15 minutes !"
+  "VotreSimulationMoinsMinutes": "Votre simulation en moins de 15 minutes !",
+  "QueVoulezVousSimuler": "Que voulez-vous simuler ?",
+  "TravailleurNonSalarie": "Vous êtes travailleur non salarié et vous souhaitez simuler l’Allocation d’adulte aux handicapés, nous vous invitons à utiliser le simulateur toutes prestations.",
+  "ESATNote": "Si vous travaillez en établissements ou services d'aide par le travail (ESAT), le simulateur de l’Allocation d’adulte aux handicapés ne prend pas en compte cette situation, votre droit à l’AAH sera calculé comme un salarié.",
+  "SimulatorUpdate": "De prochaines mises à jour des simulateurs permettront de prendre en compte votre profil.",
+  "ToutesLesPrestations": "Toutes les prestations",
+  "EstimezLes2Aides": "Estimez les 2 aides simultanément",
+  "CommentUtilisationInfos": "Comment sont utilisées mes informations personnelles au sein du simulateur ?",
+  "InfosNonConservees": "Vos informations personnelles affichées ou saisies ne sont pas conservées.",
+  "InfosPreaffichees": "Les informations préaffichées sont issues de la sphère sociale et fiscale et déclarées par vos employeurs et organismes sociaux elles permettent de vous faciliter la saisie, mais ne sont ni conservées ni transmises.",
+  "SaisieNonDeclaration": "Ce que vous saisissez ne fait pas office de déclaration de changement de votre situation, et ne met pas à jour vos informations auprès de vos employeurs et organismes sociaux.",
+  "FinSimulation": "En fin de simulation :",
+  "ResultatsIndicatifs1": "Les résultats qui vous sont présentés le sont à titre indicatif",
+  "ResultatsIndicatifs2": "Les résultats qui vous sont présentés le sont à titre indicatif",
+  "PolitiqueConfidentialite": "Vous pouvez consulter notre politique de confidentialité pour en savoir plus sur l'utilisation de vos données au sein du portail mesdroitssociaux.gouv.fr."
 }
