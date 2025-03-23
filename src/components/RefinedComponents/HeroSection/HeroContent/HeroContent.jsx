@@ -2,6 +2,7 @@ import React from "react";
 import style from "./heroContent.module.css";
 import { Badge, Button } from "antd";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 const HeroContent = () => {
   let { t } = useTranslation();
@@ -14,9 +15,11 @@ const HeroContent = () => {
         placement="start"
         style={{ top: -10 }}
       >
-        <Button type="primary" className={style.heroButton}>
-          {t("SEE_SIMULATORS")}
-        </Button>
+        <Link to="/votre-simulateur/accueil">
+          <Button type="primary" className={style.heroButton}>
+            {t("SEE_SIMULATORS")}
+          </Button>
+        </Link>
       </Badge.Ribbon>
 
       <p style={{ fontSize: "20px", marginTop: "20px" }}>

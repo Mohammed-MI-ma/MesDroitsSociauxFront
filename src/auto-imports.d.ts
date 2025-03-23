@@ -14,6 +14,7 @@ declare global {
   const Form: typeof import('antd')['Form']
   const Group: typeof import('antd')['Group']
   const Input: typeof import('antd')['Input']
+  const IoIosArrowForward: typeof import('react-icons/io')['IoIosArrowForward']
   const LoadingOutlined: typeof import('@ant-design/icons')['LoadingOutlined']
   const Message: typeof import('antd')['Message']
   const Modal: typeof import('antd')['Modal']

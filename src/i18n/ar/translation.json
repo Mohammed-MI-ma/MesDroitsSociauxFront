@@ -45,5 +45,14 @@
     "serviceAnalytics": "الخدمة: جوجل أناليتكس",
     "viewGoogleAnalytics": "عرض جوجل أناليتكس"
   },
-  "disclaimer": "تنويه: هذا التطبيق ليس دقيقًا بنسبة 100٪، فهو مجرد محاكاة وليس الحساب الحقيقي للمؤشر."
+  "disclaimer": "تنويه: هذا التطبيق ليس دقيقًا بنسبة 100٪، فهو مجرد محاكاة وليس الحساب الحقيقي للمؤشر.",
+  "sponserShip": {
+    "REGISTRE_SOCIAL": "السجل الاجتماعي",
+    "REGISTRE_POPULATION": "سجل السكان",
+    "AIDES_SOCIALES": "المساعدات الاجتماعية",
+    "Assurance_Maladie_Obligatoire": "التأمين الصحي الإجباري"
+  },
+  "SimpleRapideGratuit": "بسيط، سريع ومجاني",
+  "VotreSimulationMoinsMinutes": "محاكاتك في أقل من 15 دقيقة!",
+  "voirEtapesSimulation": "شاهد خطوات المحاكاة"
 }

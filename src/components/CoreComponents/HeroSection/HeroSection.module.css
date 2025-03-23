@@ -1,8 +1,13 @@
+.pageHeader {
+  margin-top: 50px;
+  margin-bottom: 70px;
+}
+
 .headerBloc {
   margin-left: auto;
   margin-right: auto;
-  padding-left: 0.9375rem;
-  padding-right: 0.9375rem;
+  padding: 30px;
+
   display: flex;
   justify-content: space-between;
   background: #e5edfa;
@@ -21,14 +26,16 @@
   flex: 3;
   color: #19355c;
   margin-right: 2.5rem;
-  padding: 4.375rem 0;
 }
 @media (max-width: 36rem) {
   .headerBloc > div:nth-child(2) {
     display: none;
   }
+  .headerBloc {
+    padding-top: 60px !important;
+  }
   .pageHeader {
-    margin-top: 50px;
+    margin-top: 70px;
   }
   .pageIllustration {
   }
@@ -44,6 +51,9 @@
 }
 
 @media (min-width: 75.063rem) {
+  .headerBloc {
+    border-radius: 15px;
+  }
   .contentBackground {
     height: 62.5625rem;
   }

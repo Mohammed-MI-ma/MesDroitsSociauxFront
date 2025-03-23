@@ -21,9 +21,9 @@
   "RSU_DESCRIPTION": "Le dossier RSU reflétera fidèlement la réalité de votre situation sociale",
   "CONSULT_RIGHTS": "Consultez vos droits, simulez vos prestations, effectuez vos démarches",
   "SOCIAL_RIGHTS_DESCRIPTION": "Santé, Famille, Logement, Retraite, Solidarité, Autour de l'emploi : retrouvez tous vos droits sociaux en un seul endroit",
-  "VOTRE_SIMULATEUR": "VOTRE SIMULATEUR",
+  "VOTRE_SIMULATEUR": "VOTRE CALCULATEUR",
   "ToutSavoirSurLeRSU": "Tout savoir sur le RSU ?",
-
+  "voirEtapesSimulation": "Voir les étapes de la simulation",
   "allow": "Autoriser",
   "deny": "Refuser",
   "savePreferences": "Enregistrer mes préférences",
@@ -50,5 +50,13 @@
     "viewGoogleAnalytics": "Voir Google Analytics"
   },
   "seo": { "LandingPage": "Accueil" },
-  "disclaimer": "Avertissement : cette application n'est pas précise à 100 %, elle est uniquement une simulation et non le calcul réel de l'indice."
+  "disclaimer": "Avertissement : cette application n'est pas précise à 100 %, elle est uniquement une simulation et non le calcul réel de l'indice.",
+  "sponserShip": {
+    "REGISTRE_SOCIAL": "REGISTRE SOCIAL",
+    "REGISTRE_POPULATION": "REGISTRE DE LA POPULATION",
+    "AIDES_SOCIALES": "AIDES SOCIALES",
+    "Assurance_Maladie_Obligatoire": "ASSURANCE MALADIE OBLIGATOIRE"
+  },
+  "SimpleRapideGratuit": "Simple, rapide et gratuit",
+  "VotreSimulationMoinsMinutes": "Votre simulation en moins de 15 minutes !"
 }

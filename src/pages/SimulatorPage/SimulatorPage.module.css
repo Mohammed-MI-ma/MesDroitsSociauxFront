@@ -1,12 +1,56 @@
 .title {
-  text-transform: uppercase;
   margin-bottom: 0;
-  font-weight: 900;
-  font-size: clamp(35px, 5vw, 52px);
-  line-height: clamp(40px, 5vw, 61px);
+  font-weight: 900 !important;
+  font-size: 20px;
+  margin-bottom: calc(var(--gap-xl) * 1.5);
+  display: flex;
+  align-items: center;
+  gap: var(--gap-sm);
+  background-color: var(--color-primary);
+  color: white;
+  padding: 15px;
+  border-radius: 15px;
+  width: fit-content;
 }
 .description {
-  font-size: clamp(16px, 5vw, 27px);
-
+  font-size: 16px;
   line-height: clamp(20px, 5vw, 34px);
+  margin-bottom: var(--gap-xl);
+}
+.listSponserShip {
+  font-size: 16px;
+}
+.listSponserShip > li {
+  display: flex;
+  gap: var(--gap-sm);
+}
+@media (max-width: 36rem) {
+  .headerBloc > div:nth-child(2) {
+    display: none;
+  }
+  .pageHeader {
+    margin-top: 50px;
+  }
+  .title {
+    font-size: 20px;
+    background-color: var(--color-primary);
+    color: white;
+    padding: 15px;
+    border-radius: 15px;
+  }
+  .description {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 36.063rem) and (max-width: 48rem) {
+}
+
+@media (min-width: 48.063rem) and (max-width: 62rem) {
+}
+
+@media (min-width: 62.063rem) and (max-width: 75rem) {
+}
+
+@media (min-width: 75.063rem) {
 }

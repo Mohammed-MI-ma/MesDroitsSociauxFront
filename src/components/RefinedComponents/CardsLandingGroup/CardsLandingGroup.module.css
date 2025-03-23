@@ -1,0 +1,31 @@
+.cardsLandingGroup {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0.9375rem;
+  padding-right: 0.9375rem;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 3.125rem;
+  justify-content: space-evenly;
+}
+
+@media (max-width: 36rem) {
+  .cardsLandingGroup {
+    width: calc(100% - 1.875rem);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (min-width: 36.063rem) and (max-width: 48rem) {
+}
+
+@media (min-width: 48.063rem) and (max-width: 62rem) {
+}
+
+@media (min-width: 62.063rem) and (max-width: 75rem) {
+}
+
+@media (min-width: 75.063rem) {
+}

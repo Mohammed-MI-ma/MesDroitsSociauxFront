@@ -24,6 +24,9 @@ export default defineConfig({
             "Radio",
             "Group",
           ],
+          "react-icons/io": [
+            "IoIosArrowForward", // Specify the icon you want to import here
+          ],
         },
       ],
       dts: "src/auto-imports.d.ts", // Generates a TypeScript declaration file

@@ -1,0 +1,63 @@
+/* General Styles */
+.cardsLanding {
+  margin-bottom: var(--gap-xl);
+}
+
+.cardLandingContainer {
+  width: 21.875rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-xl);
+  text-align: center;
+}
+
+.cardLandingContent {
+  color: var(--color-primary);
+}
+
+.cardLandingContent > h4 {
+  font-size: clamp(25px, 5vw, 23px);
+  line-height: clamp(19px, 5vw, 27px);
+  font-weight: 900;
+}
+
+.cardLandingContent > p {
+  font-size: clamp(12px, 5vw, 16px);
+  line-height: clamp(19px, 5vw, 27px);
+}
+/* Icon Container */
+.cardLandingIconContainer {
+  height: 8rem;
+  margin: 0 auto;
+}
+
+.cardLandingIconContainer > img {
+  width: 100%;
+  height: 100%;
+}
+
+.button {
+  font-size: clamp(12px, 5vw, 16px);
+  font-weight: bold;
+}
+/* Responsive Styles */
+@media (max-width: 36rem) {
+  .cardsLanding {
+    margin-bottom: calc(var(--gap-xl) * 2);
+  }
+
+  .cardLandingContainer {
+    text-align: center;
+  }
+
+  /* Icon Container */
+  .cardLandingIconContainer {
+    height: 8rem;
+    margin: 0 auto;
+  }
+
+  .cardLandingIconContainer > img {
+    width: 100%;
+    height: 100%;
+  }
+}
