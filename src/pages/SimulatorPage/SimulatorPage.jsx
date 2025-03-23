@@ -24,18 +24,17 @@ const SimulatorPage = () => {
     <main style={{ flex: "1", minHeight: "300vh" }}>
       <HeroSection illustration={simulateur}>
         <>
-          <TadaAnimation>
-            <Badge.Ribbon
-              text={t("NEW_FEATURE")}
-              color="pink"
-              placement="start"
-              style={{ top: -10 }}
-            >
-              <h1 className={`${styles.title} shadow-lg`}>
-                <ImCalculator /> {t("SEE_SIMULATORS")}
-              </h1>
-            </Badge.Ribbon>
-          </TadaAnimation>
+          <Badge.Ribbon
+            className=" shadow-lg animate__tada animate__animated  animate__infinite animate__slow"
+            text={t("NEW_FEATURE")}
+            color="pink"
+            placement="start"
+            style={{ top: -10 }}
+          >
+            <h1 className={`${styles.title} `}>
+              <ImCalculator /> {t("SEE_SIMULATORS")}
+            </h1>
+          </Badge.Ribbon>
           <h2 className={styles.description}>{t("DECOUVRIR_PRESTATIONS")}:</h2>
           <ul className={styles.listSponserShip}>
             <li>

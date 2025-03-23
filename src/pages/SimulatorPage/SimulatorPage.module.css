@@ -13,7 +13,7 @@
   width: fit-content;
 }
 .description {
-  font-size: 16px;
+  font-size: 25px;
   line-height: clamp(20px, 5vw, 34px);
   margin-bottom: var(--gap-xl);
 }

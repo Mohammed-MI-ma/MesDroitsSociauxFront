@@ -6,7 +6,7 @@ const TadaAnimation = ({ children }) => {
     <motion.div
       animate={{
         scale: [1, 1.1, 1.1, 1.1, 1], // Scale effect
-        rotate: [0, -3, 3, -3, 0], // Rotate effect (wiggle)
+        rotate: [0, -2, 2, -2, 0], // Rotate effect (wiggle)
       }}
       transition={{
         duration: 1, // Speed of the animation

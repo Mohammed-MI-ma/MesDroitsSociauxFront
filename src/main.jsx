@@ -22,6 +22,8 @@ import { CookieConsentProvider } from "./CookieConsentContext.jsx";
 // Styles
 import "./index.css";
 import "antd/dist/reset.css";
+import "animate.css";
+
 // Initialize i18n with proper error handling
 initializeI18n();
 
