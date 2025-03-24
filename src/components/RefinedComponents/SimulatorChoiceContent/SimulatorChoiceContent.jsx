@@ -40,7 +40,7 @@ const SimulatorChoiceContent = () => {
               <div className="mt-10">{t("EstimezLes2Aides")}</div>
             </div>
             <div>
-              <Button type="link"> Simuler toutes les prestations </Button>
+              <Button type="link"> Simuler toutes les prestations ss </Button>
             </div>
           </div>
           <div className={`${styles.tileContainer} `}>
