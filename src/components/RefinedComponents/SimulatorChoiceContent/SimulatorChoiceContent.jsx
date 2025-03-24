@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./SimulatorChoiceContent.module.css";
+import styles from "./simulatorChoiceContent.module.css";
 import { useTranslation } from "react-i18next";
 import { IoMdInformationCircle } from "react-icons/io";
 
