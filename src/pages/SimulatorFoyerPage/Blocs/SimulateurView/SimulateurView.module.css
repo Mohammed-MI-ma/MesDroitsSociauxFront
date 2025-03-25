@@ -1,0 +1,60 @@
+.simulateurView {
+  min-height: calc(100vh - 115px);
+  display: flex;
+  width: 100%;
+}
+.simulateurView > div:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+}
+.etapeSimulateurView {
+  width: 100%;
+  margin: 10px;
+  height: 100%;
+  padding: 10px;
+  color: var(--color-primary);
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
+}
+.etapeTitle {
+  padding-top: 10px;
+  margin-bottom: 12px;
+  font-size: 1.875rem;
+  margin-left: 0.25em;
+  font-size: 2.25rem;
+}
+.etapeTitle > h1 {
+  font-size: 40px;
+  width: fit-content;
+  font-weight: 900;
+}
+.synthese {
+  flex: 1;
+}
+@media (max-width: 36rem) {
+  .simulateurView {
+    min-height: calc(100vh - 370px);
+  }
+  .synthese {
+    display: none !important;
+  }
+  .simulateurView > div:first-child {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+@media (min-width: 36.063rem) and (max-width: 48rem) {
+}
+
+@media (min-width: 48.063rem) and (max-width: 62rem) {
+}
+
+@media (min-width: 62.063rem) and (max-width: 75rem) {
+}
+
+@media (min-width: 75.063rem) {
+}

@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./simulatorChoiceContent.module.css";
 import { useTranslation } from "react-i18next";
 import { IoMdInformationCircle } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 const SimulatorChoiceContent = () => {
   const { t } = useTranslation();
@@ -40,7 +41,9 @@ const SimulatorChoiceContent = () => {
               <div className="mt-10">{t("EstimezLes2Aides")}</div>
             </div>
             <div>
-              <Button type="link"> Simuler toutes les prestations ss </Button>
+              <Link to="/votre-simulateur/simu-foyer">
+                <Button type="link"> Simuler toutes les prestations </Button>
+              </Link>
             </div>
           </div>
           <div className={`${styles.tileContainer} `}>

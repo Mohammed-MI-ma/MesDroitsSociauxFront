@@ -25,8 +25,12 @@ export default defineConfig({
             "Group",
             "Progress",
             "Collapse",
+            "message",
+            "Steps",
+            "theme",
           ],
           "react-icons/io": ["IoIosArrowForward", "IoMdInformationCircle"],
+          "react-icons/md": ["MdModeEdit"],
         },
       ],
       dts: "src/auto-imports.d.ts", // Generates a TypeScript declaration file

@@ -18,6 +18,7 @@ declare global {
   const IoIosArrowForward: typeof import('react-icons/io')['IoIosArrowForward']
   const IoMdInformationCircle: typeof import('react-icons/io')['IoMdInformationCircle']
   const LoadingOutlined: typeof import('@ant-design/icons')['LoadingOutlined']
+  const MdModeEdit: typeof import('react-icons/md')['MdModeEdit']
   const Message: typeof import('antd')['Message']
   const Modal: typeof import('antd')['Modal']
   const Progress: typeof import('antd')['Progress']
@@ -25,6 +26,9 @@ declare global {
   const Select: typeof import('antd')['Select']
   const Space: typeof import('antd')['Space']
   const Spin: typeof import('antd')['Spin']
+  const Steps: typeof import('antd')['Steps']
   const Table: typeof import('antd')['Table']
   const Tooltip: typeof import('antd')['Tooltip']
+  const message: typeof import('antd')['message']
+  const theme: typeof import('antd')['theme']
 }

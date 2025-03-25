@@ -67,3 +67,9 @@ body {
   background: var(--color-secondary);
   border-radius: 5px;
 }
+:where(.css-dev-only-do-not-override-sgv094).ant-steps
+  .ant-steps-item-process
+  .ant-steps-item-icon {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}

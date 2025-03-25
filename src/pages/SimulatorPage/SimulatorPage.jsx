@@ -59,12 +59,6 @@ const SimulatorPage = () => {
       <CardsLandingGroup />
       <SimulatorChoiceContent />
       <FAQAccodion />
-      <footer
-        className="w-full flex items-center justify-center text-center h-[300px]"
-        style={{ background: "var(--color-primary)" }}
-      >
-        <div>HEllsss</div>
-      </footer>
     </main>
   );
 };
