@@ -17,18 +17,7 @@
   color: var(--color-primary);
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
 }
-.etapeTitle {
-  padding-top: 10px;
-  margin-bottom: 12px;
-  font-size: 1.875rem;
-  margin-left: 0.25em;
-  font-size: 2.25rem;
-}
-.etapeTitle > h1 {
-  font-size: 40px;
-  width: fit-content;
-  font-weight: 900;
-}
+
 .synthese {
   flex: 1;
 }

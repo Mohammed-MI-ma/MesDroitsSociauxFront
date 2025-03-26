@@ -29,8 +29,14 @@ export default defineConfig({
             "Steps",
             "theme",
           ],
-          "react-icons/io": ["IoIosArrowForward", "IoMdInformationCircle"],
+          "react-icons/io": [
+            "IoIosWoman",
+            "IoIosArrowForward",
+            "IoMdInformationCircle",
+            "IoIosAdd",
+          ],
           "react-icons/md": ["MdModeEdit"],
+          "react-icons/fa6": ["FaRegUser"],
         },
       ],
       dts: "src/auto-imports.d.ts", // Generates a TypeScript declaration file

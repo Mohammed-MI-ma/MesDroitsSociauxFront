@@ -1,0 +1,11 @@
+.etapeTitle {
+  padding-top: 10px;
+  margin-bottom: 12px;
+  margin-left: 0.25em;
+}
+.etapeTitle > h1 {
+  font-size: calc(var(--font-xl) * 2);
+  width: fit-content;
+  font-weight: 900;
+  text-transform: uppercase;
+}

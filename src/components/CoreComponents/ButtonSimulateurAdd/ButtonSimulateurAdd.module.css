@@ -1,0 +1,60 @@
+.ButtonSimulateurAdd {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  text-align: left;
+  flex: 1 1 calc(50% - 7.5px);
+  margin-bottom: 15px;
+  overflow: hidden; /* Broader support compared to 'clip' */
+  box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+  border-radius: 15px;
+  min-height: 8rem; /* Make sure this is respected */
+}
+
+.ButtonSimulateurAdd > button {
+  height: 100%;
+  width: 100%;
+  border: none;
+  background: transparent; /* Avoid using white, as it may conflict with other styles */
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  border-radius: 15px; /* Consistent radius */
+  min-height: 8rem; /* Make sure this is respected */
+}
+
+/* Non-primary button customization */
+.nonPrimary {
+  font-size: 16px !important;
+  font-weight: lighter !important;
+  background: transparent;
+  border: 1px dashed gray !important; /* Avoid using !important unless necessary */
+}
+
+@media (max-width: 36rem) {
+  .ButtonSimulateurAdd {
+    width: 100%;
+    height: 192px; /* Ensure consistent height on small screens */
+  }
+}
+
+@media (min-width: 36.063rem) and (max-width: 48rem) {
+  .ButtonSimulateurAdd {
+    flex: 1 1 100%;
+  }
+}
+
+@media (min-width: 48.063rem) and (max-width: 62rem) {
+  .ButtonSimulateurAdd {
+    flex: 1 1 calc(50% - 10px);
+  }
+}
+
+@media (min-width: 62.063rem) {
+  .ButtonSimulateurAdd {
+    flex: 1 1 calc(33.33% - 10px);
+  }
+}

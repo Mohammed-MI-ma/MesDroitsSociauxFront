@@ -73,6 +73,13 @@
   "ResultatsIndicatifs1": "Les résultats qui vous sont présentés le sont à titre indicatif",
   "ResultatsIndicatifs2": "Les résultats qui vous sont présentés le sont à titre indicatif",
   "PolitiqueConfidentialite": "Vous pouvez consulter notre politique de confidentialité pour en savoir plus sur l'utilisation de vos données au sein du portail mesdroitssociaux.gouv.fr.",
-
-  "home": "VOTRE FOYER"
+  "you": "VOUS",
+  "home": "VOTRE FOYER",
+  "simu_foyer": {
+    "step1": {
+      "step1_title": "1- Votre Foyer",
+      "step1_desc": "Vous pouvez modifier sur cet écran la composition de votre foyer pour effectuer votre simulation.",
+      "ajouter_conjointe": "Ajouter conjointe"
+    }
+  }
 }
