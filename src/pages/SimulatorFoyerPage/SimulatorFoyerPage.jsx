@@ -1,84 +1,86 @@
 /* eslint-disable no-undef */
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import styles from "./SimulatorFoyerPage.module.css";
 import SimulateurView from "./Blocs/SimulateurView/SimulateurView";
-const steps = [
-  {
-    title: "Foyer",
-    content: <SimulateurView>HEllo</SimulateurView>,
-  },
-  {
-    title: "SITUATION",
-    content: "Second-content",
-  },
-  {
-    title: "LOGEMENT",
-    content: "Last-content",
-  },
-  {
-    title: "RESSOURCES",
-    content: "Last-content",
-  },
-  {
-    title: "PATRIMOINE",
-    content: "Last-content",
-  },
-  {
-    title: "RESULTATS",
-    content: "Last-content",
-  },
-];
+import { useTranslation } from "react-i18next";
+import { Button, Steps, message } from "antd";
+import { IoIosArrowForward } from "react-icons/io";
+import onde from "../../assets/images/svg/onde-simu-v2.svg";
 const SimulatorFoyerPage = () => {
-  const { token } = theme.useToken();
+  const { t } = useTranslation();
   const [current, setCurrent] = useState(0);
-  const contentStyle = {
-    textAlign: "center",
-    color: token.colorTextTertiary,
-    backgroundColor: token.colorFillAlter,
-    borderRadius: token.borderRadiusLG,
-    border: `1px dashed ${token.colorBorder}`,
-    marginTop: 16,
-  };
-  const next = () => {
-    setCurrent(current + 1);
-  };
-  const prev = () => {
-    setCurrent(current - 1);
-  };
-  const items = steps.map((item) => ({ key: item.title, title: item.title }));
+
+  // Steps data with internationalization
+  const steps = [
+    { title: t("Foyer"), content: <SimulateurView /> },
+    { title: t("SITUATION"), content: t("Second-content") },
+    { title: t("LOGEMENT"), content: t("Last-content") },
+    { title: t("RESSOURCES"), content: t("Last-content") },
+    { title: t("PATRIMOINE"), content: t("Last-content") },
+    { title: t("RESULTATS"), content: t("Last-content") },
+  ];
+
+  // Memoized handlers to prevent unnecessary re-renders
+  const next = useCallback(() => setCurrent((prev) => prev + 1), []);
+  const prev = useCallback(() => setCurrent((prev) => prev - 1), []);
 
   return (
-    <div className={styles.container}>
-      <Steps
-        current={current}
-        items={items}
-        size="small"
-        className={styles.steps}
-      />
-      <div style={contentStyle} className={styles.contentStyle}>
-        {steps[current].content}
+    <main className={styles.container}>
+      {/* Steps Navigation */}
+      <div className="relative">
+        <Steps
+          current={current}
+          items={steps}
+          size="large"
+          className={styles.steps}
+        />
+        <img src={onde} className="absolute top-0"></img>
       </div>
-      <div style={{ marginTop: 24 }}>
+
+      {/* Step Content */}
+      <div className={styles.contentStyle}>{steps[current].content}</div>
+
+      {/* Footer Buttons */}
+      <footer className="flex flex-col items-center gap-3">
         {current < steps.length - 1 && (
-          <Button type="primary" onClick={() => next()}>
-            Next
-          </Button>
+          <div className="flex flex-col items-center w-full">
+            <Button
+              type="primary"
+              onClick={next}
+              icon={<IoIosArrowForward />}
+              style={{ backgroundColor: "var(--color-secondary)" }}
+              className={styles.nextButton}
+            >
+              {t("Suivant")}
+            </Button>
+
+            <Button
+              type="link"
+              onClick={next}
+              icon={<IoIosArrowForward />}
+              className={styles.nextButton}
+            >
+              {t("Reinitialiser")}
+            </Button>
+          </div>
         )}
+
         {current === steps.length - 1 && (
           <Button
             type="primary"
-            onClick={() => message.success("Processing complete!")}
+            onClick={() => message.success(t("Processing complete!"))}
           >
-            Done
+            {t("Done")}
           </Button>
         )}
+
         {current > 0 && (
-          <Button style={{ margin: "0 8px" }} onClick={() => prev()}>
-            Previous
+          <Button style={{ margin: "0 8px" }} onClick={prev}>
+            {t("Previous")}
           </Button>
         )}
-      </div>
-    </div>
+      </footer>
+    </main>
   );
 };
 

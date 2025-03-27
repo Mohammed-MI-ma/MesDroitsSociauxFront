@@ -76,7 +76,15 @@
     "step1": {
       "step1_title": "١- أسرتك",
       "step1_desc": "يمكنك تعديل تركيبة أسرتك على هذه الشاشة لإجراء محاكاتك.",
-      "ajouter_conjointe": "إضافة الزوجة"
+      "ajouter_conjointe": "إضافة الزوجة",
+      "single": "أعزب"
     }
-  }
+  },
+  "first_name": "الاسم الأول",
+  "date_of_birth": "تاريخ الميلاد",
+  "gender": "الجنس",
+  "male": "ذكر",
+  "female": "أنثى",
+  "personal_data": "حدد بياناتك الشخصية",
+  "choose_dob": "اختر تاريخ ميلادك"
 }

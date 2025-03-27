@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useMemo } from "react";
+import React, { useMemo, useState } from "react";
 import clsx from "clsx"; // For conditional class handling
 import PropTypes from "prop-types";
 import { Button, Avatar } from "antd"; // Assuming Button and Avatar are imported from antd
@@ -7,7 +7,24 @@ import { motion } from "framer-motion"; // Importing motion from Framer Motion
 
 import styles from "./ButtonSimulateurAdd.module.css";
 
-const ButtonSimulateurAdd = ({ children, icon, primary, editing, delay }) => {
+const ButtonSimulateurAdd = ({
+  children,
+  icon,
+  primary,
+  editing,
+  delay,
+  modal,
+}) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
   // Memoize the icon rendering to avoid unnecessary recalculations
   const renderedIcon = useMemo(() => {
     return editing ? <MdModeEdit /> : <IoIosAdd />;
@@ -22,15 +39,15 @@ const ButtonSimulateurAdd = ({ children, icon, primary, editing, delay }) => {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 1.25, delay: 1 + 0.2 * delay }} // Smooth fade-in effect
+      transition={{ duration: 1.25, delay: 0.5 + 0.2 * delay }} // Smooth fade-in effect
       className={styles.ButtonSimulateurAdd}
     >
-      <Button icon={icon} className={buttonClass}>
+      <Button icon={icon} className={buttonClass} onClick={showModal}>
         <Avatar
           size="large"
           icon={renderedIcon}
           style={{
-            background: "var(--color-secondary)",
+            background: "#cb4b4b",
             position: "absolute",
             top: 0,
             right: 0,
@@ -39,6 +56,15 @@ const ButtonSimulateurAdd = ({ children, icon, primary, editing, delay }) => {
         />{" "}
         {children}
       </Button>
+      <Modal
+        title={modal?.title}
+        open={isModalOpen}
+        onOk={handleOk}
+        onCancel={handleCancel}
+        centered
+      >
+        {modal?.body}
+      </Modal>
     </motion.div>
   );
 };

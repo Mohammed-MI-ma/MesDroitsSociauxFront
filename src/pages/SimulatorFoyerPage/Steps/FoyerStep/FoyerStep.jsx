@@ -6,6 +6,7 @@ const FoyerStep = ({ stepKey, stepTitle, stepDescription, children }) => {
   return (
     <div id={stepKey}>
       <StepTitle title={stepTitle} />
+
       {stepDescription && <p>{stepDescription}</p>}
       {children}
     </div>

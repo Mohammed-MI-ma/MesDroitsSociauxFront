@@ -1,10 +1,30 @@
 .container {
+  margin-top: var(--gap-tiny);
+}
+.steps {
+  margin-bottom: var(--gap-xl);
 }
 .contentStyle {
+  margin-top: var(--gap-md);
 }
+/*NEXT__BUTTON*/
+.nextButton {
+  margin-bottom: var(--gap-xl);
+}
+[dir="ltr"] .nextButton {
+  float: right;
+}
+[dir="rtl"] .nextButton {
+  float: left;
+}
+.container > footer {
+  margin-top: var(--gap-lg);
+  margin-bottom: var(--gap-lg);
+}
+
 @media (max-width: 36rem) {
   .container {
-    margin-top: 100px;
+    margin-top: calc(var(--gap-xl) * 5);
   }
   .steps {
     display: none !important;

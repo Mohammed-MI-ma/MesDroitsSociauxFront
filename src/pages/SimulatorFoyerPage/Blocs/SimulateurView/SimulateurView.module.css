@@ -1,5 +1,4 @@
 .simulateurView {
-  min-height: calc(100vh - 115px);
   display: flex;
   width: 100%;
 }
@@ -17,9 +16,36 @@
   color: var(--color-primary);
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
 }
-
+.individusContainer {
+  display: flex;
+  text-align: center;
+  width: 100%;
+  gap: 10px;
+  align-items: stretch;
+  justify-content: center;
+}
+.individusContainer1 {
+  display: flex;
+  text-align: center;
+  width: 100%;
+  gap: 10px;
+  align-items: stretch;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
 .synthese {
   flex: 1;
+  padding: 50px;
+  padding-top: 0px;
+  color: var(--color-primary);
+}
+.synthese > h2 {
+  font-size: 30px;
+}
+.cardWrapper {
+  width: calc(50% - 10px); /* 50% width with spacing adjustment */
+  display: flex;
+  justify-content: center; /* Center button inside */
 }
 @media (max-width: 36rem) {
   .simulateurView {

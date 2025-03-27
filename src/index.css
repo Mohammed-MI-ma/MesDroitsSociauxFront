@@ -70,6 +70,6 @@ body {
 :where(.css-dev-only-do-not-override-sgv094).ant-steps
   .ant-steps-item-process
   .ant-steps-item-icon {
-  background-color: var(--color-primary);
-  border-color: var(--color-primary);
+  background-color: #cb4b4b;
+  border-color: #cb4b4b;
 }

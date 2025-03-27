@@ -28,6 +28,9 @@ export default defineConfig({
             "message",
             "Steps",
             "theme",
+            "Flex",
+            "Input",
+            "DatePicker",
           ],
           "react-icons/io": [
             "IoIosWoman",

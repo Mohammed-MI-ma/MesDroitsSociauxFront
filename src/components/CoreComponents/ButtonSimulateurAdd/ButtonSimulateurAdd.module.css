@@ -8,8 +8,9 @@
   overflow: hidden; /* Broader support compared to 'clip' */
   box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.3);
   box-sizing: border-box;
-  border-radius: 15px;
+  border-radius: 5px;
   min-height: 8rem; /* Make sure this is respected */
+  max-width: 400px;
 }
 
 .ButtonSimulateurAdd > button {
@@ -22,7 +23,7 @@
   align-items: center;
   justify-content: center;
   font-weight: 900;
-  border-radius: 15px; /* Consistent radius */
+  border-radius: 5px; /* Consistent radius */
   min-height: 8rem; /* Make sure this is respected */
 }
 
