@@ -14,7 +14,6 @@ import { FontsConfig } from "./fontsConfig.js";
 import { loadFonts, loadImages } from "./services";
 
 import frFR from "antd/es/locale/fr_FR";
-import arEG from "antd/es/locale/ar_EG";
 
 import { global_Assets } from "./config.dev.js";
 
@@ -32,7 +31,6 @@ import SEO from "./components/CoreComponents/SEO/SEO.jsx";
 
 function App() {
   const [appIsReady, setAppIsReady] = useState(false);
-  const [language] = useState(localStorage.getItem("lang") || "fr");
 
   useEffect(() => {
     async function fetchData() {

@@ -56,15 +56,23 @@ const ButtonSimulateurAdd = ({
         />{" "}
         {children}
       </Button>
-      <Modal
-        title={modal?.title}
-        open={isModalOpen}
-        onOk={handleOk}
-        onCancel={handleCancel}
-        centered
+      <ConfigProvider
+        theme={{
+          token: {
+            color: "#1677ff",
+          },
+        }}
       >
-        {modal?.body}
-      </Modal>
+        <Modal
+          title={modal?.title}
+          open={isModalOpen}
+          onOk={handleOk}
+          onCancel={handleCancel}
+          centered
+        >
+          {modal?.body}
+        </Modal>
+      </ConfigProvider>
     </motion.div>
   );
 };

@@ -77,7 +77,7 @@
   "home": "VOTRE FOYER",
   "simu_foyer": {
     "step1": {
-      "step1_title": "1- Votre Foyer",
+      "step1_title": "1.Votre Foyer",
       "step1_desc": "Vous pouvez modifier sur cet écran la composition de votre foyer pour effectuer votre simulation.",
       "ajouter_conjointe": "Ajouter conjointe",
       "single": "Célibataire"
@@ -91,5 +91,6 @@
   "male": "Masculin",
   "female": "Féminin",
   "personal_data": "Préciser vos données personnelles",
-  "choose_dob": "Choisir votre date de naissance"
+  "choose_dob": "Choisir votre date de naissance",
+  "SYNTHESE": "Synthèse"
 }

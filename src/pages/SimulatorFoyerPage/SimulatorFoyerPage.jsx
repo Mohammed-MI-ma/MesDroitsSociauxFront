@@ -12,7 +12,7 @@ const SimulatorFoyerPage = () => {
 
   // Steps data with internationalization
   const steps = [
-    { title: t("Foyer"), content: <SimulateurView /> },
+    { title: t("simu_foyer.step1.step1_title"), content: <SimulateurView /> },
     { title: t("SITUATION"), content: t("Second-content") },
     { title: t("LOGEMENT"), content: t("Last-content") },
     { title: t("RESSOURCES"), content: t("Last-content") },

@@ -141,7 +141,9 @@ const SimulateurView = () => {
       </div>{" "}
       <div className={styles.synthese}>
         <Flex align="center" wrap gap={30}>
-          <h2 style={{ fontSize: "30px", fontWeight: "900" }}>SYNTHÈSE</h2>
+          <h2 style={{ fontSize: "30px", fontWeight: "900" }}>
+            {t("SYNTHESE")}
+          </h2>
           <Progress type="dashboard" percent={50} size="small" />
         </Flex>
         <h3> VOUS</h3>
