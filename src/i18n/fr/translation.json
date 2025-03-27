@@ -92,5 +92,7 @@
   "female": "Féminin",
   "personal_data": "Préciser vos données personnelles",
   "choose_dob": "Choisir votre date de naissance",
-  "SYNTHESE": "Synthèse"
+  "SYNTHESE": "Synthèse",
+  "validate": "Valider",
+  "cancel": "Annuler"
 }

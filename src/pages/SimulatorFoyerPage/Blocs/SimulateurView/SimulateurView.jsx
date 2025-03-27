@@ -1,55 +1,55 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useRef } from "react";
 import styles from "./SimulateurView.module.css";
 import { useTranslation } from "react-i18next";
 import FoyerStep from "../../Steps/FoyerStep/FoyerStep";
 import ButtonSimulateurAdd from "../../../../components/CoreComponents/ButtonSimulateurAdd/ButtonSimulateurAdd";
+import ChefMenage from "../ChefMenage/ChefMenage";
+import Conjointe from "../Conjointe/Conjointe";
+
+import { useSelector } from "react-redux";
+import { findByRangCode } from "../../../../reducers/applicationService/applicationSlice";
 //"../../assets/images/bgBlocTop.png";
 const SimulateurView = () => {
   const { t } = useTranslation();
+  const chefMenageRef = useRef(null);
+  const conjointeRef = useRef(null);
 
-  const options = [
-    { label: t("male"), value: "Apple" },
-    { label: t("female"), value: "Pear" },
-  ];
+  const rangCodeToFind = "CF";
+  const chefMenage = useSelector((state) =>
+    findByRangCode(state, rangCodeToFind)
+  );
+
   // Memoize the icons to avoid recalculating on every render
   const buttonConfigs = useMemo(
     () => [
       {
         icon: <FaRegUser />,
-        text: t("you"),
+        text: chefMenage ? (
+          <div className="text-left">
+            <div style={{ fontSize: "12px", fontWeight: "100" }}>
+              {t("you")}
+            </div>
+            <div style={{ fontSize: "30px" }}>{chefMenage.prenom} </div>
+            <div style={{ fontSize: "12px" }}>{chefMenage.dateNaissance} </div>
+          </div>
+        ) : (
+          t("you")
+        ),
         primary: true,
         editing: true,
         modal: {
+          id: "CHEF_MENAGE",
           title: t("personal_data"),
-          body: (
-            <>
-              <form className="">
-                <div>
-                  {t("first_name")}
-                  <Input></Input>
-                </div>
-                <div>
-                  <p> {t("date_of_birth")}</p>
-
-                  <DatePicker
-                    onChange={() => {}}
-                    style={{ width: "100%" }}
-                    placeholder={t("choose_dob")}
-                  />
-                </div>
-                <div>
-                  {t("gender")}
-                  <Radio.Group
-                    block
-                    options={options}
-                    defaultValue="Apple"
-                    optionType="button"
-                    buttonStyle="solid"
-                  />
-                </div>
-              </form>
-            </>
-          ),
+          body: <ChefMenage ref={chefMenageRef} />,
+          validate: async () => {
+            const isValid = await chefMenageRef.current?.validateForm(); // Ensure it's a boolean value
+            console.log("Validation ", isValid);
+            if (!isValid.status) {
+              console.log("Validation failed");
+              return isValid;
+            }
+            return isValid;
+          },
         },
       },
       {
@@ -57,10 +57,25 @@ const SimulateurView = () => {
         text: t("simu_foyer.step1.ajouter_conjointe"),
         primary: false,
         editing: false,
+        modal: {
+          id: "CONJOINTE",
+          title: "Votre situation matrimoniale",
+          body: <Conjointe ref={conjointeRef} />,
+          validate: async () => {
+            const isValid = await chefMenageRef.current?.validateForm(); // Ensure it's a boolean value
+            console.log("Validation ", isValid);
+            if (!isValid.status) {
+              console.log("Validation failed");
+              return isValid;
+            }
+            return isValid;
+          },
+        },
       },
     ],
-    [t]
+    [chefMenage, t]
   );
+
   const buttonConfigs1 = useMemo(
     () => [
       {

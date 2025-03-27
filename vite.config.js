@@ -31,6 +31,7 @@ export default defineConfig({
             "Flex",
             "Input",
             "DatePicker",
+            "Form",
           ],
           "react-icons/io": [
             "IoIosWoman",

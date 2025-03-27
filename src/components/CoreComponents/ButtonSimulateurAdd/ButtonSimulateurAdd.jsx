@@ -4,8 +4,11 @@ import clsx from "clsx"; // For conditional class handling
 import PropTypes from "prop-types";
 import { Button, Avatar } from "antd"; // Assuming Button and Avatar are imported from antd
 import { motion } from "framer-motion"; // Importing motion from Framer Motion
+import { useDispatch, useSelector } from "react-redux";
 
 import styles from "./ButtonSimulateurAdd.module.css";
+import { useTranslation } from "react-i18next";
+import { addToMemberList } from "../../../reducers/applicationService/applicationSlice";
 
 const ButtonSimulateurAdd = ({
   children,
@@ -16,12 +19,25 @@ const ButtonSimulateurAdd = ({
   modal,
 }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { t } = useTranslation();
+  const dispatch = useDispatch();
+
   const showModal = () => {
     setIsModalOpen(true);
   };
-  const handleOk = () => {
+  const handleOk = async () => {
+    const res = await modal.validate();
+    if (!res.status) {
+      console.log("Prevent closing if validation fails");
+      setIsModalOpen(true);
+      return;
+    }
+    console.log("red", res);
+    dispatch(addToMemberList({ ...res.body, rangCode: "CF" }));
+
     setIsModalOpen(false);
   };
+
   const handleCancel = () => {
     setIsModalOpen(false);
   };
@@ -64,6 +80,8 @@ const ButtonSimulateurAdd = ({
         }}
       >
         <Modal
+          okText={t("validate")}
+          cancelText={t("cancel")}
           title={modal?.title}
           open={isModalOpen}
           onOk={handleOk}

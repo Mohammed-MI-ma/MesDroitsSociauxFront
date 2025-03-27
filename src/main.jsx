@@ -18,11 +18,13 @@ import "./i18n"; // Ensure i18n is imported
 
 import App from "./App.jsx";
 import { CookieConsentProvider } from "./CookieConsentContext.jsx";
+import Store from "./store";
 
 // Styles
 import "./index.css";
 import "antd/dist/reset.css";
 import "animate.css";
+import { Provider } from "react-redux";
 
 // Initialize i18n with proper error handling
 initializeI18n();
@@ -49,11 +51,13 @@ root.render(
     <ThemeProvider>
       <LanguageProvider>
         <CookieConsentProvider>
-          <Router>
-            <StrictMode>
-              <App />
-            </StrictMode>
-          </Router>
+          <Provider store={Store}>
+            <Router>
+              <StrictMode>
+                <App />
+              </StrictMode>
+            </Router>
+          </Provider>
         </CookieConsentProvider>
       </LanguageProvider>
     </ThemeProvider>

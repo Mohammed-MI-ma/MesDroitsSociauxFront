@@ -87,5 +87,7 @@
   "female": "أنثى",
   "personal_data": "حدد بياناتك الشخصية",
   "choose_dob": "اختر تاريخ ميلادك",
-  "SYNTHESE": "الملخص"
+  "SYNTHESE": "الملخص",
+  "validate": "تأكيد",
+  "cancel": "إلغاء"
 }
