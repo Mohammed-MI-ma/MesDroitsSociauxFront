@@ -75,6 +75,10 @@ const Others = forwardRef(({ member }, ref) => {
         return { status: false, body: {}, error };
       }
     },
+    resetForm: () => {
+      form.resetFields(); // This will reset the form fields
+      setFormData({ prenom: "", dateNaissance: null, sexe: "" }); // Reset local state
+    },
   }));
 
   const handleInputChange = useCallback(

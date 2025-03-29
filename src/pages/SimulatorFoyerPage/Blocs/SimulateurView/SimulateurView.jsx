@@ -162,6 +162,8 @@ const SimulateurView = () => {
                       console.log("Validation failed");
                       return isValid;
                     }
+                    // If validation succeeds, reset the form
+                    chefMenageRef.current?.resetForm();
                     return isValid;
                   },
                 }}
@@ -201,7 +203,17 @@ const SimulateurView = () => {
                         },
                       }}
                     >
-                      {t("simu_foyer.step1.modifier_enfant") + id}
+                      <div className="text-left">
+                        <div style={{ fontSize: "12px", fontWeight: "100" }}>
+                          {t("simu_foyer.step1.modifier_enfant")}
+                        </div>
+                        <div style={{ fontSize: "30px" }}>
+                          {others.find((c) => c.id === id).prenom}
+                        </div>
+                        <div style={{ fontSize: "12px" }}>
+                          {others.find((c) => c.id === id).dateNaissance}
+                        </div>
+                      </div>{" "}
                     </ButtonSimulateurAdd>
                   </div>
                 );
