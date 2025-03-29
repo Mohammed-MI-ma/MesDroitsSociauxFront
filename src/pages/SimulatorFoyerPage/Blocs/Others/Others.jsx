@@ -103,9 +103,7 @@ const Others = forwardRef(({ member }, ref) => {
         <DatePicker
           allowClear
           value={formData.dateNaissance ? moment(formData.dateNaissance) : null}
-          onChange={(date, dateString) =>
-            handleInputChange("dateNaissance")(date)
-          }
+          onChange={(date) => handleInputChange("dateNaissance")(date)}
           style={{ width: "100%" }}
           placeholder={t("choose_dob")}
         />
