@@ -40,7 +40,7 @@ const SimulateurView = () => {
             <div style={{ fontSize: "12px", fontWeight: "100" }}>
               {t("you")}
             </div>
-            <div style={{ fontSize: "30px" }}>{chefMenage.prenom} </div>
+            <div style={{ fontSize: "18px" }}>{chefMenage.prenom} </div>
             <div style={{ fontSize: "12px" }}>{chefMenage.dateNaissance} </div>
           </div>
         ) : (
