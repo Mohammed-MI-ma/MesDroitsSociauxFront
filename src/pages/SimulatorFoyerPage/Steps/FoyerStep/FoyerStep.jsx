@@ -1,12 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
 import StepTitle from "../../Blocs/StepTitle/StepTitle";
-
+import styles from "./FoyerStep.module.css";
+import { useTranslation } from "react-i18next";
 const FoyerStep = ({ stepKey, stepTitle, stepDescription, children }) => {
-  return (
-    <div id={stepKey}>
-      <StepTitle title={stepTitle} />
+  const { t } = useTranslation();
 
+  return (
+    <div id={stepKey} className={styles.foyerStep}>
+      <div className={styles.step}>
+        {t("simu_foyer.step1.step", { stepKey })}
+      </div>
+      <StepTitle title={stepTitle} />
       {stepDescription && <p>{stepDescription}</p>}
       {children}
     </div>

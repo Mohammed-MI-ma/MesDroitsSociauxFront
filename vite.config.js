@@ -34,6 +34,7 @@ export default defineConfig({
             "Form",
             "FloatButton",
             "Popover",
+            "message ",
           ],
           "react-icons/io": [
             "IoIosWoman",

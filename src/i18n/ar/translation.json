@@ -76,13 +76,23 @@
     "step1": {
       "step1_title": "1.أسرتك",
       "step1_desc": "يمكنك تعديل تكوين أسرتك على هذه الشاشة لإجراء المحاكاة.",
-      "ajouter_conjointe": "إضافة زوجة",
+      "ajouter_conjointe": "إضافة زوج",
       "ajouter_enfant": "إضافة طفل أو شخص معال",
       "single": "أعزب",
       "modifier_enfant": "تعديل طفل أو شخص معال",
-      "situation_matrimoniale": "الحالة الاجتماعية"
+      "situation_matrimoniale": "الحالة الاجتماعية",
+      "Vousvivez": "أنت تعيش",
+      "seul": "وحيد",
+      "enCouple": "في زوج",
+      "InformationsConjoint": "معلومات الزوج",
+      "Male": "ذكر",
+      "Female": "أنثى",
+      "step": "الخطوة {{stepKey}} من 6"
     }
   },
+  "please_enter_first_name": "يرجى إدخال الاسم الأول",
+  "please_select_dob": "يرجى تحديد تاريخ الميلاد",
+  "please_select_gender": "يرجى اختيار الجنس",
   "first_name": "الاسم الأول",
   "date_of_birth": "تاريخ الميلاد",
   "gender": "الجنس",

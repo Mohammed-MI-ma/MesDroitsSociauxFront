@@ -26,8 +26,8 @@ const Conjointe = forwardRef((props, ref) => {
   const [form] = Form.useForm(); // Ant Design form instance
 
   const options = [
-    { label: t("seul"), value: "seul" },
-    { label: t("en Couple"), value: "enCouple" },
+    { label: t("simu_foyer.step1.seul"), value: "seul" },
+    { label: t("simu_foyer.step1.enCouple"), value: "enCouple" },
   ];
 
   // Sync formData when chefMenage changes
@@ -75,7 +75,7 @@ const Conjointe = forwardRef((props, ref) => {
   return (
     <Form layout="vertical" form={form} initialValues={{ youLive: "seul" }}>
       <Form.Item
-        label={t("Vous vivez")}
+        label={t("simu_foyer.step1.Vousvivez")}
         name="youLive"
         rules={[{ required: true, message: t("please_select_an_option") }]}
       >
@@ -92,7 +92,7 @@ const Conjointe = forwardRef((props, ref) => {
       {/* Conditionally render spouse info */}
       {formData.youLive === "enCouple" && (
         <fieldset className="styled-box">
-          <legend>{t("Informations conjoint")}</legend>
+          <legend>{t("simu_foyer.step1.InformationsConjoint")}</legend>
 
           <Form.Item
             label={t("first_name")}
@@ -131,8 +131,8 @@ const Conjointe = forwardRef((props, ref) => {
           >
             <Radio.Group
               options={[
-                { label: t("Male"), value: "male" },
-                { label: t("Female"), value: "female" },
+                { label: t("simu_foyer.step1.Male"), value: "male" },
+                { label: t("simu_foyer.step1.Female"), value: "female" },
               ]}
               value={formData.sexe}
               onChange={handleInputChange("sexe")}

@@ -68,6 +68,7 @@ const SimulateurView = () => {
             stepTitle={t("simu_foyer.step1.step1_title")}
             stepDescription={t("simu_foyer.step1.step1_desc")}
             key="Key"
+            stepKey={1}
           >
             <div className={styles.individusContainer} id="parents">
               {parents.map(({ icon, text, primary, editing, modal }, idx) => (
@@ -85,7 +86,7 @@ const SimulateurView = () => {
             </div>
 
             <div className={styles.individusContainer} id="situation">
-              <ButtonSimulateurAdd delay={1.5} editing>
+              <ButtonSimulateurAdd delay={1.5} editing muted>
                 {conjoint ? (
                   <div className="text-left">
                     <div style={{ fontSize: "30px" }}>

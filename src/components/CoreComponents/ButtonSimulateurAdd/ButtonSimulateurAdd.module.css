@@ -22,7 +22,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 900;
   text-wrap: wrap;
   border-radius: 5px; /* Consistent radius */
   min-height: 8rem; /* Make sure this is respected */

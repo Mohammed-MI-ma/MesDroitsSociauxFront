@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 //__ANTD
@@ -12,9 +12,17 @@ import { RiLoginCircleFill } from "react-icons/ri";
 import style from "./loginButton.module.css";
 
 const LoginButton = () => {
+  const location = useLocation();
   const { t } = useTranslation();
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    if (location.pathname === "/votre-simulateur/simu-foyer") {
+      setOpen(true);
+    }
+  }, [location.pathname]);
+
   // State to control popover visibility
-  const [open, setOpen] = useState(true);
 
   const hide = () => {
     setOpen(false); // Close popover

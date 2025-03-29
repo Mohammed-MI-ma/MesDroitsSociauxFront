@@ -83,9 +83,20 @@
       "ajouter_enfant": "Ajouter un enfant ou une personne à charge",
       "single": "Célibataire",
       "modifier_enfant": "Modifier un enfant ou une personne à charge",
-      "situation_matrimoniale": "Situation matrimoniale"
+      "situation_matrimoniale": "Situation matrimoniale",
+      "Vousvivez": "Vous vivez",
+      "seul": "Seul",
+      "enCouple": "En couple",
+      "InformationsConjoint": "Informations du conjoint",
+      "Male": "Homme",
+      "Female": "Femme",
+      "step": "Étape {{stepKey}} sur 6"
     }
   },
+  "please_enter_first_name": "Veuillez entrer le prénom",
+
+  "please_select_dob": "Veuillez sélectionner la date de naissance",
+  "please_select_gender": "Veuillez sélectionner le genre",
   "Suivant": "Suivant",
   "Reinitialiser": "Réinitialiser",
   "first_name": "Prénom",

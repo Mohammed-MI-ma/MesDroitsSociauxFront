@@ -1,0 +1,32 @@
+.step {
+  display: none;
+}
+
+@media (max-width: 36rem) {
+  .step {
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 1px solid var(--color-primary);
+    padding-bottom: 10px;
+    width: fit-content;
+  }
+  [dir="rtl"] .step {
+    float: left;
+  }
+  [dir="ltr"] .step {
+    float: right;
+  }
+}
+
+@media (min-width: 36.063rem) and (max-width: 48rem) {
+}
+
+@media (min-width: 48.063rem) and (max-width: 62rem) {
+}
+
+@media (min-width: 62.063rem) and (max-width: 75rem) {
+}
+
+@media (min-width: 75.063rem) {
+}
