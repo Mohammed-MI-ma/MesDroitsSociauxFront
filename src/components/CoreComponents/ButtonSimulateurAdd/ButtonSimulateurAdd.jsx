@@ -33,7 +33,7 @@ const ButtonSimulateurAdd = ({
       return;
     }
     console.log("red", res);
-    dispatch(addToMemberList({ ...res.body, rangCode: "CF" }));
+    dispatch(addToMemberList({ ...res.body, rangCode: res.rangCode }));
 
     setIsModalOpen(false);
   };

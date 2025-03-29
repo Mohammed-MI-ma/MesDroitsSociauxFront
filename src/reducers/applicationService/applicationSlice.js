@@ -38,6 +38,12 @@ const applicationSlice = createSlice({
 export const findByRangCode = (state, rangCode) =>
   state.application.memberList.find((member) => member.rangCode === rangCode);
 
+// Updated selector to get all members excluding those with any rangCodes in the array
+export const findOthers = (state, rangCodes) => {
+  return state.application.memberList.filter(
+    (member) => !rangCodes.includes(member.rangCode)
+  );
+};
 // Export action creators
 export const { setMemberList, addToMemberList, deleteFromMemberList } =
   applicationSlice.actions;

@@ -29,7 +29,7 @@
 
 /* Non-primary button customization */
 .nonPrimary {
-  font-size: 16px !important;
+  font-size: 18px !important;
   font-weight: lighter !important;
   background: transparent;
   border: 1px dashed gray !important; /* Avoid using !important unless necessary */

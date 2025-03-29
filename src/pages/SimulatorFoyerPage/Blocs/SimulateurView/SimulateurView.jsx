@@ -7,18 +7,29 @@ import ChefMenage from "../ChefMenage/ChefMenage";
 import Conjointe from "../Conjointe/Conjointe";
 
 import { useSelector } from "react-redux";
-import { findByRangCode } from "../../../../reducers/applicationService/applicationSlice";
+import {
+  findByRangCode,
+  findOthers,
+} from "../../../../reducers/applicationService/applicationSlice";
+import Others from "../Others/Others";
 //"../../assets/images/bgBlocTop.png";
 const SimulateurView = () => {
   const { t } = useTranslation();
   const chefMenageRef = useRef(null);
-  const conjointeRef = useRef(null);
+  const conjointRef = useRef(null);
+  const memberList = useSelector((state) => state.application.memberList);
 
-  const rangCodeToFind = "CF";
+  const rangCodeToFindCF = "CF";
+  const rangCodeToFindCJ = "CJ";
   const chefMenage = useSelector((state) =>
-    findByRangCode(state, rangCodeToFind)
+    findByRangCode(state, rangCodeToFindCF)
   );
-
+  const conjoint = useSelector((state) =>
+    findByRangCode(state, rangCodeToFindCJ)
+  );
+  const others = useSelector((state) =>
+    findOthers(state, [rangCodeToFindCJ, rangCodeToFindCF])
+  );
   // Memoize the icons to avoid recalculating on every render
   const buttonConfigs = useMemo(
     () => [
@@ -54,15 +65,25 @@ const SimulateurView = () => {
       },
       {
         icon: <IoIosWoman />,
-        text: t("simu_foyer.step1.ajouter_conjointe"),
+        text: conjoint ? (
+          <div className="text-left">
+            <div style={{ fontSize: "12px", fontWeight: "100" }}>
+              {t("simu_foyer.step1.ajouter_conjointe")}
+            </div>
+            <div style={{ fontSize: "30px" }}>{conjoint.prenom} </div>
+            <div style={{ fontSize: "12px" }}>{conjoint.dateNaissance} </div>
+          </div>
+        ) : (
+          t("simu_foyer.step1.ajouter_conjointe")
+        ),
         primary: false,
         editing: false,
         modal: {
           id: "CONJOINTE",
           title: "Votre situation matrimoniale",
-          body: <Conjointe ref={conjointeRef} />,
+          body: <Conjointe ref={conjointRef} />,
           validate: async () => {
-            const isValid = await chefMenageRef.current?.validateForm(); // Ensure it's a boolean value
+            const isValid = await conjointRef.current?.validateForm(); // Ensure it's a boolean value
             console.log("Validation ", isValid);
             if (!isValid.status) {
               console.log("Validation failed");
@@ -73,37 +94,18 @@ const SimulateurView = () => {
         },
       },
     ],
-    [chefMenage, t]
+    [chefMenage, conjoint, t]
   );
 
-  const buttonConfigs1 = useMemo(
-    () => [
-      {
-        icon: <IoIosWoman />,
-        text: t("simu_foyer.step1.ajouter_conjointe"),
+  const children = useMemo(
+    () =>
+      others.map(({ prenom, text, dateNaissance }, idx) => ({
+        icon: <LuBaby />,
+        text: t("simu_foyer.step1.ajouter_enfant"),
         primary: false,
         editing: false,
-      },
-      {
-        icon: <IoIosWoman />,
-        text: t("simu_foyer.step1.ajouter_conjointe"),
-        primary: false,
-        editing: false,
-      },
-      {
-        icon: <IoIosWoman />,
-        text: t("simu_foyer.step1.ajouter_conjointe"),
-        primary: false,
-        editing: false,
-      },
-      {
-        icon: <IoIosWoman />,
-        text: t("simu_foyer.step1.ajouter_conjointe"),
-        primary: false,
-        editing: false,
-      },
-    ],
-    [t]
+      })),
+    [others, t]
   );
   return (
     <main className={styles.simulateurView}>
@@ -133,11 +135,41 @@ const SimulateurView = () => {
 
             <div className={styles.individusContainer} id="situation">
               <ButtonSimulateurAdd delay={1.5} editing>
-                {t("simu_foyer.step1.single")}
+                {conjoint ? (
+                  <div className="text-left">
+                    <div style={{ fontSize: "30px" }}>
+                      {conjoint.youLive === "enCouple" ? "couple marié" : ""}
+                    </div>
+                  </div>
+                ) : (
+                  t("simu_foyer.step1.single")
+                )}
               </ButtonSimulateurAdd>
             </div>
             <div className={styles.individusContainer1} id="enfants">
-              {buttonConfigs1.map(({ icon, text, primary, editing }, idx) => (
+              <ButtonSimulateurAdd
+                key={`ChildChildChildChild`}
+                icon={<LuBaby />}
+                editing
+                modal={{
+                  id: "Child",
+                  title: t("simu_foyer.step1.ajouter_enfant"),
+                  body: <Others ref={chefMenageRef} />,
+                  validate: async () => {
+                    const isValid = await chefMenageRef.current?.validateForm(); // Ensure it's a boolean value
+                    console.log("Validation ", isValid);
+                    if (!isValid.status) {
+                      console.log("Validation failed");
+                      return isValid;
+                    }
+                    return isValid;
+                  },
+                }}
+              >
+                {t("simu_foyer.step1.ajouter_enfant")}
+              </ButtonSimulateurAdd>
+
+              {children.map(({ icon, text, primary, editing }, idx) => (
                 <div key={`${text}-${idx}`} className={styles.cardWrapper}>
                   <ButtonSimulateurAdd
                     key={`${text}-${idx}`}
@@ -161,7 +193,30 @@ const SimulateurView = () => {
           </h2>
           <Progress type="dashboard" percent={50} size="small" />
         </Flex>
-        <h3> VOUS</h3>
+        <h1 style={{ fontSize: "16px" }}>
+          Taille du ménagé: {memberList.length}
+        </h1>
+        {memberList.map(({ prenom, text, dateNaissance }, idx) => (
+          <div
+            key={`${text}-${idx}`}
+            style={{
+              borderLeft: "1px solid black",
+              padding: "10px",
+              marginBottom: "10px",
+            }}
+          >
+            <h3
+              style={{
+                fontSize: "30px",
+                fontWeight: "900",
+                textTransform: "uppercase",
+              }}
+            >
+              {prenom}
+            </h3>
+            <p>Né le {dateNaissance}</p>
+          </div>
+        ))}
       </div>
     </main>
   );

@@ -11,13 +11,13 @@ import moment from "moment"; // Add this import
 import { useSelector } from "react-redux";
 import { findByRangCode } from "../../../../reducers/applicationService/applicationSlice";
 
-const ChefMenage = forwardRef((props, ref) => {
+const Others = forwardRef((props, ref) => {
   const { t } = useTranslation();
-  const chefMenage = useSelector((state) => findByRangCode(state, "CF"));
+  const others = useSelector((state) => findByRangCode(state, "Au"));
   const [formData, setFormData] = useState({
-    prenom: chefMenage?.prenom || "",
-    dateNaissance: chefMenage?.dateNaissance || "",
-    sexe: chefMenage?.sexe || "",
+    prenom: others?.prenom || "",
+    dateNaissance: others?.dateNaissance || "",
+    sexe: others?.sexe || "",
   });
   const [form] = Form.useForm(); // Form instance to handle validation
 
@@ -28,21 +28,21 @@ const ChefMenage = forwardRef((props, ref) => {
 
   // Sync formData when chefMenage changes
   useEffect(() => {
-    if (chefMenage) {
+    if (others) {
       setFormData({
-        prenom: chefMenage.prenom || "",
-        dateNaissance: chefMenage.dateNaissance || "",
-        sexe: chefMenage.sexe || "",
+        prenom: others.prenom || "",
+        dateNaissance: others.dateNaissance || "",
+        sexe: others.sexe || "",
       });
     }
-  }, [chefMenage]);
+  }, [others]);
 
   // Expose validateForm function to parent
   useImperativeHandle(ref, () => ({
     validateForm: async () => {
       try {
         await form.validateFields();
-        return { status: true, body: formData, rangCode: "CF" }; // Validation passed
+        return { status: true, body: formData, rangCode: "Au" }; // Validation passed
       } catch (error) {
         return { status: false, body: {}, error: error }; // Validation failed
       }
@@ -133,4 +133,4 @@ const ChefMenage = forwardRef((props, ref) => {
   );
 });
 
-export default ChefMenage;
+export default Others;

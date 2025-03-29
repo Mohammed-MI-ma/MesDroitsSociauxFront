@@ -41,6 +41,7 @@ export default defineConfig({
           ],
           "react-icons/md": ["MdModeEdit"],
           "react-icons/fa6": ["FaRegUser"],
+          "react-icons/lu": ["LuBaby"],
         },
       ],
       dts: "src/auto-imports.d.ts", // Generates a TypeScript declaration file

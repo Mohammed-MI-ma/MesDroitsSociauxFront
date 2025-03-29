@@ -9,31 +9,43 @@ import {
 import { useTranslation } from "react-i18next";
 import { Form, Radio, Input, DatePicker } from "antd";
 import moment from "moment";
+import { useSelector } from "react-redux";
+import { findByRangCode } from "../../../../reducers/applicationService/applicationSlice";
 
 const Conjointe = forwardRef((props, ref) => {
   const { t } = useTranslation();
-  const [form] = Form.useForm(); // Ant Design form instance
+  const conjoint = useSelector((state) => findByRangCode(state, "CJ"));
 
   // Default form state
   const [formData, setFormData] = useState({
     youLive: "seul",
-    prenom: "",
-    sexe: "",
-    dateNaissance: "",
+    prenom: conjoint?.prenom || "",
+    dateNaissance: conjoint?.dateNaissance || "",
+    sexe: conjoint?.sexe || "",
   });
+  const [form] = Form.useForm(); // Ant Design form instance
 
   const options = [
     { label: t("seul"), value: "seul" },
     { label: t("en Couple"), value: "enCouple" },
   ];
 
+  // Sync formData when chefMenage changes
+  useEffect(() => {
+    if (conjoint) {
+      setFormData({
+        prenom: conjoint.prenom || "",
+        dateNaissance: conjoint.dateNaissance || "",
+        sexe: conjoint.sexe || "",
+      });
+    }
+  }, [conjoint]);
   // Expose validateForm function to parent
   useImperativeHandle(ref, () => ({
     validateForm: async () => {
       try {
-        console.log("gooood");
         await form.validateFields();
-        return { status: true, body: formData };
+        return { status: true, body: formData, rangCode: "CJ" };
       } catch (error) {
         console.log("error", error);
         return { status: false, body: {} };
@@ -41,15 +53,15 @@ const Conjointe = forwardRef((props, ref) => {
     },
   }));
 
-  // Handle input changes
   const handleInputChange = useCallback(
     (field) => (event) => {
-      const value = event?.target ? event.target.value : event;
+      let value = event?.target ? event.target.value : event;
 
       setFormData((prev) => {
         if (field === "youLive" && value === "seul") {
           return { youLive: "seul", prenom: "", sexe: "", dateNaissance: "" };
         }
+
         return { ...prev, [field]: value };
       });
     },
@@ -104,7 +116,9 @@ const Conjointe = forwardRef((props, ref) => {
               value={
                 formData.dateNaissance ? moment(formData.dateNaissance) : null
               }
-              onChange={handleInputChange("dateNaissance")}
+              onChange={(date, dateString) =>
+                handleInputChange("dateNaissance")(dateString)
+              }
               style={{ width: "100%" }}
               placeholder={t("choose_dob")}
             />

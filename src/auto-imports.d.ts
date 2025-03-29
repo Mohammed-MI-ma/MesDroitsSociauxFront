@@ -23,6 +23,7 @@ declare global {
   const IoIosWoman: typeof import('react-icons/io')['IoIosWoman']
   const IoMdInformationCircle: typeof import('react-icons/io')['IoMdInformationCircle']
   const LoadingOutlined: typeof import('@ant-design/icons')['LoadingOutlined']
+  const LuBaby: typeof import('react-icons/lu')['LuBaby']
   const MdModeEdit: typeof import('react-icons/md')['MdModeEdit']
   const Message: typeof import('antd')['Message']
   const Modal: typeof import('antd')['Modal']
