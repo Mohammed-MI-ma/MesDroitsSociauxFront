@@ -18,11 +18,12 @@
   width: 100%;
   border: none;
   background: transparent; /* Avoid using white, as it may conflict with other styles */
-  font-size: 40px;
+  font-size: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 900;
+  text-wrap: wrap;
   border-radius: 5px; /* Consistent radius */
   min-height: 8rem; /* Make sure this is respected */
 }
