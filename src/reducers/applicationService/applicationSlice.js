@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, nanoid } from "@reduxjs/toolkit";
 
 const initialState = {
   memberList: [],
@@ -9,9 +9,11 @@ const applicationSlice = createSlice({
   initialState,
   reducers: {
     setMemberList: (state, action) => {
-      state.memberList = action.payload.filter(
-        (member) => member.prenom && member.dateNaissance && member.sexe
-      );
+      state.memberList = action.payload
+        .filter(
+          (member) => member.prenom && member.dateNaissance && member.sexe
+        )
+        .map((member) => ({ ...member, id: nanoid() })); // Assign unique IDs to each member
     },
     addToMemberList: (state, action) => {
       const newMember = action.payload;
@@ -21,14 +23,14 @@ const applicationSlice = createSlice({
         newMember.sexe &&
         newMember.rangCode
       ) {
-        state.memberList.push(newMember);
+        state.memberList.push({ ...newMember, id: nanoid() }); // Assign a unique ID
       } else {
         console.error("Invalid member format:", newMember);
       }
     },
     deleteFromMemberList: (state, action) => {
       state.memberList = state.memberList.filter(
-        (member) => member.prenom !== action.payload
+        (member) => member.id !== action.payload // Delete by unique ID instead of name
       );
     },
   },

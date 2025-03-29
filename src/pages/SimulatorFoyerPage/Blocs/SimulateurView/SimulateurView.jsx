@@ -15,21 +15,19 @@ import Others from "../Others/Others";
 //"../../assets/images/bgBlocTop.png";
 const SimulateurView = () => {
   const { t } = useTranslation();
+
   const chefMenageRef = useRef(null);
   const conjointRef = useRef(null);
+
+  // 🔹 Dynamic refs for children
+  const childRefs = useRef({});
+
   const memberList = useSelector((state) => state.application.memberList);
 
-  const rangCodeToFindCF = "CF";
-  const rangCodeToFindCJ = "CJ";
-  const chefMenage = useSelector((state) =>
-    findByRangCode(state, rangCodeToFindCF)
-  );
-  const conjoint = useSelector((state) =>
-    findByRangCode(state, rangCodeToFindCJ)
-  );
-  const others = useSelector((state) =>
-    findOthers(state, [rangCodeToFindCJ, rangCodeToFindCF])
-  );
+  const chefMenage = useSelector((state) => findByRangCode(state, "CF"));
+  const conjoint = useSelector((state) => findByRangCode(state, "CJ"));
+  const others = useSelector((state) => findOthers(state, ["CJ", "CF"]));
+
   // Memoize the icons to avoid recalculating on every render
   const buttonConfigs = useMemo(
     () => [
@@ -97,16 +95,19 @@ const SimulateurView = () => {
     [chefMenage, conjoint, t]
   );
 
+  // 🔹 Memoize children list from Redux
   const children = useMemo(
     () =>
-      others.map(({ prenom, text, dateNaissance }, idx) => ({
+      others.map((child) => ({
+        id: child.id, // ✅ Use `rangCode` as the identifier
         icon: <LuBaby />,
-        text: t("simu_foyer.step1.ajouter_enfant"),
+        text: child.prenom || t("simu_foyer.step1.ajouter_enfant"),
         primary: false,
-        editing: false,
+        editing: true,
       })),
     [others, t]
   );
+
   return (
     <main className={styles.simulateurView}>
       <div>
@@ -150,7 +151,6 @@ const SimulateurView = () => {
               <ButtonSimulateurAdd
                 key={`ChildChildChildChild`}
                 icon={<LuBaby />}
-                editing
                 modal={{
                   id: "Child",
                   title: t("simu_foyer.step1.ajouter_enfant"),
@@ -169,19 +169,43 @@ const SimulateurView = () => {
                 {t("simu_foyer.step1.ajouter_enfant")}
               </ButtonSimulateurAdd>
 
-              {children.map(({ icon, text, primary, editing }, idx) => (
-                <div key={`${text}-${idx}`} className={styles.cardWrapper}>
-                  <ButtonSimulateurAdd
-                    key={`${text}-${idx}`}
-                    delay={idx * 0.5}
-                    icon={icon}
-                    primary={primary}
-                    editing={editing}
-                  >
-                    {text}
-                  </ButtonSimulateurAdd>
-                </div>
-              ))}
+              {/* 🔹 List of Children */}
+              {children.map(({ id, icon, primary }, idx) => {
+                if (!childRefs.current[id])
+                  childRefs.current[id] = React.createRef();
+                return (
+                  <div key={id} className={styles.cardWrapper}>
+                    <ButtonSimulateurAdd
+                      key={id}
+                      delay={idx * 0.5}
+                      icon={icon}
+                      primary={primary}
+                      editing
+                      modal={{
+                        id: `Child-${id}`,
+                        title: t("simu_foyer.step1.modifier_enfant"),
+                        body: (
+                          <Others
+                            ref={(el) => {
+                              if (el) childRefs.current[id] = el; // Assign ref dynamically
+                            }}
+                            member={others.find((c) => c.id === id)} // Use `id` instead of `rangCode`
+                          />
+                        ),
+                        validate: async () => {
+                          const isValid = await childRefs.current[
+                            id
+                          ]?.current?.validateForm();
+                          console.log("Validation ", isValid);
+                          return isValid?.status ? isValid : false;
+                        },
+                      }}
+                    >
+                      {t("simu_foyer.step1.modifier_enfant") + id}
+                    </ButtonSimulateurAdd>
+                  </div>
+                );
+              })}
             </div>
           </FoyerStep>
         </div>

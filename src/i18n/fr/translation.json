@@ -81,7 +81,8 @@
       "step1_desc": "Vous pouvez modifier sur cet écran la composition de votre foyer pour effectuer votre simulation.",
       "ajouter_conjointe": "Ajouter conjoint",
       "ajouter_enfant": "Ajouter un enfant ou une personne à charge",
-      "single": "Célibataire"
+      "single": "Célibataire",
+      "modifier_enfant": "Modifier un enfant ou une personne à charge"
     }
   },
   "Suivant": "Suivant",
