@@ -15,6 +15,7 @@ declare global {
   const Dropdown: typeof import('antd')['Dropdown']
   const FaRegUser: typeof import('react-icons/fa6')['FaRegUser']
   const Flex: typeof import('antd')['Flex']
+  const FloatButton: typeof import('antd')['FloatButton']
   const Form: typeof import('antd')['Form']
   const Group: typeof import('antd')['Group']
   const Input: typeof import('antd')['Input']

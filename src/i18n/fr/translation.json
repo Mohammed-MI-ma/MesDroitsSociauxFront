@@ -95,5 +95,14 @@
   "choose_dob": "Choisir votre date de naissance",
   "SYNTHESE": "Synthèse",
   "validate": "Valider",
-  "cancel": "Annuler"
+  "cancel": "Annuler",
+  "footer": {
+    "faq": "Foire aux questions",
+    "contact": "Contact",
+    "about": "Qui sommes-nous ?",
+    "legal": "Mentions légales",
+    "cookies": "Gérer les cookies",
+    "accessibility": "Accessibilité: partiellement conforme",
+    "sitemap": "Plan du site"
+  }
 }

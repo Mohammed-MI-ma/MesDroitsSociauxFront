@@ -28,6 +28,7 @@ import style from "./App.module.css";
 import ModalCookiesConsent from "./components/RefinedComponents/ModalCookiesConsent/ModalCookiesConsent.jsx";
 import ParamsSiteComponent from "./components/CoreComponents/ParamsSiteComponent/ParamsSiteComponent.jsx";
 import SEO from "./components/CoreComponents/SEO/SEO.jsx";
+import Footer from "./components/CoreComponents/Footer/Footer.jsx";
 
 function App() {
   const [appIsReady, setAppIsReady] = useState(false);
@@ -77,12 +78,8 @@ function App() {
               </Routes>
             </Suspense>
           </AnimatePresence>
-          <footer
-            className="w-full flex items-center justify-center text-center h-[300px]"
-            style={{ background: "var(--color-primary)" }}
-          >
-            <div>HEllsss</div>
-          </footer>
+          <FloatButton.BackTop />
+          <Footer />
         </div>
       </ConfigProvider>
     </>

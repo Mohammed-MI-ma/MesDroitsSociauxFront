@@ -1,0 +1,45 @@
+.contentinfo {
+  background-color: var(--color-primary);
+  padding: 20px 0;
+  color: white;
+  text-align: center;
+}
+.elementsFooter {
+  display: flex;
+  justify-content: center;
+}
+
+.itemWrapper {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.listItem {
+  display: inline-block;
+}
+
+.footerButton {
+  color: white !important;
+  font-size: 16px;
+}
+@media (max-width: 36rem) {
+  .itemWrapper {
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 36.063rem) and (max-width: 48rem) {
+}
+
+@media (min-width: 48.063rem) and (max-width: 62rem) {
+}
+
+@media (min-width: 62.063rem) and (max-width: 75rem) {
+}
+
+@media (min-width: 75.063rem) {
+}
