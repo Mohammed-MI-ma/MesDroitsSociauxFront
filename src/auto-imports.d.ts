@@ -28,6 +28,7 @@ declare global {
   const MdModeEdit: typeof import('react-icons/md')['MdModeEdit']
   const Message: typeof import('antd')['Message']
   const Modal: typeof import('antd')['Modal']
+  const Popover: typeof import('antd')['Popover']
   const Progress: typeof import('antd')['Progress']
   const Radio: typeof import('antd')['Radio']
   const Select: typeof import('antd')['Select']

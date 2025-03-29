@@ -1,13 +1,14 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router-dom";
 
 import ConfigProvider from "antd/es/config-provider";
 import Space from "antd/es/space";
+import Popover from "antd/es/popover"; // Make sure Popover is imported
 
 import "antd/es/config-provider/style";
 import "antd/es/space/style";
-import "antd/es/tooltip/style";
+import "antd/es/popover/style"; // Import Popover style
 
 import style from "./navbar.module.css";
 

@@ -25,26 +25,30 @@ import {
 } from "../../../../components/CoreComponents/GenericInfo/genericInfoConfig";
 
 const SimulateurView = () => {
+  // Translation hook
   const { t } = useTranslation();
 
+  // Refs for managing form or component states
   const chefMenageRef = useRef(null);
   const conjointRef = useRef(null);
   const childRefs = useRef({});
 
+  // State selections from Redux store
   const memberList = useSelector((state) => state.application.memberList);
   const chefMenage = useSelector((state) => findByRangCode(state, "CF"));
   const conjoint = useSelector((state) => findByRangCode(state, "CJ"));
   const others = useSelector((state) => findOthers(state, ["CJ", "CF"]));
 
+  // Info configuration based on the selected data
   const chefMenageInfoData = chefMenageInfo(chefMenage, t, chefMenageRef);
   const conjointInfoData = conjointInfo(conjoint, t, conjointRef);
-  const buttonConfigs = useMemo(
+
+  //__Family
+  const parents = useMemo(
     () => [chefMenageInfoData, conjointInfoData],
     [chefMenageInfoData, conjointInfoData]
   );
-
-  // 🔹 Memoize children list from Redux
-  const children = useMemo(
+  const otherMembers = useMemo(
     () =>
       others.map((child) => ({
         id: child.id, // ✅ Use `rangCode` as the identifier
@@ -66,20 +70,18 @@ const SimulateurView = () => {
             key="Key"
           >
             <div className={styles.individusContainer} id="parents">
-              {buttonConfigs.map(
-                ({ icon, text, primary, editing, modal }, idx) => (
-                  <ButtonSimulateurAdd
-                    key={`${text}-${idx}`}
-                    delay={idx * 0.5}
-                    icon={icon}
-                    primary={primary}
-                    editing={editing}
-                    modal={modal}
-                  >
-                    {text}
-                  </ButtonSimulateurAdd>
-                )
-              )}
+              {parents.map(({ icon, text, primary, editing, modal }, idx) => (
+                <ButtonSimulateurAdd
+                  key={`${text}-${idx}`}
+                  delay={idx * 0.5}
+                  icon={icon}
+                  primary={primary}
+                  editing={editing}
+                  modal={modal}
+                >
+                  {text}
+                </ButtonSimulateurAdd>
+              ))}
             </div>
 
             <div className={styles.individusContainer} id="situation">
@@ -120,7 +122,7 @@ const SimulateurView = () => {
               </ButtonSimulateurAdd>
 
               {/* 🔹 List of Children */}
-              {children.map(({ id, icon, primary }, idx) => {
+              {otherMembers.map(({ id, icon, primary }, idx) => {
                 if (!childRefs.current[id])
                   childRefs.current[id] = React.createRef();
                 return (

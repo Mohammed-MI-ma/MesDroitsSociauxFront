@@ -33,6 +33,7 @@ export default defineConfig({
             "DatePicker",
             "Form",
             "FloatButton",
+            "Popover",
           ],
           "react-icons/io": [
             "IoIosWoman",

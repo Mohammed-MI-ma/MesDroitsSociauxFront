@@ -106,5 +106,10 @@
     "cookies": "Gérer les cookies",
     "accessibility": "Accessibilité: partiellement conforme",
     "sitemap": "Plan du site"
+  },
+  "tooltip": {
+    "title": "Le saviez-vous ?",
+    "content": "Les informations de connexion plus simples et plus rapides ! En vous connectant au portail, vos informations sociales sont déjà remplies. Vous pouvez aussi découvrir d'autres fonctionnalités que le simulateur.",
+    "Fermer": "Fermer"
   }
 }
