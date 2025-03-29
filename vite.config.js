@@ -41,10 +41,12 @@ export default defineConfig({
             "IoIosArrowForward",
             "IoMdInformationCircle",
             "IoIosAdd",
+            "IoTrashBin",
           ],
           "react-icons/md": ["MdModeEdit"],
           "react-icons/fa6": ["FaRegUser"],
           "react-icons/lu": ["LuBaby"],
+          "react-icons/fa": ["FaTrash"],
         },
       ],
       dts: "src/auto-imports.d.ts", // Generates a TypeScript declaration file

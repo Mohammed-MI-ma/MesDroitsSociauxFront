@@ -31,6 +31,10 @@
   .itemWrapper {
     flex-direction: column;
   }
+  .listItem {
+    display: inline-block;
+    border-left: inherit;
+  }
 }
 
 @media (min-width: 36.063rem) and (max-width: 48rem) {

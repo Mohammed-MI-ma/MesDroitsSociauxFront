@@ -91,6 +91,21 @@
       "Male": "Homme",
       "Female": "Femme",
       "step": "Étape {{stepKey}} sur 6"
+    },
+    "step2": {
+      "step2_title": "2. Situation"
+    },
+    "step3": {
+      "step3_title": "3. Logement"
+    },
+    "step4": {
+      "step4_title": "4. Ressources"
+    },
+    "step5": {
+      "step5_title": "5. Patrimoine"
+    },
+    "step6": {
+      "step6_title": "6. Resultat"
     }
   },
   "please_enter_first_name": "Veuillez entrer le prénom",

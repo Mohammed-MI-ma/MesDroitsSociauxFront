@@ -13,11 +13,11 @@ const SimulatorFoyerPage = () => {
   // Steps data with internationalization
   const steps = [
     { title: t("simu_foyer.step1.step1_title"), content: <SimulateurView /> },
-    { title: t("SITUATION"), content: t("Second-content") },
-    { title: t("LOGEMENT"), content: t("Last-content") },
-    { title: t("RESSOURCES"), content: t("Last-content") },
-    { title: t("PATRIMOINE"), content: t("Last-content") },
-    { title: t("RESULTATS"), content: t("Last-content") },
+    { title: t("simu_foyer.step2.step2_title"), content: t("Second-content") },
+    { title: t("simu_foyer.step3.step3_title"), content: t("Last-content") },
+    { title: t("simu_foyer.step4.step4_title"), content: t("Last-content") },
+    { title: t("simu_foyer.step5.step5_title"), content: t("Last-content") },
+    { title: t("simu_foyer.step6.step6_title"), content: t("Last-content") },
   ];
 
   // Memoized handlers to prevent unnecessary re-renders
@@ -55,9 +55,10 @@ const SimulatorFoyerPage = () => {
             </Button>
 
             <Button
+              style={{ color: "#cb4b4b", fontWeight: 900 }}
               type="link"
-              onClick={next}
-              icon={<IoIosArrowForward />}
+              onClick={null}
+              icon={<FaTrash />}
               className={styles.nextButton}
             >
               {t("Reinitialiser")}
