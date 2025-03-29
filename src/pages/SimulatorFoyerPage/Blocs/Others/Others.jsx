@@ -4,6 +4,7 @@ import {
   useEffect,
   forwardRef,
   useImperativeHandle,
+  useMemo,
 } from "react";
 import { Input, DatePicker, Radio, Form } from "antd";
 import { useTranslation } from "react-i18next";
@@ -13,15 +14,20 @@ import { findByRangCode } from "../../../../reducers/applicationService/applicat
 
 const Others = forwardRef(({ member }, ref) => {
   const { t } = useTranslation();
-  const reduxMember = useSelector((state) => findByRangCode(state, "Au")); // Fetch member from Redux
+  const reduxMember = useSelector((state) => findByRangCode(state, "Au"));
   const [form] = Form.useForm();
 
-  // Ensure we use `member` if passed; fallback to Redux data
-  const effectiveMember = member || reduxMember || {};
+  // Memoize effectiveMember to prevent unnecessary renders
+  const effectiveMember = useMemo(
+    () => member || reduxMember || {},
+    [member, reduxMember]
+  );
 
   const [formData, setFormData] = useState({
     prenom: effectiveMember.prenom || "",
-    dateNaissance: effectiveMember.dateNaissance || "",
+    dateNaissance: effectiveMember.dateNaissance
+      ? moment(effectiveMember.dateNaissance)
+      : null,
     sexe: effectiveMember.sexe || "",
   });
 
@@ -30,32 +36,41 @@ const Others = forwardRef(({ member }, ref) => {
     { label: t("female"), value: "Femme" },
   ];
 
-  // Sync state when `member` or `reduxMember` changes
+  // Sync form state when `effectiveMember` changes
   useEffect(() => {
-    if (effectiveMember) {
-      setFormData({
-        prenom: effectiveMember.prenom || "",
-        dateNaissance: effectiveMember.dateNaissance || "",
-        sexe: effectiveMember.sexe || "",
-      });
+    setFormData({
+      prenom: effectiveMember.prenom || "",
+      dateNaissance: effectiveMember.dateNaissance
+        ? moment(effectiveMember.dateNaissance)
+        : null,
+      sexe: effectiveMember.sexe || "",
+    });
 
-      // Update form fields dynamically
-      form.setFieldsValue({
-        prenom: effectiveMember.prenom,
-        dateNaissance: effectiveMember.dateNaissance
-          ? moment(effectiveMember.dateNaissance)
-          : null,
-        sexe: effectiveMember.sexe,
-      });
-    }
+    // Update Ant Design form fields dynamically
+    form.setFieldsValue({
+      prenom: effectiveMember.prenom,
+      dateNaissance: effectiveMember.dateNaissance
+        ? moment(effectiveMember.dateNaissance)
+        : null,
+      sexe: effectiveMember.sexe,
+    });
   }, [effectiveMember, form]);
 
-  // Expose validateForm function to parent
+  // Expose validateForm to parent
   useImperativeHandle(ref, () => ({
     validateForm: async () => {
       try {
         await form.validateFields();
-        return { status: true, body: formData, rangCode: "Au" };
+        return {
+          status: true,
+          body: {
+            ...formData,
+            dateNaissance: formData.dateNaissance
+              ? formData.dateNaissance.format("YYYY-MM-DD")
+              : null,
+          },
+          rangCode: "Au",
+        };
       } catch (error) {
         return { status: false, body: {}, error };
       }
@@ -66,23 +81,13 @@ const Others = forwardRef(({ member }, ref) => {
     (field) => (event) => {
       const value = event?.target ? event.target.value : event;
       setFormData((prev) => ({ ...prev, [field]: value }));
-      form.setFieldsValue({ [field]: value }); // Ensure form UI updates
+      form.setFieldsValue({ [field]: value });
     },
     [form]
   );
 
   return (
-    <Form
-      layout="vertical"
-      form={form}
-      initialValues={{
-        prenom: formData.prenom,
-        dateNaissance: formData.dateNaissance
-          ? moment(formData.dateNaissance)
-          : null,
-        sexe: formData.sexe,
-      }}
-    >
+    <Form layout="vertical" form={form}>
       <Form.Item
         label={t("first_name")}
         name="prenom"
@@ -102,7 +107,7 @@ const Others = forwardRef(({ member }, ref) => {
       >
         <DatePicker
           allowClear
-          value={formData.dateNaissance ? moment(formData.dateNaissance) : null}
+          value={formData.dateNaissance}
           onChange={(date) => handleInputChange("dateNaissance")(date)}
           style={{ width: "100%" }}
           placeholder={t("choose_dob")}
