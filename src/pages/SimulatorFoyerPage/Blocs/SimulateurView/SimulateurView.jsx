@@ -1,98 +1,46 @@
+//__REACT
 import React, { useMemo, useRef } from "react";
-import styles from "./SimulateurView.module.css";
 import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
+
+//__STYLES
+import styles from "./SimulateurView.module.css";
+
+//__COMPONENTS
 import FoyerStep from "../../Steps/FoyerStep/FoyerStep";
 import ButtonSimulateurAdd from "../../../../components/CoreComponents/ButtonSimulateurAdd/ButtonSimulateurAdd";
+
 import ChefMenage from "../ChefMenage/ChefMenage";
 import Conjointe from "../Conjointe/Conjointe";
+import Others from "../Others/Others";
 
-import { useSelector } from "react-redux";
 import {
   findByRangCode,
   findOthers,
 } from "../../../../reducers/applicationService/applicationSlice";
-import Others from "../Others/Others";
-//"../../assets/images/bgBlocTop.png";
+import GenericInfo from "../../../../components/CoreComponents/GenericInfo/GenericInfo";
+import {
+  chefMenageInfo,
+  conjointInfo,
+} from "../../../../components/CoreComponents/GenericInfo/genericInfoConfig";
+
 const SimulateurView = () => {
   const { t } = useTranslation();
 
   const chefMenageRef = useRef(null);
   const conjointRef = useRef(null);
-
-  // 🔹 Dynamic refs for children
   const childRefs = useRef({});
 
   const memberList = useSelector((state) => state.application.memberList);
-
   const chefMenage = useSelector((state) => findByRangCode(state, "CF"));
   const conjoint = useSelector((state) => findByRangCode(state, "CJ"));
   const others = useSelector((state) => findOthers(state, ["CJ", "CF"]));
 
-  // Memoize the icons to avoid recalculating on every render
+  const chefMenageInfoData = chefMenageInfo(chefMenage, t, chefMenageRef);
+  const conjointInfoData = conjointInfo(conjoint, t, conjointRef);
   const buttonConfigs = useMemo(
-    () => [
-      {
-        icon: <FaRegUser />,
-        text: chefMenage ? (
-          <div className="text-left">
-            <div style={{ fontSize: "12px", fontWeight: "100" }}>
-              {t("you")}
-            </div>
-            <div style={{ fontSize: "18px" }}>{chefMenage.prenom} </div>
-            <div style={{ fontSize: "12px" }}>{chefMenage.dateNaissance} </div>
-          </div>
-        ) : (
-          t("you")
-        ),
-        primary: true,
-        editing: true,
-        modal: {
-          id: "CHEF_MENAGE",
-          title: t("personal_data"),
-          body: <ChefMenage ref={chefMenageRef} />,
-          validate: async () => {
-            const isValid = await chefMenageRef.current?.validateForm(); // Ensure it's a boolean value
-            console.log("Validation ", isValid);
-            if (!isValid.status) {
-              console.log("Validation failed");
-              return isValid;
-            }
-            return isValid;
-          },
-        },
-      },
-      {
-        icon: <IoIosWoman />,
-        text: conjoint ? (
-          <div className="text-left">
-            <div style={{ fontSize: "12px", fontWeight: "100" }}>
-              {t("simu_foyer.step1.ajouter_conjointe")}
-            </div>
-            <div style={{ fontSize: "30px" }}>{conjoint.prenom} </div>
-            <div style={{ fontSize: "12px" }}>{conjoint.dateNaissance} </div>
-          </div>
-        ) : (
-          t("simu_foyer.step1.ajouter_conjointe")
-        ),
-        primary: false,
-        editing: false,
-        modal: {
-          id: "CONJOINTE",
-          title: "Votre situation matrimoniale",
-          body: <Conjointe ref={conjointRef} />,
-          validate: async () => {
-            const isValid = await conjointRef.current?.validateForm(); // Ensure it's a boolean value
-            console.log("Validation ", isValid);
-            if (!isValid.status) {
-              console.log("Validation failed");
-              return isValid;
-            }
-            return isValid;
-          },
-        },
-      },
-    ],
-    [chefMenage, conjoint, t]
+    () => [chefMenageInfoData, conjointInfoData],
+    [chefMenageInfoData, conjointInfoData]
   );
 
   // 🔹 Memoize children list from Redux

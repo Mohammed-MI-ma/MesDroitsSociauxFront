@@ -1,0 +1,36 @@
+/* InfoText.module.css */
+.textLeft {
+  text-align: left;
+}
+
+.label {
+  font-size: var(--font-sm);
+  font-weight: 100;
+}
+
+.value {
+  font-size: var(--font-xl);
+  font-weight: 900;
+}
+
+.dateOfBirth {
+  font-size: var(--font-sm);
+}
+[dir="rtl"] .textLeft {
+  text-align: right;
+}
+
+@media (max-width: 36rem) {
+}
+
+@media (min-width: 36.063rem) and (max-width: 48rem) {
+}
+
+@media (min-width: 48.063rem) and (max-width: 62rem) {
+}
+
+@media (min-width: 62.063rem) and (max-width: 75rem) {
+}
+
+@media (min-width: 75.063rem) {
+}
