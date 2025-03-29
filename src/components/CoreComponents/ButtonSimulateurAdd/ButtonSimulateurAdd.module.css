@@ -18,7 +18,7 @@
   width: 100%;
   border: none;
   background: transparent; /* Avoid using white, as it may conflict with other styles */
-  font-size: 30px;
+  font-size: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
