@@ -20,6 +20,8 @@ import { useTranslation } from "react-i18next";
 import LanguageContext from "../../../LanguageContext";
 
 const AppHeader = ({ logoAltText }) => {
+  const { t } = useTranslation();
+
   const headerVariants = {
     hidden: { opacity: 0, y: -20 },
     visible: { opacity: 1, y: 0 },
@@ -27,39 +29,25 @@ const AppHeader = ({ logoAltText }) => {
   };
   const items = [
     {
-      label: (
-        <a
-          href="https://www.antgroup.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          1st menu item
-        </a>
-      ),
+      label: <Link to="/">{t("Accueil")}</Link>,
       key: "0",
     },
     {
-      label: (
-        <a
-          href="https://www.aliyun.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          2nd menu item
-        </a>
-      ),
+      label: <Link to="/droits-sociaux/Vosservices">{t("Vosservices")}</Link>,
       key: "1",
     },
     {
       type: "divider",
     },
     {
-      label: "3rd menu item",
+      label: (
+        <Link to="/droits-sociaux/Vosevenementsdevie">
+          {t("Vosevenementsdevie")}
+        </Link>
+      ),
       key: "3",
     },
   ];
-  const { i18n, t } = useTranslation();
-  const { language, setLanguage } = useContext(LanguageContext);
   return (
     <motion.header
       className={`${style.header} `}
