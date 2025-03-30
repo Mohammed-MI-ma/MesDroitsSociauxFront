@@ -78,7 +78,25 @@ export default defineConfig({
       },
 
       workbox: {
+        globPatterns: ["**/*.{js,css,html,png,svg,woff2}"],
+
         runtimeCaching: [
+          {
+            urlPattern: /^\/$/,
+            handler: "CacheFirst",
+          },
+          {
+            urlPattern: /^.*\.js$/,
+            handler: "CacheFirst",
+          },
+          {
+            urlPattern: /^.*\.css$/,
+            handler: "CacheFirst",
+          },
+          {
+            urlPattern: /^.*\.(woff2|ttf)$/,
+            handler: "CacheFirst",
+          },
           {
             urlPattern: ({ request }) => request.destination === "image",
             handler: "CacheFirst",

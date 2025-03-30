@@ -2,7 +2,7 @@ import React from "react";
 
 import styles from "./HeroSection.module.css";
 import { useTranslation } from "react-i18next";
-import im from "../../../assets/images/bgBlocTop.png";
+import im from "/assets/images/bgBlocTop.png";
 const HeroSection = ({ children, illustration }) => {
   const { t } = useTranslation();
 

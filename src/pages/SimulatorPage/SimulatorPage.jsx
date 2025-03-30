@@ -2,7 +2,7 @@ import React from "react";
 import HeroSection from "../../components/CoreComponents/HeroSection/HeroSection";
 
 //__ILLUSTRATION
-import simulateur from "../../assets/images/svg/illus-votre-simulateur.svg";
+import simulateur from "/assets/images/svg/illus-votre-simulateur.svg";
 import styles from "./SimulatorPage.module.css";
 import { useTranslation } from "react-i18next";
 import CardsLandingGroup from "../../components/RefinedComponents/CardsLandingGroup/CardsLandingGroup";

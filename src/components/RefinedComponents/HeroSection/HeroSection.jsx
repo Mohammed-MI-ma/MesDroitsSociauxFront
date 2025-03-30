@@ -4,8 +4,8 @@ import React from "react";
 import HeroContent from "./HeroContent/HeroContent";
 
 //__ASSETS
-import rightBlocGraphic from "../../../assets/images/mes-droit-sociaux-accueil.svg";
-import leftBlocGraphic from "../../../assets/images/head-banner-left.svg";
+import rightBlocGraphic from "/assets/images/mes-droit-sociaux-accueil.svg";
+import leftBlocGraphic from "/assets/images/head-banner-left.svg";
 
 //__STYLING
 import style from "./heroSection.module.css";

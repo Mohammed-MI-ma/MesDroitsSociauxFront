@@ -16,23 +16,24 @@ export const LanguageProvider = ({ children }) => {
     document.documentElement.lang = language;
     if (!i18n) return; // ✅ Ensure i18n is available before calling changeLanguage
 
-    // ✅ Update i18n language
-    i18n
-      .changeLanguage(language)
-      .catch((err) => console.error("i18n Error:", err));
+    // Wait for i18n to initialize before calling changeLanguage
+    if (i18n.isInitialized) {
+      i18n
+        .changeLanguage(language)
+        .catch((err) => console.error("i18n Error:", err));
 
-    document.documentElement.setAttribute("dir", isArabic ? "rtl" : "ltr");
-    setIsRTL(isArabic); // Sync with ThemeContext
-    localStorage.setItem("lang", language);
-    console.log("isArabic", isArabic);
-    // Apply font dynamically
-    const fontUrl = isArabic
-      ? FontsConfig["Primary-Font_ar"]
-      : FontsConfig["Primary-Font"];
-    document.documentElement.style.setProperty(
-      "--primary-font",
-      `url(${fontUrl})`
-    );
+      document.documentElement.setAttribute("dir", isArabic ? "rtl" : "ltr");
+      setIsRTL(isArabic);
+      localStorage.setItem("lang", language);
+
+      console.log("isArabic", isArabic);
+
+      // Set font dynamically
+      const fontUrl = isArabic
+        ? FontsConfig["Primary-Font_ar"]
+        : FontsConfig["Primary-Font"];
+      document.documentElement.style.setProperty("--primary-font", fontUrl);
+    }
   }, [language, setIsRTL]);
 
   return (

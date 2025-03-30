@@ -4,9 +4,9 @@ import { useTranslation } from "react-i18next";
 import styles from "./CardsLandingGroup.module.css";
 import CardLandingIconContainer from "../../CoreComponents/CardLandingIconContainer/CardLandingIconContainer";
 
-import step from "../../../assets/images/svg/card-step-icon.svg";
-import document from "../../../assets/images/svg/card-documents-icon.svg";
-import aid from "../../../assets/images/svg/card-aid-icon.svg";
+import step from "/assets/images/svg/card-step-icon.svg";
+import document from "/assets/images/svg/card-documents-icon.svg";
+import aid from "/assets/images/svg/card-aid-icon.svg";
 
 const CardsLandingGroup = () => {
   const { t } = useTranslation();

@@ -10,12 +10,8 @@ import "antd/es/config-provider/style"; // Only imports ConfigProvider styles
 import { AnimatePresence } from "framer-motion";
 
 //__CONFIGURATION
-import { FontsConfig } from "./fontsConfig.js";
-import { loadFonts, loadImages } from "./services";
 
 import frFR from "antd/es/locale/fr_FR";
-
-import { global_Assets } from "./config.dev.js";
 
 //__ROUTES
 import routes from "./routes";
@@ -29,17 +25,16 @@ import ModalCookiesConsent from "./components/RefinedComponents/ModalCookiesCons
 import ParamsSiteComponent from "./components/CoreComponents/ParamsSiteComponent/ParamsSiteComponent.jsx";
 import SEO from "./components/CoreComponents/SEO/SEO.jsx";
 import Footer from "./components/CoreComponents/Footer/Footer.jsx";
-import useOnlineStatus from "./hooks/useOnlineStatus.js";
-import OfflineBanner from "./components/CoreComponents/OfflineBanner/OfflineBanner.jsx";
+import { global_Assets } from "./config.dev.js";
+import { loadImages } from "./services/loadAssets.js";
 
 function App() {
   const [appIsReady, setAppIsReady] = useState(false);
-  const isOnline = useOnlineStatus();
 
   useEffect(() => {
     async function fetchData() {
       try {
-        await loadFonts(FontsConfig);
+        // await loadFonts(FontsConfig);
         await loadImages(global_Assets);
         setAppIsReady(true);
       } catch (error) {
@@ -49,10 +44,7 @@ function App() {
 
     fetchData();
   }, []);
-  // If offline and app isn't ready, show offline message first
-  if (!isOnline) {
-    return <OfflineBanner />;
-  }
+
   if (!appIsReady) {
     return <Loader />;
   }

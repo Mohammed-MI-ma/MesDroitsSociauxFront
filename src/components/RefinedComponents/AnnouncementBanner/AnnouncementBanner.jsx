@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import styles from "./announcementBanner.module.css";
-import fff from "../../../assets/images/netsocial.svg";
+import fff from "/assets/images/netsocial.svg";
 
 const AnnouncementBanner = () => {
   const { t } = useTranslation();

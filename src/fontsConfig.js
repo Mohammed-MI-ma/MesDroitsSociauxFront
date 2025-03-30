@@ -1,12 +1,4 @@
-/* eslint-disable no-undef */
-
-const fonts = import.meta.glob("./assets/fonts/*.woff2", { eager: true });
-
-// fontsConfig.js
 export const FontsConfig = {
-  //Foreign Fonts
-  "Primary-Font": fonts["./assets/fonts/Cairo.woff2"].default,
-
-  //ArabicFont
-  "Primary-Font_ar": fonts["./assets/fonts/Cairo.woff2"].default,
+  "Primary-Font": "/assets/fonts/Cairo.woff2",
+  "Primary-Font_ar": "/assets/fonts/Cairo.woff2",
 };

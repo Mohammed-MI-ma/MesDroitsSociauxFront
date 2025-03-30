@@ -5,7 +5,7 @@ import SimulateurView from "./Blocs/SimulateurView/SimulateurView";
 import { useTranslation } from "react-i18next";
 import { Button, Steps, message } from "antd";
 import { IoIosArrowForward } from "react-icons/io";
-import onde from "../../assets/images/svg/onde-simu-v2.svg";
+import onde from "/assets/images/svg/onde-simu-v2.svg";
 const SimulatorFoyerPage = () => {
   const { t } = useTranslation();
   const [current, setCurrent] = useState(0);

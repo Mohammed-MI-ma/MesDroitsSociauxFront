@@ -5,7 +5,7 @@ import {
   mes_droits_sociaux_webp_small,
   mes_droits_sociaux_webp_medium,
   mes_droits_sociaux_webp_large,
-} from "./assets/images/images.js";
+} from "./images.js";
 
 export const global_Assets = [
   {
