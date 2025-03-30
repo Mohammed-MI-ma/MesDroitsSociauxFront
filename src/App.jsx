@@ -29,9 +29,11 @@ import ModalCookiesConsent from "./components/RefinedComponents/ModalCookiesCons
 import ParamsSiteComponent from "./components/CoreComponents/ParamsSiteComponent/ParamsSiteComponent.jsx";
 import SEO from "./components/CoreComponents/SEO/SEO.jsx";
 import Footer from "./components/CoreComponents/Footer/Footer.jsx";
+import useOnlineStatus from "./hooks/useOnlineStatus.js";
 
 function App() {
   const [appIsReady, setAppIsReady] = useState(false);
+  const isOnline = useOnlineStatus();
 
   useEffect(() => {
     async function fetchData() {
@@ -80,7 +82,8 @@ function App() {
           </AnimatePresence>
           <FloatButton.BackTop />
           <Footer />
-        </div>
+        </div>{" "}
+        {!isOnline && <OfflineBanner />}
       </ConfigProvider>
     </>
   );
