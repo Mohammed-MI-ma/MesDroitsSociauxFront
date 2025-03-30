@@ -15,7 +15,6 @@ import frFR from "antd/es/locale/fr_FR";
 
 //__ROUTES
 import routes from "./routes";
-import { useOnline } from "react-use";
 
 import Loader from "./components/CoreComponents/CustomSuspense/Loader/index.jsx";
 import HeaderLogoHome from "./components/RefinedComponents/AppHeader/AppHeader.jsx";

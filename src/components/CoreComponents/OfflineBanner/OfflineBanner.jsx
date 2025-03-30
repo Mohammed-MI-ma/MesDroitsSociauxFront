@@ -7,25 +7,17 @@ const OfflineBanner = () => {
     <div>
       <Result
         status="500"
-        title={t("connection_lost_title")} // Translated title
-        subTitle={t("connection_lost_message")} // Translated message
-      />{" "}
-      <div
-        style={{
-          position: "fixed",
-          bottom: 0,
-          left: 0,
-          right: 0,
-          background: "#ffcc00",
-          color: "#333",
-          textAlign: "center",
-          padding: "10px",
-          fontSize: "14px",
-          zIndex: 99999,
-        }}
-      >
-        ⚠️ You are offline. Some features may not work.
-      </div>
+        title={
+          <h1 style={{ fontFamily: "var(--font-primary)" }}>
+            {t("connection_lost_title")}
+          </h1>
+        } // Translated title
+        subTitle={
+          <h3 style={{ fontFamily: "var(--font-primary)" }}>
+            {t("connection_lost_message")}
+          </h3>
+        } // Translated message
+      />
     </div>
   );
 };
