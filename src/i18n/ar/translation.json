@@ -133,5 +133,7 @@
     "Fermer": "إغلاق"
   },
   "Suivant": "التالي",
-  "Reinitialiser": "إعادة تعيين"
+  "Reinitialiser": "إعادة تعيين",
+  "connection_lost_title": "تم فقد الاتصال",
+  "connection_lost_message": "عذراً، لم نتمكن من الاتصال بالخادم. يرجى التحقق من اتصالك بالإنترنت والمحاولة مرة أخرى."
 }
