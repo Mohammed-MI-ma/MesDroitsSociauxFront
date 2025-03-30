@@ -30,6 +30,7 @@ import ParamsSiteComponent from "./components/CoreComponents/ParamsSiteComponent
 import SEO from "./components/CoreComponents/SEO/SEO.jsx";
 import Footer from "./components/CoreComponents/Footer/Footer.jsx";
 import useOnlineStatus from "./hooks/useOnlineStatus.js";
+import OfflineBanner from "./components/CoreComponents/OfflineBanner/OfflineBanner.jsx";
 
 function App() {
   const [appIsReady, setAppIsReady] = useState(false);
@@ -48,7 +49,10 @@ function App() {
 
     fetchData();
   }, []);
-
+  // If offline and app isn't ready, show offline message first
+  if (!isOnline) {
+    return <OfflineBanner />;
+  }
   if (!appIsReady) {
     return <Loader />;
   }
@@ -83,7 +87,6 @@ function App() {
           <FloatButton.BackTop />
           <Footer />
         </div>{" "}
-        {!isOnline && <OfflineBanner />}
       </ConfigProvider>
     </>
   );
