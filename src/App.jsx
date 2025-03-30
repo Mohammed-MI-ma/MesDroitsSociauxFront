@@ -27,9 +27,12 @@ import SEO from "./components/CoreComponents/SEO/SEO.jsx";
 import Footer from "./components/CoreComponents/Footer/Footer.jsx";
 import { global_Assets } from "./config.dev.js";
 import { loadImages } from "./services/loadAssets.js";
+import OfflineBanner from "./components/CoreComponents/OfflineBanner/OfflineBanner.jsx";
+import useOnlineStatus from "./hooks/useOnlineStatus.js";
 
 function App() {
   const [appIsReady, setAppIsReady] = useState(false);
+  const isOnline = useOnlineStatus();
 
   useEffect(() => {
     async function fetchData() {
@@ -51,6 +54,7 @@ function App() {
 
   return (
     <>
+      {!isOnline && <OfflineBanner />}
       <ConfigProvider
         locale={frFR}
         theme={{
