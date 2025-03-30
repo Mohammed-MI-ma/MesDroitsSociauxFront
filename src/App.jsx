@@ -15,6 +15,7 @@ import frFR from "antd/es/locale/fr_FR";
 
 //__ROUTES
 import routes from "./routes";
+import { useOnline } from "react-use";
 
 import Loader from "./components/CoreComponents/CustomSuspense/Loader/index.jsx";
 import HeaderLogoHome from "./components/RefinedComponents/AppHeader/AppHeader.jsx";
@@ -28,7 +29,6 @@ import Footer from "./components/CoreComponents/Footer/Footer.jsx";
 import { global_Assets } from "./config.dev.js";
 import { loadImages } from "./services/loadAssets.js";
 import OfflineBanner from "./components/CoreComponents/OfflineBanner/OfflineBanner.jsx";
-import { useOnline } from "react-use";
 
 function App() {
   const [appIsReady, setAppIsReady] = useState(false);
