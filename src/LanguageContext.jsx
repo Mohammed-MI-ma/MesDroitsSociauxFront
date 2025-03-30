@@ -14,27 +14,33 @@ export const LanguageProvider = ({ children }) => {
   useEffect(() => {
     const isArabic = language === "ar";
     document.documentElement.lang = language;
-    if (!i18n) return; // ✅ Ensure i18n is available before calling changeLanguage
 
-    // Wait for i18n to initialize before calling changeLanguage
+    // Ensure i18n is initialized before using it
     if (i18n.isInitialized) {
-      i18n
-        .changeLanguage(language)
-        .catch((err) => console.error("i18n Error:", err));
-
-      document.documentElement.setAttribute("dir", isArabic ? "rtl" : "ltr");
-      setIsRTL(isArabic);
-      localStorage.setItem("lang", language);
-
-      console.log("isArabic", isArabic);
-
-      // Set font dynamically
-      const fontUrl = isArabic
-        ? FontsConfig["Primary-Font_ar"]
-        : FontsConfig["Primary-Font"];
-      document.documentElement.style.setProperty("--primary-font", fontUrl);
+      handleLanguageChange(isArabic);
+    } else {
+      // Listen for i18n initialization if it's not ready yet
+      i18n.on("initialized", () => handleLanguageChange(isArabic));
     }
   }, [language, setIsRTL]);
+
+  const handleLanguageChange = (isArabic) => {
+    if (!i18n) return; // Ensure i18n is available before calling changeLanguage
+
+    i18n
+      .changeLanguage(language)
+      .catch((err) => console.error("i18n Error:", err));
+
+    document.documentElement.setAttribute("dir", isArabic ? "rtl" : "ltr");
+    setIsRTL(isArabic);
+    localStorage.setItem("lang", language);
+
+    // Set font dynamically
+    const fontUrl = isArabic
+      ? FontsConfig["Primary-Font_ar"]
+      : FontsConfig["Primary-Font"];
+    document.documentElement.style.setProperty("--primary-font", fontUrl);
+  };
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage }}>
