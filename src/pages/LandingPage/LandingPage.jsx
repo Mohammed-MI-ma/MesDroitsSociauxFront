@@ -6,7 +6,7 @@ import ServicesContainer from "../../components/RefinedComponents/ServicesContai
 
 const LandingPage = () => {
   return (
-    <main style={{ flex: "1", minHeight: "300vh" }}>
+    <main style={{ flex: "1", minHeight: "calc(100vh - 200px)" }}>
       <HeroSection />
       <AnnouncementBanner />
       <LatestUpdates />

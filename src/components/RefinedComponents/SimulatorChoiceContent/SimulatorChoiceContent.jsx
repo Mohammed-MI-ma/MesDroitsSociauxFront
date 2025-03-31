@@ -81,7 +81,6 @@ const SimulatorChoiceContent = () => {
             <div className={styles.tileInfos}>
               <h1>{t("ToutesLesPrestations")}</h1>
               <div>
-                {" "}
                 <Progress
                   percent={15}
                   steps={10}

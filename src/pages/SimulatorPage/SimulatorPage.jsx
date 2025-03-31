@@ -24,7 +24,7 @@ const SimulatorPage = () => {
     section.scrollIntoView({ behavior: "smooth" });
   };
   return (
-    <main style={{ flex: "1", minHeight: "300vh" }}>
+    <main style={{ flex: "1", minHeight: "calc(100vh - 200px)" }}>
       <HeroSection illustration={simulateur}>
         <>
           <Badge.Ribbon

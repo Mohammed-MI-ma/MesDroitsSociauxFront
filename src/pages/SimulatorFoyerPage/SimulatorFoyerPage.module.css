@@ -1,5 +1,6 @@
 .container {
   margin-top: var(--gap-tiny);
+  min-height: calc(100vh - 200px);
 }
 .steps {
   margin-bottom: var(--gap-xl);

@@ -78,8 +78,7 @@ function App() {
             <AnimatePresence mode="wait">
               <Suspense fallback={<Loader />}>
                 <SEO />
-                {/* ScrollToTop component is placed inside Router */}
-                {/* `smooth` ensures smooth scrolling to the top */}
+
                 <Routes>
                   {routes.length > 0 ? (
                     routes.map((route, index) => (
