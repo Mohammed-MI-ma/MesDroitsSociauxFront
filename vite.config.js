@@ -39,6 +39,7 @@ export default defineConfig({
             "Popover",
             "message",
             "Result",
+            "Breadcrumb",
           ],
           "react-icons/io": [
             "IoIosWoman",

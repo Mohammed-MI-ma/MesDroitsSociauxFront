@@ -48,7 +48,7 @@ const LoginButton = () => {
       onOpenChange={handleOpenChange} // Handle opening and closing
       getPopupContainer={(triggerNode) => triggerNode.parentNode} // Ensure popover is within the same container
     >
-      <Link to={"/authentication"}>
+      <Link to={"/maroc-connect/connexion"}>
         <Button className={style.loginButton} type="text">
           <RiLoginCircleFill style={{ color: "var(--color-primary)" }} />
           <div>
