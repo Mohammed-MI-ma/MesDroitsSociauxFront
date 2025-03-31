@@ -1,35 +1,36 @@
-// __REACT
+// src/index.jsx
 import React, { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter as Router } from "react-router-dom";
 
-// __I18N
+// i18n and internationalization setup
 import i18n from "i18next";
 import { I18nextProvider } from "react-i18next";
 import initializeI18n from "./Utils/initializeI18n";
 
-// __CONTEXT & STORE
+// Contexts and Store
 import { ThemeProvider } from "./ThemeContext";
 import { LanguageProvider } from "./LanguageContext.jsx";
 import { CookieConsentProvider } from "./CookieConsentContext.jsx";
 import { Provider } from "react-redux";
 import Store from "./store";
 
-// __SERVICE WORKER & PWA
+// Service Worker & PWA
 import { registerSW } from "virtual:pwa-register";
 
-// __STYLES
+// Styles
 import "./index.css";
 import "antd/dist/reset.css";
 import "animate.css";
 
-// __APP
+// App component and Keycloak Context
 import App from "./App.jsx";
+import { KeycloakProvider } from "./KeycloakContext"; // Import KeycloakProvider
 
-// Initialize i18n with proper error handling
+// Initialize i18n
 initializeI18n();
 
-// Ensure root element is present
+// Ensure root element exists
 const rootElement = document.getElementById("root");
 if (!rootElement) {
   throw new Error(
@@ -37,6 +38,7 @@ if (!rootElement) {
   );
 }
 
+// Register service worker
 registerSW({
   onNeedRefresh() {
     console.log("New content available, refresh the page!");
@@ -45,7 +47,8 @@ registerSW({
     console.log("App is ready to work offline.");
   },
 });
-// Create and render the root element
+
+// Create root and render the app
 const root = createRoot(rootElement);
 root.render(
   <StrictMode>
@@ -56,13 +59,11 @@ root.render(
             <Provider store={Store}>
               <Router>
                 <App />
-              </Router>
-            </Provider>
+              </Router>{" "}
+            </Provider>{" "}
           </CookieConsentProvider>
         </LanguageProvider>
-      </ThemeProvider>
+      </ThemeProvider>{" "}
     </I18nextProvider>
   </StrictMode>
 );
-
-// Report web vitals (optional for performance monitoring)

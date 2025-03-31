@@ -2,9 +2,10 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import styles from "./SignInPage.module.css";
-
+import { useKeycloak } from "@react-keycloak/web";
 const SignInPage = () => {
   const { t } = useTranslation();
+  const { keycloak } = useKeycloak();
 
   return (
     <div className={styles.pageWrapper}>
@@ -83,7 +84,7 @@ const SignInPage = () => {
               <figcaption>Gmail</figcaption>
             </figure>
           </Button>
-          <Button>
+          <Button onClick={() => keycloak.login()}>
             <figure>
               <div style={{ maxHeight: "44px", flex: 1, width: "100%" }}>
                 <img src={null}></img>
