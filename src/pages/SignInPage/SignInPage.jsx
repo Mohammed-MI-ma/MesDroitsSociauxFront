@@ -30,7 +30,6 @@ const SignInPage = () => {
         </header>
         <div className={styles.grid}>
           <Badge.Ribbon
-            className=" shadow-lg animate__tada animate__animated  animate__infinite animate__slow"
             text={t("NEW_FEATURE")}
             color="pink"
             placement="start"
@@ -48,10 +47,13 @@ const SignInPage = () => {
                   }}
                 >
                   <FaSms
+                    className=" shadow-lg animate__tada animate__animated  animate__infinite animate__slow "
                     style={{ color: "var(--color-primary)", fontSize: "40px" }}
                   />
                 </div>
-                <figcaption>{t("otpSent")}</figcaption>
+                <figcaption style={{ textWrap: "wrap" }}>
+                  {t("otpSent")}
+                </figcaption>
               </figure>
             </Button>{" "}
           </Badge.Ribbon>

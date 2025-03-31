@@ -34,6 +34,9 @@
   gap: 20px;
   margin-top: 10px;
 }
+.grid > div:first-child {
+  display: flex;
+}
 .grid > button {
   width: 226px;
   min-width: 226px;
