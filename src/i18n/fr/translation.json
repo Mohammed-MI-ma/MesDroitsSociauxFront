@@ -139,5 +139,8 @@
     "Fermer": "Fermer"
   },
   "connection_lost_title": "Connexion perdue",
-  "connection_lost_message": "Désolé, nous n'avons pas pu nous connecter au serveur. Veuillez vérifier votre connexion Internet et réessayer."
+  "connection_lost_message": "Désolé, nous n'avons pas pu nous connecter au serveur. Veuillez vérifier votre connexion Internet et réessayer.",
+  "signInRegister": "Connexion - Inscription",
+  "signInProgress": "Connexion en cours ",
+  "chooseAccount": "Choisissez un compte pour vous connecter :"
 }

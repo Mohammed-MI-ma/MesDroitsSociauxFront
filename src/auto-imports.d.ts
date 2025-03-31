@@ -7,12 +7,14 @@
 export {}
 declare global {
   const Avatar: typeof import('antd')['Avatar']
+  const Badge: typeof import('antd')['Badge']
   const Breadcrumb: typeof import('antd')['Breadcrumb']
   const Button: typeof import('antd')['Button']
   const Collapse: typeof import('antd')['Collapse']
   const ConfigProvider: typeof import('antd')['ConfigProvider']
   const DatePicker: typeof import('antd')['DatePicker']
   const Dropdown: typeof import('antd')['Dropdown']
+  const FaFacebook: typeof import('react-icons/fa')['FaFacebook']
   const FaRegUser: typeof import('react-icons/fa6')['FaRegUser']
   const FaTrash: typeof import('react-icons/fa')['FaTrash']
   const Flex: typeof import('antd')['Flex']

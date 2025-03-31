@@ -13,7 +13,6 @@ import {
   Bs4CircleFill,
 } from "react-icons/bs";
 import { ImCalculator } from "react-icons/im";
-import { Badge } from "antd";
 import SimulatorChoiceContent from "../../components/RefinedComponents/SimulatorChoiceContent/SimulatorChoiceContent";
 import FAQAccodion from "../../components/CoreComponents/FAQAccodion/FAQAccodion";
 

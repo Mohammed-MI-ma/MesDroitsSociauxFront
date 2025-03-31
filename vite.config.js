@@ -40,6 +40,7 @@ export default defineConfig({
             "message",
             "Result",
             "Breadcrumb",
+            "Badge",
           ],
           "react-icons/io": [
             "IoIosWoman",
@@ -51,7 +52,7 @@ export default defineConfig({
           "react-icons/md": ["MdModeEdit"],
           "react-icons/fa6": ["FaRegUser"],
           "react-icons/lu": ["LuBaby"],
-          "react-icons/fa": ["FaTrash"],
+          "react-icons/fa": ["FaTrash", "FaFacebook"],
         },
       ],
       dts: "src/auto-imports.d.ts", // Generates a TypeScript declaration file for auto-imports

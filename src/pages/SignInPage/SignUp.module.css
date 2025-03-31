@@ -1,23 +1,85 @@
-.container {
+.contentWrapper {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   width: 100%;
   margin-top: 4rem !important;
+  text-align: center;
+  color: var(--color-primary);
 }
-.titleHeader {
+.header {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
-.titleHeader > h1 {
+.mainTitle {
   font-size: 2rem;
   line-height: 1.75rem;
   margin: var(--text-spacing);
 }
 
-.titleHeader > h2 {
+.subtitle {
   font-size: 2rem;
   line-height: 1.75rem;
   font-weight: 900;
+}
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  --fc-fi-outer-margin: calc(var(--fc-fi-margin) * 2);
+  --fc-fi-outer-width: calc(var(--fc-fi-width) + var(--fc-fi-outer-margin));
+  max-width: calc(var(--fc-fi-outer-width) * var(--fc-fi-grid-row-max));
+  justify-content: center;
+}
+.grid > button {
+  width: 226px;
+  min-width: 226px;
+  max-width: 226px;
+  height: 110px;
+  min-height: 110px;
+  max-height: 110px;
+  margin: 12px;
+  overflow: hidden;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  border: 1px solid var(--color-primary);
+}
+.button {
+  width: 226px;
+  min-width: 226px;
+  max-width: 226px;
+  height: 110px;
+  min-height: 110px;
+  max-height: 110px;
+  overflow: hidden;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  border: 1px solid var(--color-primary);
+}
+.mainWrapper {
+  margin-top: 2rem !important;
+}
+@media (max-width: 36rem) {
+  .pageWrapper {
+    margin-top: 100px;
+  }
+}
+
+@media (min-width: 36.063rem) and (max-width: 48rem) {
+}
+
+@media (min-width: 48.063rem) and (max-width: 62rem) {
+}
+
+@media (min-width: 62.063rem) and (max-width: 75rem) {
+}
+
+@media (min-width: 75.063rem) {
 }

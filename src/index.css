@@ -8,6 +8,12 @@
 
 :root {
   --font-primary: "PrimaryFont", sans-serif;
+  --fc-fi-height: 110px;
+  --fc-fi-width: 226px;
+  --fc-fi-margin: 12px;
+  --fc-fi-grid-row-max: 3;
+  --fc-fi-img-width: 165px;
+  --fc-fi-img-height: 44px;
 }
 :root {
   --font-tiny: 0.625rem;

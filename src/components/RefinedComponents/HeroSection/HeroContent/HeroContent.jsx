@@ -1,6 +1,5 @@
 import React from "react";
 import style from "./heroContent.module.css";
-import { Badge, Button } from "antd";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 

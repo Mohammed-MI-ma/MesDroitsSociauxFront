@@ -2,30 +2,77 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import styles from "./SignUp.module.css";
+
 const SignInPage = () => {
   const { t } = useTranslation();
+
   return (
-    <div>
+    <div className={styles.pageWrapper}>
       <Breadcrumb
-        className="shadow-lg flex items-center px-5"
+        className=""
         items={[
           {
             title: <Link to="/">{t("Accueil")}</Link>,
           },
-
           {
             title: (
-              <span style={{ fontWeight: 900 }}>Connexion - Inscription</span>
+              <span className={styles.activeBreadcrumb}>
+                {t("signInRegister")}
+              </span>
             ),
           },
         ]}
       />
-      <main className={styles.container}>
-        <header className={styles.titleHeader}>
-          <h1>Connexion en cours sur mesdroitssociaux.gouv.fr</h1>
-          <h2>Choisissez un compte pour vous connecter :</h2>
+      <div className={styles.contentWrapper}>
+        <header className={styles.header}>
+          <h1 className={styles.mainTitle}>{t("signInProgress")}</h1>
+          <h2 className={styles.subtitle}>{t("chooseAccount")}</h2>
         </header>
-      </main>
+        <div className={styles.grid}>
+          <Badge.Ribbon
+            className=" shadow-lg animate__tada animate__animated  animate__infinite animate__slow"
+            text={t("NEW_FEATURE")}
+            color="pink"
+            placement="start"
+            style={{ top: -10 }}
+          >
+            <Button className={styles.button}>
+              <figure>
+                <div style={{ maxHeight: "44px", flex: 1, width: "100%" }}>
+                  <FaFacebook
+                    style={{ color: "var(--color-primary)", fontSize: "30px" }}
+                  />
+                </div>
+                <figcaption>SMS</figcaption>
+              </figure>
+            </Button>{" "}
+          </Badge.Ribbon>
+          <Button>
+            <figure>
+              <div style={{ maxHeight: "44px", flex: 1, width: "100%" }}>
+                <img src={null}></img>
+              </div>
+              <figcaption>EMAIL</figcaption>
+            </figure>
+          </Button>
+          <Button>
+            <figure>
+              <div style={{ maxHeight: "44px", flex: 1, width: "100%" }}>
+                <img src={null}></img>
+              </div>
+              <figcaption>Gmail</figcaption>
+            </figure>
+          </Button>
+          <Button>
+            <figure>
+              <div style={{ maxHeight: "44px", flex: 1, width: "100%" }}>
+                <img src={null}></img>
+              </div>
+              <figcaption>Facebook</figcaption>
+            </figure>
+          </Button>
+        </div>
+      </div>
     </div>
   );
 };
