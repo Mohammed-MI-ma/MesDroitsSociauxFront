@@ -36,14 +36,7 @@ const SimulatorPage = () => {
             <h1 className={`${styles.title} `} onClick={scrollToSection}>
               <ImCalculator /> {t("SEE_SIMULATORS")}
             </h1>
-            <h2>
-              Le simulateur multi-prestations du Portail peut être pré-alimenté
-              d’informations transmises par les différents Organismes de
-              Protection Sociale (OPS) partenaires. Ces informations ne sont pas
-              stockées et vous pouvez les modifier. Elles vous sont présentées
-              dans l’unique but de vous faciliter la saisie et la navigation
-              dans le simulateur.
-            </h2>
+            <h2>{t("dataRetentionPortalInfo")}</h2>
           </Badge.Ribbon>
           <h2 className={styles.description}>{t("DECOUVRIR_PRESTATIONS")}:</h2>
           <ul className={styles.listSponserShip}>
