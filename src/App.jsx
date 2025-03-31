@@ -1,6 +1,6 @@
 import React, { Suspense, useEffect, useState } from "react";
 
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 
 //__ANTD
 import ConfigProvider from "antd/es/config-provider";
@@ -33,7 +33,7 @@ import useOnlineStatus from "./hooks/useOnlineStatus.js";
 function App() {
   const [appIsReady, setAppIsReady] = useState(false);
   const isOnline = useOnlineStatus();
-
+  const location = useLocation();
   useEffect(() => {
     async function fetchData() {
       try {
@@ -47,6 +47,11 @@ function App() {
 
     fetchData();
   }, []);
+
+  // Scroll to the top of the page whenever the route changes
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scroll to top of the page
+  }, [location]);
 
   if (!appIsReady) {
     return <Loader />;
@@ -73,6 +78,8 @@ function App() {
             <AnimatePresence mode="wait">
               <Suspense fallback={<Loader />}>
                 <SEO />
+                {/* ScrollToTop component is placed inside Router */}
+                {/* `smooth` ensures smooth scrolling to the top */}
                 <Routes>
                   {routes.length > 0 ? (
                     routes.map((route, index) => (
