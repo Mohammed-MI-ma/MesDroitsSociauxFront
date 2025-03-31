@@ -33,7 +33,7 @@ const LoginButton = () => {
   };
   return (
     <>
-      {location !== "maroc-connect/connexion" && (
+      {location.pathname !== "/maroc-connect/connexion" && (
         <Popover
           color="var(--color-primary)"
           content={
