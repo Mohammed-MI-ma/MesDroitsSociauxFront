@@ -143,5 +143,7 @@
   "signInRegister": "Connexion - Inscription",
   "signInProgress": "Connexion en cours ",
   "chooseAccount": "Choisissez un compte pour vous connecter :",
-  "otpSent": "OTP envoyé à votre téléphone pour un accès sécurisé"
+  "otpSent": "OTP envoyé à votre téléphone pour un accès sécurisé",
+
+  "Minutes": "minutes"
 }

@@ -18,7 +18,11 @@ import FAQAccodion from "../../components/CoreComponents/FAQAccodion/FAQAccodion
 
 const SimulatorPage = () => {
   const { t } = useTranslation();
-
+  // Function to handle scroll
+  const scrollToSection = () => {
+    const section = document.getElementById("targetSection");
+    section.scrollIntoView({ behavior: "smooth" });
+  };
   return (
     <main style={{ flex: "1", minHeight: "300vh" }}>
       <HeroSection illustration={simulateur}>
@@ -30,7 +34,7 @@ const SimulatorPage = () => {
             placement="start"
             style={{ top: -10 }}
           >
-            <h1 className={`${styles.title} `}>
+            <h1 className={`${styles.title} `} onClick={scrollToSection}>
               <ImCalculator /> {t("SEE_SIMULATORS")}
             </h1>
           </Badge.Ribbon>
@@ -56,7 +60,9 @@ const SimulatorPage = () => {
         </>
       </HeroSection>
       <CardsLandingGroup />
-      <SimulatorChoiceContent />
+      <div id="targetSection">
+        <SimulatorChoiceContent />
+      </div>
       <FAQAccodion />
     </main>
   );

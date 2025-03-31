@@ -12,6 +12,9 @@
   border-radius: 15px;
   width: fit-content;
 }
+.title:hover {
+  cursor: pointer;
+}
 .description {
   font-size: 25px;
   line-height: clamp(20px, 5vw, 34px);
