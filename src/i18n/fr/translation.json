@@ -142,5 +142,6 @@
   "connection_lost_message": "Désolé, nous n'avons pas pu nous connecter au serveur. Veuillez vérifier votre connexion Internet et réessayer.",
   "signInRegister": "Connexion - Inscription",
   "signInProgress": "Connexion en cours ",
-  "chooseAccount": "Choisissez un compte pour vous connecter :"
+  "chooseAccount": "Choisissez un compte pour vous connecter :",
+  "otpSent": "OTP envoyé à votre téléphone pour un accès sécurisé"
 }

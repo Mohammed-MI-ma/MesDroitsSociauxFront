@@ -52,7 +52,7 @@ export default defineConfig({
           "react-icons/md": ["MdModeEdit"],
           "react-icons/fa6": ["FaRegUser"],
           "react-icons/lu": ["LuBaby"],
-          "react-icons/fa": ["FaTrash", "FaFacebook"],
+          "react-icons/fa": ["FaTrash", "FaFacebook", "FaSms"],
           "react-icons/fc": ["FcGoogle"],
         },
       ],

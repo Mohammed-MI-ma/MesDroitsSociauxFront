@@ -47,11 +47,11 @@ const SignInPage = () => {
                     justifyContent: "center",
                   }}
                 >
-                  <FaFacebook
+                  <FaSms
                     style={{ color: "var(--color-primary)", fontSize: "40px" }}
                   />
                 </div>
-                <figcaption>Le réseau social facebook</figcaption>
+                <figcaption>{t("otpSent")}</figcaption>
               </figure>
             </Button>{" "}
           </Badge.Ribbon>
