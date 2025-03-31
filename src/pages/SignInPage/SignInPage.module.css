@@ -31,6 +31,8 @@
   --fc-fi-outer-width: calc(var(--fc-fi-width) + var(--fc-fi-outer-margin));
   max-width: calc(var(--fc-fi-outer-width) * var(--fc-fi-grid-row-max));
   justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
 }
 .grid > button {
   width: 226px;
@@ -39,10 +41,10 @@
   height: 110px;
   min-height: 110px;
   max-height: 110px;
-  margin: 12px;
   overflow: hidden;
   border-radius: 4px;
   display: flex;
+  align-items: center;
   flex-direction: column;
   justify-content: center;
   position: relative;

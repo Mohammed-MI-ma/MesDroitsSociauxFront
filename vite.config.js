@@ -53,6 +53,7 @@ export default defineConfig({
           "react-icons/fa6": ["FaRegUser"],
           "react-icons/lu": ["LuBaby"],
           "react-icons/fa": ["FaTrash", "FaFacebook"],
+          "react-icons/fc": ["FcGoogle"],
         },
       ],
       dts: "src/auto-imports.d.ts", // Generates a TypeScript declaration file for auto-imports

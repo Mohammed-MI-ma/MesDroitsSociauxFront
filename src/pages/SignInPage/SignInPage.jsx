@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import styles from "./SignUp.module.css";
+import styles from "./SignInPage.module.css";
 
 const SignInPage = () => {
   const { t } = useTranslation();
@@ -38,19 +38,37 @@ const SignInPage = () => {
           >
             <Button className={styles.button}>
               <figure>
-                <div style={{ maxHeight: "44px", flex: 1, width: "100%" }}>
+                <div
+                  style={{
+                    maxHeight: "44px",
+                    flex: 1,
+                    width: "100%",
+                    display: "flex",
+                    justifyContent: "center",
+                  }}
+                >
                   <FaFacebook
-                    style={{ color: "var(--color-primary)", fontSize: "30px" }}
+                    style={{ color: "var(--color-primary)", fontSize: "40px" }}
                   />
                 </div>
-                <figcaption>SMS</figcaption>
+                <figcaption>Le réseau social facebook</figcaption>
               </figure>
             </Button>{" "}
           </Badge.Ribbon>
           <Button>
             <figure>
-              <div style={{ maxHeight: "44px", flex: 1, width: "100%" }}>
-                <img src={null}></img>
+              <div
+                style={{
+                  maxHeight: "44px",
+                  flex: 1,
+                  width: "100%",
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+              >
+                <FcGoogle
+                  style={{ color: "var(--color-primary)", fontSize: "40px" }}
+                />
               </div>
               <figcaption>EMAIL</figcaption>
             </figure>

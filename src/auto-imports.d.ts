@@ -17,6 +17,7 @@ declare global {
   const FaFacebook: typeof import('react-icons/fa')['FaFacebook']
   const FaRegUser: typeof import('react-icons/fa6')['FaRegUser']
   const FaTrash: typeof import('react-icons/fa')['FaTrash']
+  const FcGoogle: typeof import('react-icons/fc')['FcGoogle']
   const Flex: typeof import('antd')['Flex']
   const FloatButton: typeof import('antd')['FloatButton']
   const Form: typeof import('antd')['Form']
