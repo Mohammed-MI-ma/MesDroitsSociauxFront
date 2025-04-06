@@ -1,4 +1,4 @@
-const API_BASE_URL = "http://localhost:5000/api/core";
+const API_BASE_URL = import.meta.env.VITE_BACKEND_URL;
 
 // Generic function to handle API requests
 const fetchData = async (endpoint, options = {}) => {

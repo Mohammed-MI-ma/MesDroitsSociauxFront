@@ -1,4 +1,3 @@
-// src/index.jsx
 import React, { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter as Router } from "react-router-dom";
@@ -15,6 +14,8 @@ import { CookieConsentProvider } from "./CookieConsentContext.jsx";
 import { Provider } from "react-redux";
 import Store from "./store";
 
+// Keycloak Authentication
+
 // Service Worker & PWA
 import { registerSW } from "virtual:pwa-register";
 
@@ -23,9 +24,10 @@ import "./index.css";
 import "antd/dist/reset.css";
 import "animate.css";
 
-// App component and Keycloak Context
+// App component
 import App from "./App.jsx";
-import { KeycloakProvider } from "./KeycloakContext"; // Import KeycloakProvider
+import ErrorBoundary from "./Utils/errorBoundary.jsx";
+import { KeycloakProvider } from "./components/KeycloakProvider.jsx";
 
 // Initialize i18n
 initializeI18n();
@@ -51,19 +53,19 @@ registerSW({
 // Create root and render the app
 const root = createRoot(rootElement);
 root.render(
-  <StrictMode>
-    <I18nextProvider i18n={i18n}>
-      <ThemeProvider>
-        <LanguageProvider>
+  <I18nextProvider i18n={i18n}>
+    <ThemeProvider>
+      <LanguageProvider>
+        <ErrorBoundary>
           <CookieConsentProvider>
             <Provider store={Store}>
               <Router>
                 <App />
-              </Router>{" "}
-            </Provider>{" "}
+              </Router>
+            </Provider>
           </CookieConsentProvider>
-        </LanguageProvider>
-      </ThemeProvider>{" "}
-    </I18nextProvider>
-  </StrictMode>
+        </ErrorBoundary>
+      </LanguageProvider>
+    </ThemeProvider>
+  </I18nextProvider>
 );

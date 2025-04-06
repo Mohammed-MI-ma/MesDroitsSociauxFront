@@ -49,7 +49,7 @@ export default defineConfig({
             "IoIosAdd",
             "IoTrashBin",
           ],
-          "react-icons/md": ["MdModeEdit"],
+          "react-icons/md": ["MdModeEdit", "MdMarkEmailRead"],
           "react-icons/fa6": ["FaRegUser"],
           "react-icons/lu": ["LuBaby"],
           "react-icons/fa": ["FaTrash", "FaFacebook", "FaSms"],

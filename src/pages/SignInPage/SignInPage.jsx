@@ -2,11 +2,13 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import styles from "./SignInPage.module.css";
-import { useKeycloak } from "@react-keycloak/web";
+//import keycloakInstance from "../../services/keycloak";
 const SignInPage = () => {
   const { t } = useTranslation();
-  const { keycloak } = useKeycloak();
 
+  const handleSignUp = () => {
+    window.location.href = import.meta.env.VITE_BACKEND_URL + "/auth/login"; // Your backend route
+  };
   return (
     <div className={styles.pageWrapper}>
       <Breadcrumb
@@ -30,34 +32,28 @@ const SignInPage = () => {
           <h2 className={styles.subtitle}>{t("chooseAccount")}</h2>
         </header>
         <div className={styles.grid}>
-          <Badge.Ribbon
-            text={t("NEW_FEATURE")}
-            color="pink"
-            placement="start"
-            style={{ top: -10 }}
-          >
-            <Button className={styles.button}>
-              <figure>
-                <div
-                  style={{
-                    maxHeight: "44px",
-                    flex: 1,
-                    width: "100%",
-                    display: "flex",
-                    justifyContent: "center",
-                  }}
-                >
-                  <FaSms
-                    className="animate__tada animate__animated  animate__infinite animate__slow "
-                    style={{ color: "var(--color-primary)", fontSize: "40px" }}
-                  />
-                </div>
-                <figcaption style={{ textWrap: "wrap" }}>
-                  {t("otpSent")}
-                </figcaption>
-              </figure>
-            </Button>{" "}
-          </Badge.Ribbon>
+          <Button onClick={handleSignUp}>
+            <figure>
+              <div
+                style={{
+                  maxHeight: "44px",
+                  flex: 1,
+                  width: "100%",
+                  display: "flex",
+                  justifyContent: "center",
+                  marginBottom: "10px",
+                }}
+              >
+                <MdMarkEmailRead
+                  style={{ fontSize: "30px", color: "var(--color-primary)" }}
+                  className="shadow-lg animate__tada animate__animated  animate__infinite animate__slow"
+                />
+              </div>
+              <figcaption style={{ textTransform: "uppercase" }}>
+                Adresse éléctronique
+              </figcaption>
+            </figure>
+          </Button>
           <Button>
             <figure>
               <div
@@ -73,9 +69,11 @@ const SignInPage = () => {
                   style={{ color: "var(--color-primary)", fontSize: "40px" }}
                 />
               </div>
-              <figcaption>EMAIL</figcaption>
+              <figcaption>GOOGLE GMAIL</figcaption>
+              <small>Prochainement</small>
             </figure>
           </Button>
+          {/*
           <Button>
             <figure>
               <div style={{ maxHeight: "44px", flex: 1, width: "100%" }}>
@@ -84,14 +82,14 @@ const SignInPage = () => {
               <figcaption>Gmail</figcaption>
             </figure>
           </Button>
-          <Button onClick={() => keycloak.login()}>
+          <Button onClick={handleSignUp}>
             <figure>
               <div style={{ maxHeight: "44px", flex: 1, width: "100%" }}>
                 <img src={null}></img>
               </div>
-              <figcaption>Facebook</figcaption>
+              <figcaption>Remplir formulare</figcaption>
             </figure>
-          </Button>
+          </Button>*/}
         </div>
       </div>
     </div>

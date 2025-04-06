@@ -30,6 +30,7 @@ declare global {
   const IoMdInformationCircle: typeof import('react-icons/io')['IoMdInformationCircle']
   const IoTrashBin: typeof import('react-icons/io')['IoTrashBin']
   const LuBaby: typeof import('react-icons/lu')['LuBaby']
+  const MdMarkEmailRead: typeof import('react-icons/md')['MdMarkEmailRead']
   const MdModeEdit: typeof import('react-icons/md')['MdModeEdit']
   const Modal: typeof import('antd')['Modal']
   const Popover: typeof import('antd')['Popover']
