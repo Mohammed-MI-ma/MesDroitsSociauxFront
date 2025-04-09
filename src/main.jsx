@@ -1,6 +1,7 @@
 import React, { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter as Router } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 
 // i18n and internationalization setup
 import i18n from "i18next";
@@ -27,7 +28,7 @@ import "animate.css";
 // App component
 import App from "./App.jsx";
 import ErrorBoundary from "./Utils/errorBoundary.jsx";
-import { KeycloakProvider } from "./components/KeycloakProvider.jsx";
+import { AuthProvider } from "./components/AuthProvider.jsx";
 
 // Initialize i18n
 initializeI18n();
@@ -59,9 +60,13 @@ root.render(
         <ErrorBoundary>
           <CookieConsentProvider>
             <Provider store={Store}>
-              <Router>
-                <App />
-              </Router>
+              <AuthProvider>
+                <HelmetProvider>
+                  <Router>
+                    <App />
+                  </Router>
+                </HelmetProvider>
+              </AuthProvider>
             </Provider>
           </CookieConsentProvider>
         </ErrorBoundary>

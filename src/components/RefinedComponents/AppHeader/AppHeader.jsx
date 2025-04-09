@@ -10,17 +10,18 @@ import "antd/es/dropdown/style";
 
 import style from "./appHeader.module.css";
 import ResponsiveLogo from "../ResponsiveLogo/ResponsiveLogo";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import Navbar from "../Navbar/Navbar";
 import PropTypes from "prop-types";
 import LoginButton from "../../CoreComponents/LoginButton/LoginButton";
 import LanguageSwitcher from "../../CoreComponents/LanguageSwitcher/LanguageSwitcher";
-import { Divider } from "antd";
+import { Divider, Progress } from "antd";
 import { useTranslation } from "react-i18next";
-import LanguageContext from "../../../LanguageContext";
-
+import { useAuth } from "../../AuthProvider";
+import LogoutButton from "../../CoreComponents/LogoutButton/LogoutButton";
 const AppHeader = ({ logoAltText }) => {
   const { t } = useTranslation();
+  const { isAuthenticated, user } = useAuth(); // Get authentication status from context
 
   const headerVariants = {
     hidden: { opacity: 0, y: -20 },
@@ -48,6 +49,7 @@ const AppHeader = ({ logoAltText }) => {
       key: "3",
     },
   ];
+
   return (
     <motion.header
       className={`${style.header} `}
@@ -61,6 +63,36 @@ const AppHeader = ({ logoAltText }) => {
         <Link to={"/"}>
           <ResponsiveLogo />
         </Link>
+        {isAuthenticated && (
+          <div className={style.profile}>
+            <div>
+              <Avatar
+                style={{ background: "var(--color-text)" }}
+                size="small"
+                icon={<PiBellSimpleRingingFill />}
+              />
+              &nbsp;
+              <Badge
+                status="warning"
+                placement="start"
+                dot={!user.email_verified}
+              >
+                <Avatar
+                  style={{ background: "var(--color-text)" }}
+                  size="small"
+                  icon={<AiOutlineUser />}
+                />
+              </Badge>{" "}
+            </div>
+            <div className={style.profileInfos}>
+              <div>{user.name}</div>
+              <div>
+                <div>Solde disponible</div>
+                <Progress size="small" percent={100}></Progress>
+              </div>
+            </div>
+          </div>
+        )}
         <div className={`${style.navBarContainer}`}>
           <Navbar />{" "}
           <Divider type="vertical" style={{ backgroundColor: "black" }} />{" "}
@@ -87,14 +119,14 @@ const AppHeader = ({ logoAltText }) => {
                 size="large"
                 icon={
                   <GiHamburgerMenu
-                    style={{ fontSize: "40px", color: "var(--color-primary)" }}
+                    style={{ fontSize: "30px", color: "var(--color-primary)" }}
                   />
                 }
                 type="text"
               />
               <p
                 style={{
-                  fontSize: "15px",
+                  fontSize: "10px",
                   margin: "0px",
                   color: "var(--color-primary)",
                 }}
@@ -108,7 +140,7 @@ const AppHeader = ({ logoAltText }) => {
           <div>{t("LANG")}</div>
           <LanguageSwitcher />
         </div>
-        <LoginButton />
+        {!isAuthenticated ? <LoginButton /> : <LogoutButton />}
       </div>
     </motion.header>
   );

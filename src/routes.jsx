@@ -4,23 +4,10 @@ import CustomSuspense from "./components/CoreComponents/CustomSuspense/CustomSus
 import SimulatorPage from "./pages/SimulatorPage/SimulatorPage";
 import SimulatorFoyerPage from "./pages/SimulatorFoyerPage/SimulatorFoyerPage";
 import SignInPage from "./pages/SignInPage/SignInPage";
-import { useKeycloak } from "./components/KeycloakProvider";
+import PrivateRoute from "./components/CoreComponents/PrivateRoute/PrivateRoute";
 
 const LandingPage = lazy(() => import("./pages/LandingPage/LandingPage"));
-const ProtectedRoute = ({ element }) => {
-  const { authenticated, keycloak } = useKeycloak();
 
-  if (!authenticated) {
-    return (
-      <div>
-        You need to log in to access this page.
-        <button onClick={() => keycloak.login()}>Login with Keycloak</button>
-      </div>
-    );
-  }
-
-  return element;
-};
 const routes = [
   {
     path: "/",
@@ -55,16 +42,13 @@ const routes = [
     ),
   },
   {
-    // Example of protected route
-    path: "/protected-page",
+    path: "/votre-simulateur/AidesSocialesDirectes",
     element: (
-      <ProtectedRoute
-        element={
-          <CustomSuspense id="protectedPage">
-            <div>Protected Content</div>
-          </CustomSuspense>
-        }
-      />
+      <PrivateRoute>
+        <CustomSuspense id="protectedPage">
+          <div>Protected Content</div>
+        </CustomSuspense>
+      </PrivateRoute>
     ),
   },
 ];

@@ -5,6 +5,8 @@
   "Vosservices": "Vos services",
   "Vosevenementsdevie": "Vos évenements de vie",
   "Seconnecter": "Se connecter",
+  "Sedeconnecter": "se déconnecter",
+
   "Entoutesecurite": "En toute sécurité",
   "MESDROITSSOCIAUX": "Mes Droits Sociaux",
   "SEE_SIMULATORS": "Calculer l'indice socio-économique (ISE)",
@@ -146,5 +148,7 @@
   "otpSent": "OTP envoyé à votre téléphone pour un accès sécurisé",
 
   "Minutes": "minutes",
-  "dataRetentionPortalInfo": "Les informations pour lesquelles vous accédez au portail ne sont pas conservées après la déconnexion. Les informations relatives à votre avis sur le service sont conservées pendant six mois après l'achèvement des opérations d'exploitation. La conservation de vos autres données relatives aux traces de vos accès (données de connexion), qui sont enregistrées lors de l'utilisation du portail, ne peut excéder 2 mois après l'achèvement des opérations de suivi ou de gestion technique."
+  "dataRetentionPortalInfo": "Les informations pour lesquelles vous accédez au portail ne sont pas conservées après la déconnexion. Les informations relatives à votre avis sur le service sont conservées pendant six mois après l'achèvement des opérations d'exploitation. La conservation de vos autres données relatives aux traces de vos accès (données de connexion), qui sont enregistrées lors de l'utilisation du portail, ne peut excéder 2 mois après l'achèvement des opérations de suivi ou de gestion technique.",
+  "Breakingnews": "Dernières nouvelles",
+  "workMessage": "Bon travail aux cadres préfectoraux et provinciaux pour ce grand travail !"
 }

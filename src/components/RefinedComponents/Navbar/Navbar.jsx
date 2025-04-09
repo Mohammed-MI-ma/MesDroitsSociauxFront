@@ -14,11 +14,14 @@ import style from "./navbar.module.css";
 //__COMPONENTS
 import NavItem from "./NavItem/NavItem";
 import LoginButton from "../../CoreComponents/LoginButton/LoginButton";
+import { useAuth } from "../../AuthProvider";
+import LogoutButton from "../../CoreComponents/LogoutButton/LogoutButton";
 
 // Navbar component
 const Navbar = () => {
   const { t } = useTranslation();
   const location = useLocation();
+  const { isAuthenticated } = useAuth(); // Get authentication status from context
 
   // Nav items definition
   const navItems = [
@@ -55,8 +58,16 @@ const Navbar = () => {
             />
           ))}
           <li>
-            <LoginButton />
+            {isAuthenticated && (
+              <Avatar
+                style={{ background: "var(--color-primary)" }}
+                size="large"
+              >
+                A
+              </Avatar>
+            )}
           </li>
+          <li>{!isAuthenticated ? <LoginButton /> : <LogoutButton />}</li>
         </ul>
       </ConfigProvider>
     </Space>

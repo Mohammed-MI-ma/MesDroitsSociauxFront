@@ -5,6 +5,17 @@
   display: flex;
   align-items: center; /* Vertically center the logo */
 }
+.profile {
+  display: none;
+  color: var(--color-primary);
+}
+.profileInfos {
+  font-size: 10px;
+}
+.profileInfos > div:first-child {
+  font-weight: 900;
+  text-transform: uppercase;
+}
 .navBarContainer {
   display: flex;
   gap: var(--gap-lg);
@@ -25,6 +36,23 @@
 }
 
 @media (max-width: 36rem) {
+  .profile {
+    display: flex;
+    border: 1px solid var(--color-primary);
+    justify-content: center;
+    align-items: center;
+    gap: var(--gap-xl);
+    padding: 2px;
+    padding-left: 20px;
+
+    padding-right: 20px;
+    border-radius: 50px;
+  }
+  .profileInfos {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-xs);
+  }
   .header {
     max-height: 100px;
     flex-direction: column;

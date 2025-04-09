@@ -9,7 +9,7 @@ const HeroContent = () => {
     <div className={style.heroContent}>
       <h1>{t("MESDROITSSOCIAUX")}</h1>
       <Badge.Ribbon
-        className=" shadow-lg animate__tada animate__animated  animate__infinite animate__slow"
+        className=" shadow-lg "
         text={t("NEW_FEATURE")}
         color="pink"
         placement="start"

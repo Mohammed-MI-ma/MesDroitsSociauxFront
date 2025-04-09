@@ -24,7 +24,7 @@ const HeroSection = () => {
           className="w-full h-full"
           style={{
             backgroundImage: `url(${rightBlocGraphic})`,
-            backgroundSize: "contain" /* Ensures the entire image is visible */,
+            backgroundSize: "cover" /* Ensures the entire image is visible */,
             backgroundRepeat: "no-repeat",
           }}
         />

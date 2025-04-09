@@ -29,6 +29,8 @@ import { global_Assets } from "./config.dev.js";
 import { loadImages } from "./services/loadAssets.js";
 import OfflineBanner from "./components/CoreComponents/OfflineBanner/OfflineBanner.jsx";
 import { useOnlineStatus } from "./hooks/useOnlineStatus.js";
+import CustomDrawer from "./components/CoreComponents/CustomDrawer/CustomDrawer.jsx";
+
 //hello
 function App() {
   const [appIsReady, setAppIsReady] = useState(false);
@@ -78,7 +80,7 @@ function App() {
             <AnimatePresence mode="wait">
               <Suspense fallback={<Loader />}>
                 <SEO />
-
+                <CustomDrawer />
                 <Routes>
                   {routes.length > 0 ? (
                     routes.map((route, index) => (

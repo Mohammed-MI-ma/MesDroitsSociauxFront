@@ -1,3 +1,4 @@
+/* eslint-disable no-dupe-keys */
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import AutoImport from "unplugin-auto-import/vite";
@@ -48,12 +49,18 @@ export default defineConfig({
             "IoMdInformationCircle",
             "IoIosAdd",
             "IoTrashBin",
+            "IoMdShare",
+            "IoIosSave",
           ],
           "react-icons/md": ["MdModeEdit", "MdMarkEmailRead"],
           "react-icons/fa6": ["FaRegUser"],
           "react-icons/lu": ["LuBaby"],
           "react-icons/fa": ["FaTrash", "FaFacebook", "FaSms"],
           "react-icons/fc": ["FcGoogle"],
+          "react-icons/tb": ["TbLogout2"],
+          "react-icons/ai": ["AiOutlineUser", "AiOutlineComment"],
+          "react-icons/pi": ["PiBellSimpleRingingFill"],
+          "react-icons/io5": ["IoHeartHalf"],
         },
       ],
       dts: "src/auto-imports.d.ts", // Generates a TypeScript declaration file for auto-imports
