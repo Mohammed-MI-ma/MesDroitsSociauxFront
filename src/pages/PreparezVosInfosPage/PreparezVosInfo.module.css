@@ -1,0 +1,21 @@
+.prepare_info__container {
+  margin-top: var(--gap-tiny);
+}
+
+.prepare_info__title {
+  font-size: clamp(3rem, 5vw, 3.25rem) !important;
+  font-weight: 900;
+}
+
+.prepare_info__section_title {
+  color:var(--color-primary);
+  font-size: 1.75rem;  
+  color: #cb4b4b;
+  font-weight: 900;
+
+}
+.prepare_info__section_body{
+  font-size: 1.25rem;  
+  color:var(--color-primary);
+
+}

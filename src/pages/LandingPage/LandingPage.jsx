@@ -4,6 +4,7 @@ import AnnouncementBanner from "../../components/RefinedComponents/AnnouncementB
 import LatestUpdates from "../../components/RefinedComponents/LatestUpdates/LatestUpdates";
 import ServicesContainer from "../../components/RefinedComponents/ServicesContainer/ServicesContainer";
 import MobileTopNewsFeed from "../../components/RefinedComponents/MobileTopNewsFeed/MobileTopNewsFeed";
+import SourcesOfInfos from "../../components/RefinedComponents/SourcesOfInfos/SourcesOfInfos";
 
 const LandingPage = () => {
   return (
@@ -13,6 +14,7 @@ const LandingPage = () => {
       <AnnouncementBanner />
       <LatestUpdates />
       <ServicesContainer />
+      <SourcesOfInfos />
     </main>
   );
 };

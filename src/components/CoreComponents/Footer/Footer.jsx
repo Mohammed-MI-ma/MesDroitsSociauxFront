@@ -1,11 +1,13 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useContext } from "react";
 import { Link } from "react-router-dom";
 import { ConfigProvider, Button } from "antd";
 import { useTranslation } from "react-i18next";
 import styles from "./Footer.module.css";
+import LanguageContext from "../../../LanguageContext"; // update path if needed
 
 const Footer = () => {
   const { t } = useTranslation();
+  const { language } = useContext(LanguageContext);
 
   // Memoized footer links for performance optimization
   const footerLinks = useMemo(
@@ -34,7 +36,7 @@ const Footer = () => {
           <ul className={styles.itemWrapper}>
             {footerLinks.map(({ path, label }) => (
               <li key={path} className={styles.listItem}>
-                <Link to={path}>
+                <Link to={`/${language}${path}`}>
                   <Button type="text" className={styles.footerButton}>
                     {label}
                   </Button>

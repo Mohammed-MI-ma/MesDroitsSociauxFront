@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useTranslation } from "react-i18next";
 import MatGrid from "./MatGrid/MatGrid";
 import MatGridTile from "./MatGridTile/MatGridTile";
@@ -6,9 +6,11 @@ import simulateur from "./illus-votre-simulateur.svg";
 
 import styles from "./ServicesContainer.module.css";
 import { Link } from "react-router-dom";
+import LanguageContext from "../../../LanguageContext";
 
 const ServicesContainer = () => {
   const { t } = useTranslation();
+  const { language } = useContext(LanguageContext);
 
   return (
     <div className={styles.ServicesBloc}>
@@ -25,7 +27,7 @@ const ServicesContainer = () => {
                 <p className={styles.description}>
                   {t("DISCOVER_SOCIAL_BENEFITS")}
                 </p>
-                <Link to="/votre-simulateur/accueil">
+                <Link to={`/${language}/votre-simulateur/accueil`}>
                   <Button style={{ fontSize: "12px" }}>
                     {t("PERFORM_SIMULATION")}
                   </Button>

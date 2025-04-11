@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./simulatorChoiceContent.module.css";
 import { useTranslation } from "react-i18next";
 import { IoMdInformationCircle } from "react-icons/io";
 import { Link } from "react-router-dom";
+import LanguageContext from "../../../LanguageContext";
 
 const SimulatorChoiceContent = () => {
   const { t } = useTranslation();
+  const { language } = useContext(LanguageContext);
 
   const formatter = (input, active) => {
     return (
@@ -47,7 +49,7 @@ const SimulatorChoiceContent = () => {
               <div className="mt-10">{t("EstimezLes2Aides")}</div>
             </div>
             <div>
-              <Link to="/votre-simulateur/simu-foyer">
+              <Link to={`/${language}/votre-simulateur/simu-foyer`}>
                 <Button type="link">
                   {" "}
                   {t("SimulerToutesLesPrestations")}{" "}

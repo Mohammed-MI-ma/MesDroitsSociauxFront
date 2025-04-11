@@ -46,11 +46,10 @@ const SignInPage = () => {
               >
                 <MdMarkEmailRead
                   style={{ fontSize: "30px", color: "var(--color-primary)" }}
-                  className="shadow-lg animate__tada animate__animated  animate__infinite animate__slow"
                 />
               </div>
               <figcaption style={{ textTransform: "uppercase" }}>
-                Adresse éléctronique
+                {t("emailAddress")}
               </figcaption>
             </figure>
           </Button>
@@ -69,8 +68,8 @@ const SignInPage = () => {
                   style={{ color: "var(--color-primary)", fontSize: "40px" }}
                 />
               </div>
-              <figcaption>GOOGLE GMAIL</figcaption>
-              <small>Prochainement</small>
+              <figcaption>{t("gmail")}</figcaption>
+              <small>{t("comingSoon")}</small>
             </figure>
           </Button>
           {/*

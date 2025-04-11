@@ -1,93 +1,126 @@
-// SEO.js
 import { Helmet } from "react-helmet-async";
 import { useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import React, { useEffect } from "react";
-import LazyLoad from "react-lazyload"; // For lazy loading images
+import React, { useContext, useEffect } from "react";
+import LanguageContext from "../../../LanguageContext";
 
 const SEO = () => {
   const location = useLocation();
   const { t } = useTranslation();
+  const { language } = useContext(LanguageContext);
 
   // Meta Data for different pages (Add more pages as necessary)
   const metaData = {
     "/": {
       title: t("seo.LandingPage"),
-      description: t(
-        "Mes Droits Sociaux est une application marocaine permettant aux citoyens de calculer leur Indice Socio-Économique (ISE) et d'évaluer leur éligibilité aux aides sociales. Obtenez un score personnalisé grâce à notre calculateur intuitif et précis."
-      ),
-      keywords: t(
-        "Mes Droits Sociaux, Indice Socio-Économique, ISE, aides sociales, calculateur ISE, score socio-économique, citoyens marocains, éligibilité aides, services sociaux, calcul des droits sociaux"
-      ),
-      image: "https://www.weconnectmaroc.com/images/landing-page-image.jpg", // Fallback image
+      description: t("seo.descriptionLandingPage"),
+      keywords: t("seo.keywordsLandingPage"),
+      image: "https://www.weconnectmaroc.com/images/landing-page-image.png", // Fallback image
       structuredData: {
         "@context": "https://schema.org",
         "@type": "WebSite",
-        url: "https://www.weconnectmaroc.com/",
+        url: `https://www.weconnectmaroc.com/${language}`,
         name: t("seo.LandingPage"),
-        description: t(
-          "Mes Droits Sociaux est une application marocaine permettant aux citoyens de calculer leur Indice Socio-Économique (ISE) et d'évaluer leur éligibilité aux aides sociales."
-        ),
+        description: t("seo.descriptionLandingPage"),
         sameAs: ["https://x.com/WMaroc2025"],
+      },
+    },
+    [`/${language}/votre-simulateur/simu-foyer`]: {
+      title: t("seo.SimulateurFoyer"),
+      description: t("seo.descriptionSimulateurFoyer"),
+      keywords: t("seo.keywordsSimulateurFoyer"),
+      image:
+        "https://weconnectmaroc.com/assets/images/simulateur-foyer-image.png", // Fallback image
+      structuredData: {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        url: `https://www.weconnectmaroc.com/${language}/votre-simulateur/simu-foyer`,
+        name: t("seo.SimulateurFoyer"),
+        description: t("seo.descriptionSimulateurFoyer"),
+      },
+    },
+    [`/${language}/votre-simulateur/accueil/Preparez_vos_infos`]: {
+      title: t("seo.PreparezVosInfos"),
+      description: t("seo.descriptionPreparezVosInfos"),
+      keywords: t("seo.keywordsPreparezVosInfos"),
+      image:
+        "https://weconnectmaroc.com/assets/images/preparez-vos-infos-image.png", // Fallback image
+      structuredData: {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        url: `https://www.weconnectmaroc.com/${language}/votre-simulateur/accueil/Preparez_vos_infos`,
+        name: t("seo.PreparezVosInfos"),
+        description: t("seo.descriptionPreparezVosInfos"),
       },
     },
     "/about": {
       title: t("seo.AboutPage"),
-      description: t(
-        "Découvrez l'application qui aide les citoyens à mieux comprendre leurs droits sociaux."
-      ),
-      keywords: t("application, droits sociaux, citoyens, ISE, maroc"),
-      image: "https://www.weconnectmaroc.com/images/about-page-image.jpg", // Fallback image
+      description: t("seo.descriptionAboutPage"),
+      keywords: t("seo.keywordsAboutPage"),
+      image: "https://weconnectmaroc.com/assets/images/about-page-image.png", // Fallback image
       structuredData: {
         "@context": "https://schema.org",
         "@type": "WebPage",
-        url: "https://www.weconnectmaroc.com/about",
+        url: `https://www.weconnectmaroc.com/${language}/about`,
         name: t("seo.AboutPage"),
-        description: t(
-          "Découvrez l'application qui aide les citoyens à mieux comprendre leurs droits sociaux."
-        ),
+        description: t("seo.descriptionAboutPage"),
       },
     },
-    "/droits-sociaux/Vosservices": {
+    [`/${language}/droits-sociaux/Vosservices`]: {
       title: t("seo.VosServices"),
-      description: t(
-        "Découvrez les services disponibles pour vous. Apprenez comment maximiser vos droits sociaux et accédez à une assistance dédiée pour mieux gérer vos démarches sociales."
-      ),
-      keywords: t(
-        "droits sociaux, services sociaux, aide sociale, Maroc, services citoyens, assistance sociale, droits citoyens, vos services"
-      ),
-      image: "https://www.weconnectmaroc.com/images/vos-services-image.jpg", // Fallback image
+      description: t("seo.descriptionVosServices"),
+      keywords: t("seo.keywordsVosServices"),
+      image:
+        "https://weconnectmaroc.com/assets/images/services-page-image.webp", // Fallback image
       structuredData: {
         "@context": "https://schema.org",
         "@type": "WebPage",
-        url: "https://www.weconnectmaroc.com/droits-sociaux/vosservices",
+        url: `https://www.weconnectmaroc.com/${language}/droits-sociaux/vosservices`,
         name: t("seo.VosServices"),
-        description: t(
-          "Découvrez les services disponibles pour vous. Apprenez comment maximiser vos droits sociaux et accédez à une assistance dédiée pour mieux gérer vos démarches sociales."
-        ),
+        description: t("seo.descriptionVosServices"),
       },
     },
-    // Add more pages here if needed
+    [`/${language}/maroc-connect/connexion`]: {
+      title: t("seo.LoginPage"),
+      description: t("seo.descriptionLoginPage"),
+      keywords: t("seo.keywordsLoginPage"),
+      image: "https://weconnectmaroc.com/assets/images/login-page-image.png", // Fallback image
+      structuredData: {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        url: `https://www.weconnectmaroc.com/${language}/maroc-connect/connexion`,
+        name: t("seo.LoginPage"),
+        description: t("seo.descriptionLoginPage"),
+      },
+    },
+    [`/${language}/votre-simulateur/accueil`]: {
+      title: t("seo.SimulateurAccueil"),
+      description: t("seo.descriptionSimulateurAccueil"),
+      keywords: t("seo.keywordsSimulateurAccueil"),
+      image:
+        "https://weconnectmaroc.com/assets/images/simulateur-page-image.png", // Fallback image
+      structuredData: {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        url: `https://www.weconnectmaroc.com/${language}/votre-simulateur/accueil`,
+        name: t("seo.SimulateurAccueil"),
+        description: t("seo.descriptionSimulateurAccueil"),
+      },
+    },
   };
 
-  // Default meta info
+  // Default meta info for fallback
   const defaultMeta = {
     title: t("seo.LandingPage"),
-    description: t(
-      "Mes Droits Sociaux est une application marocaine permettant aux citoyens de calculer leur Indice Socio-Économique (ISE) et d'évaluer leur éligibilité aux aides sociales."
-    ),
-    keywords: t(
-      "Mes Droits Sociaux, Indice Socio-Économique, ISE, aides sociales, calculateur ISE, score socio-économique, citoyens marocains, éligibilité aides, services sociaux, calcul des droits sociaux"
-    ),
-    image: "https://www.weconnectmaroc.com/images/default-image.jpg",
+    description: t("seo.descriptionLandingPage"),
+    keywords: t("seo.keywordsLandingPage"),
+    image: "https://www.weconnectmaroc.com/images/landing-page-image.png",
     structuredData: {
       "@context": "https://schema.org",
       "@type": "WebSite",
-      url: "https://www.weconnectmaroc.com/",
+      url: `https://www.weconnectmaroc.com/${language}`,
       name: t("seo.LandingPage"),
-      description: t(
-        "Mes Droits Sociaux est une application marocaine permettant aux citoyens de calculer leur Indice Socio-Économique (ISE) et d'évaluer leur éligibilité aux aides sociales."
-      ),
+      description: t("seo.descriptionLandingPage"),
     },
   };
 
@@ -96,8 +129,6 @@ const SEO = () => {
   useEffect(() => {
     document.title = meta.title;
   }, [meta.title]);
-
-  // Lazy load images
 
   return (
     <>
@@ -133,8 +164,6 @@ const SEO = () => {
         {/* Sitemap */}
         <link rel="sitemap" href="/sitemap.xml" />
       </Helmet>
-
-      {/* Lazy load images */}
     </>
   );
 };

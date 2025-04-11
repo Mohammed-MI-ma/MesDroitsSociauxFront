@@ -36,8 +36,9 @@ const SimulatorPage = () => {
             <h1 className={`${styles.title} `} onClick={scrollToSection}>
               <ImCalculator /> {t("SEE_SIMULATORS")}
             </h1>
-            <h2>{t("dataRetentionPortalInfo")}</h2>
           </Badge.Ribbon>
+          <h2>{t("retentionPortalInfo")}</h2>
+
           <h2 className={styles.description}>{t("DECOUVRIR_PRESTATIONS")}:</h2>
           <ul className={styles.listSponserShip}>
             <li>

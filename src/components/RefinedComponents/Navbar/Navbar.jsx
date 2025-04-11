@@ -1,14 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router-dom";
-
-import ConfigProvider from "antd/es/config-provider";
-import Space from "antd/es/space";
-
-import "antd/es/config-provider/style";
-import "antd/es/space/style";
-import "antd/es/popover/style"; // Import Popover style
-
 import style from "./navbar.module.css";
 
 //__COMPONENTS
@@ -16,20 +8,22 @@ import NavItem from "./NavItem/NavItem";
 import LoginButton from "../../CoreComponents/LoginButton/LoginButton";
 import { useAuth } from "../../AuthProvider";
 import LogoutButton from "../../CoreComponents/LogoutButton/LogoutButton";
+import LanguageContext from "../../../LanguageContext";
 
 // Navbar component
 const Navbar = () => {
   const { t } = useTranslation();
   const location = useLocation();
   const { isAuthenticated } = useAuth(); // Get authentication status from context
+  const { language } = useContext(LanguageContext);
 
   // Nav items definition
   const navItems = [
-    { title: t("Accueil"), key: "/" },
-    { title: t("Vosservices"), key: "/droits-sociaux/Vosservices" },
+    { title: t("Accueil"), key: `/${language}/` },
+    { title: t("Vosservices"), key: `/${language}/droits-sociaux/Vosservices` },
     {
       title: t("Vosevenementsdevie"),
-      key: "/droits-sociaux/Vosevenementsdevie",
+      key: `/${language}/droits-sociaux/Vosevenementsdevie`,
     },
   ];
 
@@ -62,9 +56,7 @@ const Navbar = () => {
               <Avatar
                 style={{ background: "var(--color-primary)" }}
                 size="large"
-              >
-                A
-              </Avatar>
+              />
             )}
           </li>
           <li>{!isAuthenticated ? <LoginButton /> : <LogoutButton />}</li>

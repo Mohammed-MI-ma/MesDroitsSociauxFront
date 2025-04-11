@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
+import React, { useRef, useState } from "react";
 import style from "./MobileTopNewsFeed.module.css";
 import { useTranslation } from "react-i18next";
 import { useDispatch } from "react-redux";
@@ -8,6 +8,8 @@ import { motion } from "framer-motion";
 import man from "./manHoldingIris.webp";
 import arnaque from "./RSUArnque.webp";
 import enquete from "./Enquete.webp";
+import Draggable from "react-draggable";
+
 const MobileTopNewsFeed = () => {
   let { t } = useTranslation();
   const dispatch = useDispatch();
@@ -70,7 +72,6 @@ const MobileTopNewsFeed = () => {
         className={style.mobile}
         style={{
           height: "150px",
-          background: "var(--color-primary)",
         }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -105,9 +106,8 @@ const MobileTopNewsFeed = () => {
         <div style={{ flex: 1 }}>
           <motion.div
             style={{
-              height: "50%",
-              background: "var(--color-secondary)",
-              color: "white",
+              height: "80%",
+              color: "black",
             }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -118,22 +118,63 @@ const MobileTopNewsFeed = () => {
               stiffness: 120,
               damping: 15,
             }}
-            whileTap={{ scale: 0.9 }}
           >
-            aaaaaa
+            <motion.div
+              style={{
+                height: "100%",
+                background: "#f1f1f1",
+                color: "var(--color-primary)",
+
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+                textAlign: "center",
+              }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  fontSize: "16px",
+                  gap: "5px",
+                  marginBottom: "5px",
+                }}
+              >
+                <MdSlowMotionVideo />
+                <h1 style={{ fontWeight: 900, margin: "0px" }}>
+                  La page d'accueil
+                </h1>
+              </div>
+              <p style={{ fontSize: "10px" }}>
+                Pour voir cette vidéo, vous devez autoriser les cookies "Vidéo"
+              </p>
+              <Button size="small" shape="round">
+                Gérer les cookies
+              </Button>
+            </motion.div>
           </motion.div>
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{
               duration: 1,
-              delay: 1.6,
+              delay: 1.4,
               type: "spring",
               stiffness: 120,
               damping: 15,
             }}
+            style={{
+              fontWeight: "900",
+              textAlign: "center",
+              color: "var(--color-primary)",
+              fontSize: "10px",
+              padding: "5px",
+            }}
           >
-            bbbbbb
+            Voir la transcription textuelle du tuto vidéo "La page d'accueil"
           </motion.div>
         </div>
       </div>

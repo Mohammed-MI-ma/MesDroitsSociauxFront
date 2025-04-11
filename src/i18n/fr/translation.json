@@ -51,7 +51,6 @@
     "serviceAnalytics": "Service: Google Analytics",
     "viewGoogleAnalytics": "Voir Google Analytics"
   },
-  "seo": { "LandingPage": "Accueil" },
   "disclaimer": "Avertissement : cette application n'est pas précise à 100 %, elle est uniquement une simulation et non le calcul réel de l'indice.",
   "sponserShip": {
     "REGISTRE_SOCIAL": "REGISTRE SOCIAL",
@@ -59,8 +58,20 @@
     "AIDES_SOCIALES": "AIDES SOCIALES",
     "Assurance_Maladie_Obligatoire": "ASSURANCE MALADIE OBLIGATOIRE"
   },
-  "SimpleRapideGratuit": "Simple, rapide et gratuit",
-  "VotreSimulationMoinsMinutes": "Votre simulation en moins de 15 minutes !",
+
+  "simulation": {
+    "simpleRapideGratuit": "Simple, rapide, gratuit",
+    "votreSimulationMoinsMinutes": "Votre simulation en moins de 5 minutes",
+    "voirEtapesSimulation": "Voir les étapes de la simulation",
+
+    "aidesEstimees": "4 aides estimées",
+    "aidesNationalesLocales": "Des aides nationales et des aides locales",
+    "voirAides": "Voir les aides",
+
+    "preparezVosInfos": "Préparez vos infos",
+    "indiquerPrecisementSituation": "Pour indiquer précisément votre situation",
+    "voirDocumentsUtiles": "Voir les documents utiles"
+  },
   "QueVoulezVousSimuler": "Que voulez-vous simuler ?",
   "TravailleurNonSalarie": "Vous êtes travailleur non salarié et vous souhaitez simuler l’Allocation d’adulte aux handicapés, nous vous invitons à utiliser le simulateur toutes prestations.",
   "ESATNote": "Si vous travaillez en établissements ou services d'aide par le travail (ESAT), le simulateur de l’Allocation d’adulte aux handicapés ne prend pas en compte cette situation, votre droit à l’AAH sera calculé comme un salarié.",
@@ -148,7 +159,41 @@
   "otpSent": "OTP envoyé à votre téléphone pour un accès sécurisé",
 
   "Minutes": "minutes",
-  "dataRetentionPortalInfo": "Les informations pour lesquelles vous accédez au portail ne sont pas conservées après la déconnexion. Les informations relatives à votre avis sur le service sont conservées pendant six mois après l'achèvement des opérations d'exploitation. La conservation de vos autres données relatives aux traces de vos accès (données de connexion), qui sont enregistrées lors de l'utilisation du portail, ne peut excéder 2 mois après l'achèvement des opérations de suivi ou de gestion technique.",
+  "retentionPortalInfo": "Les informations que vous saisissez sur ce portail ne sont pas conservées après la déconnexion sauf si vous le voulez. Les informations relatives à votre avis sur le service sont conservées pendant six mois après l'achèvement des opérations d'exploitation. La conservation de vos autres données relatives aux traces de vos accès (données de connexion), qui sont enregistrées lors de l'utilisation du portail, ne peut excéder 2 mois après l'achèvement des opérations de suivi ou de gestion technique.",
   "Breakingnews": "Dernières nouvelles",
-  "workMessage": "Bon travail aux cadres préfectoraux et provinciaux pour ce grand travail !"
+  "workMessage": "Bon travail aux cadres préfectoraux et provinciaux pour ce grand travail !",
+  "slogan": "Pour une vie meilleure, à portée de main.",
+
+  "seo": {
+    "LandingPage": "Page d'accueil",
+    "AboutPage": "À propos",
+    "VosServices": "Vos services",
+    "descriptionLandingPage": "Mes Droits Sociaux est une application marocaine permettant aux citoyens de calculer leur Indice Socio-Économique (ISE) et d'évaluer leur éligibilité aux aides sociales. Obtenez un score personnalisé grâce à notre calculateur intuitif et précis.",
+    "keywordsLandingPage": "Mes Droits Sociaux, Indice Socio-Économique, ISE, aides sociales, calculateur ISE, score socio-économique, citoyens marocains, éligibilité aides, services sociaux, calcul des droits sociaux",
+    "descriptionAboutPage": "Découvrez l'application qui aide les citoyens à mieux comprendre leurs droits sociaux.",
+    "keywordsAboutPage": "application, droits sociaux, citoyens, ISE, maroc",
+    "descriptionVosServices": "Découvrez les services disponibles pour vous. Apprenez comment maximiser vos droits sociaux et accédez à une assistance dédiée pour mieux gérer vos démarches sociales.",
+    "keywordsVosServices": "droits sociaux, services sociaux, aide sociale, Maroc, services citoyens, assistance sociale, droits citoyens, vos services",
+    "LoginPage": "Se connecter à WeConnect",
+    "descriptionLoginPage": "Connectez-vous à votre compte sur WeConnect.",
+    "keywordsLoginPage": "connexion, WeConnect, compte",
+    "SimulateurAccueil": "Page d'accueil du simulateur",
+    "descriptionSimulateurAccueil": "Accédez à la page d'accueil de votre outil de simulation et explorez les options disponibles.",
+    "keywordsSimulateurAccueil": "simulateur, accueil, outil, options",
+    "SimulateurFoyer": "Simulateur Foyer",
+    "descriptionSimulateurFoyer": "Simulez et calculez votre score RSU en fonction de la situation de votre foyer pour déterminer votre éligibilité aux prestations sociales.",
+    "keywordsSimulateurFoyer": "score RSU, simulation foyer, prestations sociales, éligibilité, calcul des aides",
+    "PreparezVosInfos": "Préparez vos informations pour la simulation RSU - Simplifiez votre démarche avec WeConnect Maroc",
+    "descriptionPreparezVosInfos": "Préparez facilement toutes les informations nécessaires pour votre simulation RSU avec WeConnect Maroc. Simplifiez votre processus administratif et optimisez vos démarches.",
+    "keywordsPreparezVosInfos": "simulation RSU, préparation information RSU, simulateur RSU, démarches administratives Maroc, WeConnect Maroc, préparation dossier RSU",
+
+    "RnpRequired": "Inscription obligatoire au RNP",
+    "Adresse_RNP": "Si vous êtes un citoyen marocain et que vous souhaitez utiliser cette application, il est essentiel d’être bien inscrit dans le Registre National de la Population (RNP). Pour cela, veuillez vous rendre au Centre de Services de Proximité (CSC) correspondant à votre adresse de résidence.Lorsque vous simulez votre indice sur notre plateforme, sachez que toute personne que vous souhaitez ajouter à la simulation doit obligatoirement avoir la même adresse que vous dans le RNP. C’est une condition indispensable.",
+
+    "PreparezVosInfosDocumentsTitle": "Préparez ces documents pour obtenir un résultat aussi précis et réaliste que possible :"
+  },
+  "emailAddress": "Adresse électronique",
+  "gmail": "GMAIL",
+  "comingSoon": "Prochainement",
+  "Simplify_your_life_info": "Simplifiez-vous la vie ! Si vous vous connectez via weConnectMaroc, des informations connues des organismes sociaux vous concernant sont déjà remplies : aides, etc."
 }

@@ -36,6 +36,13 @@ function App() {
   const [appIsReady, setAppIsReady] = useState(false);
   const isOnline = useOnlineStatus();
   const location = useLocation();
+
+  const renderRoutes = (routesArray) =>
+    routesArray.map(({ path, element, children }, index) => (
+      <Route key={index} path={path} element={element}>
+        {children && renderRoutes(children)}
+      </Route>
+    ));
   useEffect(() => {
     async function fetchData() {
       try {
@@ -81,14 +88,8 @@ function App() {
               <Suspense fallback={<Loader />}>
                 <SEO />
                 <CustomDrawer />
-                <Routes>
-                  {routes.length > 0 ? (
-                    routes.map((route, index) => (
-                      <Route key={index} {...route} />
-                    ))
-                  ) : (
-                    <Route path="*" element={<div>No Routes Found</div>} />
-                  )}
+                <Routes location={location} key={location.pathname}>
+                  {renderRoutes(routes)}
                 </Routes>
               </Suspense>
             </AnimatePresence>

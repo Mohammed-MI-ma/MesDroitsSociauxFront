@@ -5,12 +5,12 @@ import { Link } from "react-router-dom";
 //__STYLING
 import styles from "./cardLandingIconContainer.module.css";
 
-const CardLandingIconContainer = memo(({ icon, title, desc, link }) => {
+const CardLandingIconContainer = memo(({ icon, title, desc, link, to }) => {
   return (
     <div className={styles.cardsLanding}>
       <div className={styles.cardLandingContainer}>
         <MemoizedIcon icon={icon} />
-        <MemoizedContent title={title} desc={desc} link={link} />
+        <MemoizedContent title={title} desc={desc} link={link} to={to} />
       </div>
     </div>
   );
@@ -22,11 +22,11 @@ const Icon = ({ icon }) => (
   </div>
 );
 
-const Content = ({ title, desc, link }) => (
+const Content = ({ title, desc, link, to }) => (
   <div className={styles.cardLandingContent}>
     <h4>{title}</h4>
     <p>{desc}</p>
-    <Link to={link}>
+    <Link to={to}>
       <Button
         type="link"
         className={styles.button}

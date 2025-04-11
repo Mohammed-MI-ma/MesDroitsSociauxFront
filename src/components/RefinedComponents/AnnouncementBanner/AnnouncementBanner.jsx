@@ -7,9 +7,7 @@ const AnnouncementBanner = () => {
   const { t } = useTranslation();
 
   return (
-    <section
-      className={`shadow-lg border-lg rounded-lg ${styles.announcementBanner}`}
-    >
+    <section className={`${styles.announcementBanner}`}>
       <div className={`border-lg rounded-lg ${styles.zone1}`}>
         <span>{t("NEW_FEATURE")}</span>
         <span>{t("RSU_DESCRIPTION")}</span>

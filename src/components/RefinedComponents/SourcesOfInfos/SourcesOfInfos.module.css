@@ -1,0 +1,72 @@
+.nosPartenairesBloc {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color:var(--color-primary);
+
+  }
+  
+  .nosPartenairesBloc > h2 {
+    margin-bottom: 1.5625rem;
+    font-size: clamp(16px, 5vw, 24px);
+    line-height: clamp(19px, 5vw, 28px);  
+    font-weight: 900;
+  }
+  .redLine {
+    width: 4.0625rem;
+    margin-bottom: 2.5rem;
+    border-top: 0.0625rem solid #cb4b4b;
+  }
+  .nosPartenairesBloc > h3 {
+    margin-bottom: 3.125rem;
+    font-size: clamp(20px, 5vw, 2px);
+    line-height: clamp(23px, 5vw, 45px); padding: 10px;
+
+  }
+  .wrapperPartenaires{   
+     display: flex
+    ;}
+
+    .nosPartenairesMinisteres {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin: auto;
+        margin-left: 0.9375rem;
+      }
+      
+      .nosPartenairesMinisteres > button {
+        display: flex;
+        background-color: #fff;
+        border: 0;    height: fit-content;
+      }
+
+      
+@media (max-width: 36rem) {
+    .logoOrganisme{        height: 11.25rem;}
+    
+  }
+  
+  @media (min-width: 36.063rem) and (max-width: 48rem) {
+   
+  }
+  
+  @media (min-width: 48.063rem) and (max-width: 62rem) {
+   
+  }
+  
+  @media (min-width: 62.063rem) and (max-width: 75rem) {    .logoOrganisme{        height: 11.25rem;}
+    
+
+}
+
+  
+  @media (min-width: 75.063rem) {
+    .logoOrganisme{        height: 11.25rem;}
+    
+
+  }
+
+  

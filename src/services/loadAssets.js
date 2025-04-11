@@ -13,8 +13,8 @@ export const loadImages = async (images) => {
         });
       })
     );
-    console.log("All images loaded successfully.");
+    //  console.log("All images loaded successfully.");
   } catch (error) {
-    console.error("Some images failed to load." + error);
+    //console.error("Some images failed to load." + error);
   }
 };

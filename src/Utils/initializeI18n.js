@@ -1,24 +1,40 @@
-/* eslint-disable no-undef */
+// src/i18n.js
 import i18n from "i18next";
 import Backend from "i18next-xhr-backend";
 
-export default async function initializeI18n() {
-  try {
-    const arTranslations = await import("../i18n/ar/translation.json");
-    const frTranslations = await import("../i18n/fr/translation.json");
-
-    i18n.use(Backend).init({
-      fallbackLng: "fr",
-      debug: process.env.NODE_ENV === "dev",
-      interpolation: {
-        escapeValue: false,
-      },
-      resources: {
-        ar: { translation: arTranslations },
-        fr: { translation: frTranslations },
-      },
-    });
-  } catch (error) {
-    console.error("Error initializing i18n:", error);
-  }
+export default function initializeI18n() {
+  return new Promise((resolve, reject) => {
+    import("../i18n/ar/translation.json")
+      .then((arTranslations) => {
+        import("../i18n/fr/translation.json")
+          .then((frTranslations) => {
+            i18n.use(Backend).init(
+              {
+                fallbackLng: "fr",
+                debug: process.env.NODE_ENV === "dev",
+                interpolation: {
+                  escapeValue: false,
+                },
+                supportedLngs: ["fr", "ar"],
+                resources: {
+                  ar: { translation: arTranslations },
+                  fr: { translation: frTranslations },
+                },
+              },
+              (error, t) => {
+                if (error) {
+                  reject(error);
+                } else {
+                  resolve();
+                }
+              }
+            );
+          })
+          .catch((error) => reject(error));
+      })
+      .catch((error) => reject(error));
+  });
 }
+
+// Export i18n to be used in other parts of the app
+export { i18n };

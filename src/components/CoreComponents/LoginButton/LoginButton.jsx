@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
@@ -10,6 +10,7 @@ import { RiLoginCircleFill } from "react-icons/ri";
 
 //__STYLE
 import style from "./loginButton.module.css";
+import LanguageContext from "../../../LanguageContext";
 
 const LoginButton = () => {
   const location = useLocation();
@@ -31,6 +32,8 @@ const LoginButton = () => {
   const handleOpenChange = (newOpen) => {
     setOpen(newOpen); // Toggle popover visibility
   };
+  const { language } = useContext(LanguageContext);
+
   return (
     <>
       {location.pathname !== "/maroc-connect/connexion" && (
@@ -49,7 +52,7 @@ const LoginButton = () => {
           onOpenChange={handleOpenChange} // Handle opening and closing
           getPopupContainer={(triggerNode) => triggerNode.parentNode} // Ensure popover is within the same container
         >
-          <Link to={"/maroc-connect/connexion"}>
+          <Link to={`/${language}/maroc-connect/connexion`}>
             <Button className={style.loginButton} type="text">
               <RiLoginCircleFill style={{ color: "var(--color-primary)" }} />
               <div>

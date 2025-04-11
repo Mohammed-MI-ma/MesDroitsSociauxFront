@@ -13,9 +13,9 @@ export const loadFonts = async (fontsConfig) => {
       )
     );
 
-    console.log("Fonts loaded successfully!");
+    //console.log("Fonts loaded successfully!");
   } catch (error) {
-    console.error("Error loading fonts:", error);
+    // console.error("Error loading fonts:", error);
   }
 };
 
@@ -23,7 +23,7 @@ export const loadImages = async (imagesConfig) => {
   try {
     const promises = Object.values(imagesConfig).map((imagePath) => {
       if (!imagePath) {
-        console.error("Image path is undefined!");
+        //    console.error("Image path is undefined!");
         return Promise.reject("Invalid image path");
       }
 
@@ -32,15 +32,15 @@ export const loadImages = async (imagesConfig) => {
         img.src = imagePath;
         img.onload = resolve;
         img.onerror = () => {
-          console.error("Failed to load image:", imagePath);
+          //   console.error("Failed to load image:", imagePath);
           reject(`Failed to load ${imagePath}`);
         };
       });
     });
 
     await Promise.all(promises);
-    console.log("Images loaded successfully!");
+    //console.log("Images loaded successfully!");
   } catch (error) {
-    console.error("Some images failed to load.", error);
+    // console.error("Some images failed to load.", error);
   }
 };

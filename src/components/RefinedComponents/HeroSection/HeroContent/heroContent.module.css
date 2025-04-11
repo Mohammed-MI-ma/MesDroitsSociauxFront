@@ -8,14 +8,15 @@
 }
 
 .heroContent h1 {
-  margin-bottom: calc(var(--gap-xl) * 2);
   font-size: clamp(3rem, 5vw, 3.25rem) !important;
   font-weight: 900;
 }
 
+.heroContent h2 {  
+  margin-bottom: calc(var(--gap-xl) * 2);
+}
+
 .heroContent p {
-  margin-bottom: var(--gap-lg);
-  font-size: clamp(2rem, 3vw, 1.75rem) !important;
   font-weight: 300;
   line-height: 1.5;
 }
@@ -23,10 +24,9 @@
 .heroButton {
   max-width: fit-content;
   background: var(--color-primary) !important;
-  font-size: clamp(1.2rem, 3vw, 1.55rem) !important;
+  font-size: clamp(1.2rem, 3vw, 1.25rem) !important;
   border-radius: var(--border-radius-lg);
   padding: var(--gap-xl) !important;
-
   cursor: pointer;
 }
 
@@ -34,12 +34,17 @@
   margin-top: var(--gap-lg);
 }
 
+/* Media Queries */
 @media (max-width: 36rem) {
   .heroContent {
     max-width: 100%;
     align-items: center;
     text-align: center;
     margin-inline: inherit;
+  }
+  
+  .heroContent h2 {  
+    font-size: 25px;
   }
 }
 
@@ -62,7 +67,11 @@
 }
 
 @media (min-width: 62.063rem) and (max-width: 75rem) {
+  /* No specific styles for this range yet */
 }
 
 @media (min-width: 75.063rem) {
+  .heroContent h2 {  
+    font-size: 25px;
+  }
 }
