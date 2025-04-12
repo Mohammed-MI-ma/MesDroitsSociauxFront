@@ -19,11 +19,15 @@ const Navbar = () => {
 
   // Nav items definition
   const navItems = [
-    { title: t("Accueil"), key: `/${language}/` },
+    { title: t("Accueil"), key: `/${language}` },
     { title: t("Vosservices"), key: `/${language}/droits-sociaux/Vosservices` },
     {
       title: t("Vosevenementsdevie"),
       key: `/${language}/droits-sociaux/Vosevenementsdevie`,
+    },
+    {
+      title: t("SEE_SIMULATORS"),
+      key: `/${language}/votre-simulateur/accueil`,
     },
   ];
 

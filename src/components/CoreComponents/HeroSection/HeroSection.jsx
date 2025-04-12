@@ -21,7 +21,6 @@ const HeroSection = ({ children, illustration, without = false }) => {
           <img src={illustration} alt="illustration" />
         </div>
       </div>
-      <small> {t("disclaimer")}</small>
     </div>
   );
 };

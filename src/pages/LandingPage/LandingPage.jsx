@@ -5,12 +5,15 @@ import LatestUpdates from "../../components/RefinedComponents/LatestUpdates/Late
 import ServicesContainer from "../../components/RefinedComponents/ServicesContainer/ServicesContainer";
 import MobileTopNewsFeed from "../../components/RefinedComponents/MobileTopNewsFeed/MobileTopNewsFeed";
 import SourcesOfInfos from "../../components/RefinedComponents/SourcesOfInfos/SourcesOfInfos";
+import { useTranslation } from "react-i18next";
+import BigScreensNewsFeed from "../../components/RefinedComponents/BigScreensNewsFeed/BigScreensNewsFeed";
 
 const LandingPage = () => {
   return (
     <main style={{ flex: "1", minHeight: "calc(100vh - 200px)" }}>
       <MobileTopNewsFeed />
       <HeroSection />
+      <BigScreensNewsFeed />
       <AnnouncementBanner />
       <LatestUpdates />
       <ServicesContainer />

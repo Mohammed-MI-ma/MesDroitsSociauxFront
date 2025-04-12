@@ -20,9 +20,7 @@ const HeroContent = () => {
         style={{ top: -10 }}
       >
         <Link to={`/${language}/votre-simulateur/accueil`}>
-          <Button type="primary" className={style.heroButton}>
-            {t("SEE_SIMULATORS")}
-          </Button>
+          <Button className={style.heroButton}>{t("SEE_SIMULATORS")}</Button>
         </Link>
       </Badge.Ribbon>
 

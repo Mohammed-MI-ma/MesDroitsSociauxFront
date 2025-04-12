@@ -1,13 +1,51 @@
-/* Wrapper for the page background */
+/* === Page Background Wrapper === */
 .wrapper {
   width: 100%;
   margin: 0 auto;
   position: relative;
   height: 100vh;
-  max-width: 1150px;
+  padding: 0 1rem; /* Adds horizontal padding on smaller screens */
+  max-width: 1150px; /* Default for large screens */
 }
 
-/* Header spacing */
+/* === Header Spacing === */
 .bgHeader {
-  margin-bottom: 40px;
+  margin-bottom: 2.5rem; /* 40px */
+}
+
+/* === Media Queries === */
+
+/* Extra small: <576px — auto max-width, let padding handle it */
+@media (max-width: 36rem) {
+  .wrapper {
+    max-width: 100%;
+  }
+}
+
+/* Small: 577px–768px */
+@media (min-width: 36.063rem) and (max-width: 48rem) {
+  .wrapper {
+    max-width: 750px;
+  }
+}
+
+/* Medium: 769px–992px */
+@media (min-width: 48.063rem) and (max-width: 62rem) {
+  .wrapper {
+    max-width: 940px;
+  }
+}
+
+/* Large: 993px–1200px */
+@media (min-width: 62.063rem) and (max-width: 75rem) {
+  .wrapper {
+    max-width: 1000px;
+  }
+}
+
+/* Extra large: 1201px+ */
+@media (min-width: 75.063rem) {
+  .wrapper {
+    max-width: 1150px;
+  }
 }

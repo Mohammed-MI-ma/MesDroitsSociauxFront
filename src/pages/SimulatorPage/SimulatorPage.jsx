@@ -25,7 +25,7 @@ const SimulatorPage = () => {
   };
   return (
     <main style={{ flex: "1", minHeight: "calc(100vh - 200px)" }}>
-      <HeroSection illustration={simulateur}>
+      <HeroSection illustration={simulateur} without>
         <>
           <Badge.Ribbon
             text={t("NEW_FEATURE")}

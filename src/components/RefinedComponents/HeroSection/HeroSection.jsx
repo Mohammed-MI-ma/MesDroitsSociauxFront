@@ -12,7 +12,7 @@ import style from "./heroSection.module.css";
 
 const HeroSection = () => {
   return (
-    <section className={style.hero}>
+    <section className={`${style.hero}`}>
       <div className={style.leftBloc}>
         <div className={style.landingPageleftBloc}>
           <img src={leftBlocGraphic}></img>

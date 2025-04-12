@@ -60,7 +60,7 @@ const AppHeader = ({ logoAltText }) => {
       transition={{ duration: 0.3 }}
     >
       <div className="flex justify-between items-center w-full">
-        <Link to={"/"}>
+        <Link to={`/${language}`}>
           <ResponsiveLogo />
         </Link>
         {isAuthenticated && (

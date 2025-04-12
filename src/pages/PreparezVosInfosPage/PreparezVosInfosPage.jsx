@@ -1,7 +1,14 @@
-import React from "react";
+//__REACT
+import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
+
+//__STYLE
 import style from "./PreparezVosInfo.module.css";
+
+//__ILLUSTRATION
 import papers from "/assets/images/svg/papers.svg";
+
+//__COMPONENTS
 import HeroSection from "../../components/CoreComponents/HeroSection/HeroSection";
 
 const DocumentList = () => {
@@ -35,7 +42,6 @@ const DocumentList = () => {
 
 const PreparezVosInfosPage = () => {
   const { t } = useTranslation();
-
   return (
     <main className={style.prepare_info__container}>
       <HeroSection illustration={papers} without>

@@ -20,10 +20,18 @@ const LanguageSwitcher = () => {
         segments.shift();
       }
 
-      const newPath = `/${value}/${segments.join("/")}`;
+      let newPath = `/${value}${
+        segments.length ? "/" + segments.join("/") : ""
+      }`;
+
+      // 🔥 Remove trailing slash if it's there (but not from root slashes)
+      if (newPath !== "/" && newPath.endsWith("/")) {
+        newPath = newPath.slice(0, -1);
+      }
+
       navigate(newPath);
     },
-    [setLanguage, i18n, location.pathname, navigate] // location.pathname is enough
+    [setLanguage, i18n, location.pathname, navigate]
   );
 
   const options = [

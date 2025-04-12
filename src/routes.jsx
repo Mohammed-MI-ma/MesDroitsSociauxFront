@@ -3,6 +3,7 @@ import { Navigate } from "react-router-dom";
 import CustomSuspense from "./components/CoreComponents/CustomSuspense/CustomSuspense";
 import LanguageLayout from "./components/CoreComponents/LanguageLayout/LanguageLayout";
 import PreparezVosInfosPage from "./pages/PreparezVosInfosPage/PreparezVosInfosPage";
+import OurServicePage from "./pages/OurServicePage/OurServicePage";
 
 const LandingPage = lazy(() => import("./pages/LandingPage/LandingPage"));
 const SimulatorPage = lazy(() => import("./pages/SimulatorPage/SimulatorPage"));
@@ -57,6 +58,14 @@ const routes = [
         element: (
           <CustomSuspense id="simulatorFoyer">
             <SimulatorFoyerPage />
+          </CustomSuspense>
+        ),
+      },
+      {
+        path: "droits-sociaux/Vosservices",
+        element: (
+          <CustomSuspense id="vos-services">
+            <OurServicePage />
           </CustomSuspense>
         ),
       },

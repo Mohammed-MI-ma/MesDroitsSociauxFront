@@ -1,0 +1,40 @@
+.prepare_info__container {
+    margin-top: var(--gap-tiny);
+  }
+  
+  .prepare_info__title {
+    font-size: clamp(3rem, 5vw, 3.25rem) !important;
+    font-weight: 900;
+  }
+  
+  .prepare_info__section_title {
+    color:var(--color-primary);
+    font-size: 1.75rem;  
+    color: #cb4b4b;
+    font-weight: 900;
+  
+  }
+  .prepare_info__section_body{
+    font-size: 1.25rem;  
+    color:var(--color-primary);
+  
+  }
+  
+.servicesContent {
+  display: flex;
+  gap: 10px;
+  padding: 20px;
+}
+.servicesContent > div {
+  width: 12.25rem;
+  height: auto;
+}
+.servicesTitle {
+  font-size: 1.7rem;
+  font-weight: 900;
+}
+
+.description {
+  font-size: 12px;
+  font-weight: light;
+}
