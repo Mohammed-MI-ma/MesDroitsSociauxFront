@@ -1,39 +1,46 @@
-.container{
-    width: 100%;
-    margin-bottom: var(--gap-xl);
+.container {
+  width: 100%;
+  margin-bottom: var(--gap-xl);
 }
-.container > h2{
+
+.container > h2 {
   font-size: 20px;
 }
-.container > main{
-gap:var(--gap-xl)  }
-.squareBox{
-    flex: 1;
-    aspect-ratio: 1 / 1; /* same as Tailwind's aspect-square */
-    background-color: var(--color-primary); /* override gray-200 */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+.container > main {
+  gap: var(--gap-xl);
 }
 
+.squareBox {
+  border-radius: var(--border-radius-lg);
+  flex: 1;
+  aspect-ratio: 1 / 1; 
+  background: linear-gradient(to top, var(--color-primary), var(--color-text)); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 @media (max-width: 36rem) {
-    .container{
-        display: none;
-    }
+  .container {
+    display: none;
   }
-  
-  @media (min-width: 36.063rem) and (max-width: 48rem) {
-    .container > main{
-        gap:var(--gap-sm)  }
+}
+
+@media (min-width: 36.063rem) and (max-width: 48rem) {
+  .container > main {
+    gap: var(--gap-sm);
   }
-  
-  @media (min-width: 48.063rem) and (max-width: 62rem) {
-  }
-  
-  @media (min-width: 62.063rem) and (max-width: 75rem) {
-  }
-  
-  @media (min-width: 75.063rem) {
-  }
-  
+}
+
+@media (min-width: 48.063rem) and (max-width: 62rem) {
+  /* Add any styles for this breakpoint if needed */
+}
+
+@media (min-width: 62.063rem) and (max-width: 75rem) {
+  /* Add any styles for this breakpoint if needed */
+}
+
+@media (min-width: 75.063rem) {
+  /* Add any styles for this breakpoint if needed */
+}

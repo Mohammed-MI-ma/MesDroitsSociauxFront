@@ -35,8 +35,8 @@ const LanguageSwitcher = () => {
   );
 
   const options = [
-    { value: "fr", label: t("FR") },
-    { value: "ar", label: t("AR") },
+    { value: "fr", label: <div style={{ fontSize: "1rem" }}>{t("FR")}</div> },
+    { value: "ar", label: <div style={{ fontSize: "1rem" }}>{t("AR")}</div> },
   ];
 
   return (

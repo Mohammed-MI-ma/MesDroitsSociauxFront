@@ -19,9 +19,11 @@ import { Divider, Progress } from "antd";
 import { useTranslation } from "react-i18next";
 import { useAuth } from "../../AuthProvider";
 import LogoutButton from "../../CoreComponents/LogoutButton/LogoutButton";
-const AppHeader = ({ logoAltText }) => {
+import LanguageContext from "../../../LanguageContext";
+const AppHeader = () => {
   const { t } = useTranslation();
   const { isAuthenticated, user } = useAuth(); // Get authentication status from context
+  const { language } = useContext(LanguageContext);
 
   const headerVariants = {
     hidden: { opacity: 0, y: -20 },
@@ -30,11 +32,15 @@ const AppHeader = ({ logoAltText }) => {
   };
   const items = [
     {
-      label: <Link to="/">{t("Accueil")}</Link>,
+      label: <Link to={`/${language}`}>{t("Accueil")}</Link>,
       key: "0",
     },
     {
-      label: <Link to="/droits-sociaux/Vosservices">{t("Vosservices")}</Link>,
+      label: (
+        <Link to={`/${language}/droits-sociaux/Vosservices`}>
+          {t("Vosservices")}
+        </Link>
+      ),
       key: "1",
     },
     {
@@ -42,7 +48,7 @@ const AppHeader = ({ logoAltText }) => {
     },
     {
       label: (
-        <Link to="/droits-sociaux/Vosevenementsdevie">
+        <Link to={`/${language}/droits-sociaux/Vosevenementsdevie`}>
           {t("Vosevenementsdevie")}
         </Link>
       ),
@@ -82,7 +88,7 @@ const AppHeader = ({ logoAltText }) => {
                   size="small"
                   icon={<AiOutlineUser />}
                 />
-              </Badge>{" "}
+              </Badge>
             </div>
             <div className={style.profileInfos}>
               <div>{user.name}</div>

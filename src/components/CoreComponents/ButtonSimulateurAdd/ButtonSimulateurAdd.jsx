@@ -9,7 +9,11 @@ import { useDispatch, useSelector } from "react-redux";
 
 import styles from "./ButtonSimulateurAdd.module.css";
 import { useTranslation } from "react-i18next";
-import { addToMemberList } from "../../../reducers/applicationService/applicationSlice";
+import {
+  addToMemberList,
+  findByRangCode,
+  updateMember,
+} from "../../../reducers/applicationService/applicationSlice";
 
 const ButtonSimulateurAdd = ({
   children,
@@ -25,6 +29,7 @@ const ButtonSimulateurAdd = ({
   const dispatch = useDispatch();
   const [messageApi, contextHolder] = message.useMessage();
   const [isLoading, setIsLoading] = useState(false); // ✅ State to track loading
+  const conjoint = useSelector((state) => findByRangCode(state, "CJ"));
 
   const showModal = () => {
     setIsModalOpen(true);
@@ -33,6 +38,7 @@ const ButtonSimulateurAdd = ({
     setIsLoading(true); // Set loading to true when saving
 
     const res = await modal.validate();
+
     if (!res.status) {
       console.log("Prevent closing if validation fails");
       setIsModalOpen(true);
@@ -47,7 +53,19 @@ const ButtonSimulateurAdd = ({
         duration: 0.5,
       })
       .then(() => {
-        dispatch(addToMemberList({ ...res.body, rangCode: res.rangCode }));
+        console.log("updated", conjoint?.id, {
+          ...res.body,
+          rangCode: res.rangCode,
+        });
+        dispatch(
+          conjoint
+            ? updateMember({
+                updatedFields: { ...res.body, rangCode: res.rangCode },
+
+                id: conjoint?.id,
+              })
+            : addToMemberList({ ...res.body, rangCode: res.rangCode })
+        );
         setIsModalOpen(false);
         setIsLoading(false); // Reset loading after successful save
       }); // ✅ Ensure it's awaited

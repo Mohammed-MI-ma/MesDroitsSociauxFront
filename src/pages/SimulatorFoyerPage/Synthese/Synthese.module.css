@@ -1,0 +1,28 @@
+.memberCard {
+    border-left: 1px solid var(--color-primary);
+    padding: var(--gap-lx);
+    margin-bottom: var(--gap-lx);
+  }
+  
+  .syntheseTitle {
+    font-weight: 900;
+    font-size: 20px;
+  }  
+  @media (max-width: 36rem) {
+    .synthese {
+      display: none !important;
+    }
+  }
+  
+  @media (min-width: 36.063rem) and (max-width: 48rem) {
+  }
+  
+  @media (min-width: 48.063rem) and (max-width: 62rem) {
+  }
+  
+  @media (min-width: 62.063rem) and (max-width: 75rem) {
+  }
+  
+  @media (min-width: 75.063rem) {
+  }
+  

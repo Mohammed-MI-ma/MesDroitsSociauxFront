@@ -51,6 +51,11 @@
     "serviceAnalytics": "Service: Google Analytics",
     "viewGoogleAnalytics": "Voir Google Analytics"
   },
+  "SIZE_OF_HOUSEHOLD": "Taille du ménage",
+
+  "memberCard": {
+    "bornOn": "Né le"
+  },
   "disclaimer": "Avertissement : cette application n'est pas précise à 100 %, elle est uniquement une simulation et non le calcul réel de l'indice.",
   "sponserShip": {
     "REGISTRE_SOCIAL": "REGISTRE SOCIAL",
@@ -100,13 +105,16 @@
       "Vousvivez": "Vous vivez",
       "seul": "Seul",
       "enCouple": "En couple",
+      "divorced": "Divorcé(e)",
+      "veuf": "veuf(ve)",
       "InformationsConjoint": "Informations du conjoint",
       "Male": "Homme",
       "Female": "Femme",
       "step": "Étape {{stepKey}} sur 6"
     },
     "step2": {
-      "step2_title": "2. Situation"
+      "step2_title": "2. Situation",
+      "step2_desc": "Passez directement à l'étape suivante si vous n'êtes dans aucune de ces situations"
     },
     "step3": {
       "step3_title": "3. Logement"

@@ -1,36 +1,58 @@
 .heroContent {
   display: flex;
+  justify-content: space-evenly;
   flex-direction: column;
+  
   position: relative;
   color: var(--color-primary);
   max-width: 50%;
   margin-inline: var(--gap-md) 0;
+  height: 100%;
+
 }
 
 .heroContent h1 {
-  font-size: clamp(3rem, 5vw, 3.25rem) !important;
+  font-size: clamp(3rem, 5vw, 7rem) !important;
+  letter-spacing: -2px;
   font-weight: 900;
+  line-height: 70px;
+  max-width: 400px;
 }
 
 .heroContent h2 {  
-  margin-bottom: calc(var(--gap-xl) * 2);
+  margin-bottom: calc(var(--gap-md) * 2);
+  font-size: 1rem;
 }
-
+.heroContent p {  
+  font-size: 1rem;
+}
 .heroContent p {
   font-weight: 300;
   line-height: 1.5;
 }
-
-.heroButton {
-  max-width: fit-content;
-  background: var(--color-primary) !important;
-  font-size: clamp(1.2rem, 3vw, 1.25rem) !important;
-  border-radius:50px;
-  padding: var(--gap-xl) !important;
-  cursor: pointer;
-  color:white
-
+.heroButton,
+.heroButton_shadow {
+  font-size:1rem;
+  color: var(--color-muted);
+  background: var(--color-primary)!important;
+  border-radius: var(--border-radius-xl);
+  padding: var(--gap-xl) ;
 }
+.heroButton_shadow { 
+  position: absolute;
+  top: 5px;
+  z-index: 0;
+}
+/* Shadow variant RTL */
+[dir="rtl"] .heroButton_shadow {
+  right: 0;
+}
+
+/* Shadow variant LTR */
+[dir="ltr"] .heroButton_shadow {
+  left: 0;
+}
+
 .heroButton:hover{  color:white!important}
 .heroContent small {
   margin-top: var(--gap-lg);
@@ -73,7 +95,5 @@
 }
 
 @media (min-width: 75.063rem) {
-  .heroContent h2 {  
-    font-size: 25px;
-  }
+ 
 }

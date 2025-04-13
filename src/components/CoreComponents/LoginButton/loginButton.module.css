@@ -5,7 +5,7 @@
   display: flex;
   align-items: center;
   font-weight: light;
-  padding: var(--spacing-lg);
+  padding: var(--spacing-md);
   font-family: var(--primary-font);
   background-color: white;
   border-bottom: 5px solid var(--color-primary);
@@ -19,6 +19,7 @@
 .loginButton > div > p {
   margin-bottom: 0;
   font-weight: 900;
+  font-size: 1rem;
 }
 .googlePartner {
 }

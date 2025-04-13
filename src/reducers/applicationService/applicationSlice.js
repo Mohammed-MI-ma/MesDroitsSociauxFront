@@ -2,6 +2,7 @@ import { createSlice, nanoid } from "@reduxjs/toolkit";
 
 const initialState = {
   memberList: [],
+  curentStep: 0,
 };
 
 const applicationSlice = createSlice({
@@ -14,6 +15,9 @@ const applicationSlice = createSlice({
           (member) => member.prenom && member.dateNaissance && member.sexe
         )
         .map((member) => ({ ...member, id: nanoid() })); // Assign unique IDs to each member
+    },
+    setCurrentStep: (state, action) => {
+      state.curentStep = action.payload;
     },
     addToMemberList: (state, action) => {
       const newMember = action.payload;
@@ -33,6 +37,28 @@ const applicationSlice = createSlice({
         (member) => member.id !== action.payload // Delete by unique ID instead of name
       );
     },
+    // Update a member by ID
+    updateMember: (state, action) => {
+      const { id, updatedFields } = action.payload;
+
+      // Log the payload and the member list for debugging
+      console.log("Updating member with ID:", id);
+      console.log("Updated Fields:", updatedFields);
+      console.table(state.memberList); // Logs the entire member list
+
+      // Find the member by ID and update their fields
+      const member = state.memberList.find((member) => member.id === id);
+
+      // Log the found member
+      console.log("Found member:", member);
+
+      if (member) {
+        // Update only the specified fields, keeping the existing ID
+        Object.assign(member, updatedFields);
+      } else {
+        console.error(`Member with ID "${id}" not found.`);
+      }
+    },
   },
 });
 
@@ -47,8 +73,13 @@ export const findOthers = (state, rangCodes) => {
   );
 };
 // Export action creators
-export const { setMemberList, addToMemberList, deleteFromMemberList } =
-  applicationSlice.actions;
+export const {
+  setMemberList,
+  addToMemberList,
+  deleteFromMemberList,
+  updateMember,
+  setCurrentStep,
+} = applicationSlice.actions;
 
 // Export reducer
 export default applicationSlice.reducer;

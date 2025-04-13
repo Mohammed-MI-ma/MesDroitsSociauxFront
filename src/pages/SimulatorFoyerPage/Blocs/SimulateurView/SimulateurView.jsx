@@ -1,5 +1,5 @@
 //__REACT
-import React, { useMemo, useRef } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 
@@ -23,6 +23,7 @@ import {
   chefMenageInfo,
   conjointInfo,
 } from "../../../../components/CoreComponents/GenericInfo/genericInfoConfig";
+import Synthese from "../../Synthese/Synthese";
 
 const SimulateurView = () => {
   // Translation hook
@@ -38,7 +39,20 @@ const SimulateurView = () => {
   const chefMenage = useSelector((state) => findByRangCode(state, "CF"));
   const conjoint = useSelector((state) => findByRangCode(state, "CJ"));
   const others = useSelector((state) => findOthers(state, ["CJ", "CF"]));
+  const [memberList_Rect, setMemberList_Rect] = useState([]);
 
+  useEffect(() => {
+    const filteredMemberList = memberList
+      .filter(
+        (member) => !(member.rangCode === "CJ" && member.prenom === "skip2025")
+      )
+      .map((e) => {
+        // Your mapping logic here (if any)
+
+        return e;
+      });
+    setMemberList_Rect(filteredMemberList); // Set the new filtered and mapped list
+  }, [memberList]); // This effect runs whenever memberList changes
   // Info configuration based on the selected data
   const chefMenageInfoData = chefMenageInfo(chefMenage, t, chefMenageRef);
   const conjointInfoData = conjointInfo(conjoint, t, conjointRef);
@@ -88,10 +102,21 @@ const SimulateurView = () => {
             <div className={styles.individusContainer} id="situation">
               <ButtonSimulateurAdd delay={1.5} editing muted>
                 {conjoint ? (
-                  <div className="text-left">
-                    <div style={{ fontSize: "30px" }}>
-                      {conjoint.youLive === "enCouple" ? "couple marié" : ""}
-                    </div>
+                  <div style={{ fontSize: "30px" }}>
+                    {(() => {
+                      switch (conjoint?.youLive) {
+                        case "seul":
+                          return t("simu_foyer.step1.single");
+                        case "enCouple":
+                          return "couple marié";
+                        case "divorce":
+                          return t("simu_foyer.step1.divorced");
+                        case "veuf":
+                          return t("simu_foyer.step1.veuf");
+                        default:
+                          return "";
+                      }
+                    })()}
                   </div>
                 ) : (
                   t("simu_foyer.step1.single")
@@ -172,39 +197,8 @@ const SimulateurView = () => {
             </div>
           </FoyerStep>
         </div>
-      </div>{" "}
-      <div className={styles.synthese}>
-        <Flex align="center" wrap gap={30}>
-          <h2 style={{ fontSize: "30px", fontWeight: "900" }}>
-            {t("SYNTHESE")}
-          </h2>
-          <Progress type="dashboard" percent={50} size="small" />
-        </Flex>
-        <h1 style={{ fontSize: "16px" }}>
-          Taille du ménagé: {memberList.length}
-        </h1>
-        {memberList.map(({ prenom, text, dateNaissance }, idx) => (
-          <div
-            key={`${text}-${idx}`}
-            style={{
-              borderLeft: "1px solid black",
-              padding: "10px",
-              marginBottom: "10px",
-            }}
-          >
-            <h3
-              style={{
-                fontSize: "30px",
-                fontWeight: "900",
-                textTransform: "uppercase",
-              }}
-            >
-              {prenom}
-            </h3>
-            <p>Né le {dateNaissance}</p>
-          </div>
-        ))}
       </div>
+      <Synthese />
     </main>
   );
 };

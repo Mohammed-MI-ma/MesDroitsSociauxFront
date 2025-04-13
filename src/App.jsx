@@ -1,35 +1,32 @@
 import React, { Suspense, useEffect, useState } from "react";
-
 import { Route, Routes, useLocation } from "react-router-dom";
 
-//__ANTD
-import ConfigProvider from "antd/es/config-provider";
-
-import "antd/es/config-provider/style"; // Only imports ConfigProvider styles
 //__FRAMER_MOTION
 import { AnimatePresence } from "framer-motion";
 
 //__CONFIGURATION
-
 import frFR from "antd/es/locale/fr_FR";
+import { global_Assets } from "./config.dev.js";
 
 //__ROUTES
 import routes from "./routes";
 
+import SEO from "./components/CoreComponents/SEO/SEO.jsx";
+import ModalCookiesConsent from "./components/RefinedComponents/ModalCookiesConsent/ModalCookiesConsent.jsx";
+import ParamsSiteComponent from "./components/CoreComponents/ParamsSiteComponent/ParamsSiteComponent.jsx";
 import Loader from "./components/CoreComponents/CustomSuspense/Loader/index.jsx";
 import HeaderLogoHome from "./components/RefinedComponents/AppHeader/AppHeader.jsx";
+import CustomDrawer from "./components/CoreComponents/CustomDrawer/CustomDrawer.jsx";
+import OfflineBanner from "./components/CoreComponents/OfflineBanner/OfflineBanner.jsx";
+import Footer from "./components/CoreComponents/Footer/Footer.jsx";
+
+//__CUSTOM_HOOKS
+import { useOnlineStatus } from "./hooks/useOnlineStatus.js";
+
+import { loadImages } from "./services/loadAssets.js";
 
 //__STYLING
 import style from "./App.module.css";
-import ModalCookiesConsent from "./components/RefinedComponents/ModalCookiesConsent/ModalCookiesConsent.jsx";
-import ParamsSiteComponent from "./components/CoreComponents/ParamsSiteComponent/ParamsSiteComponent.jsx";
-import SEO from "./components/CoreComponents/SEO/SEO.jsx";
-import Footer from "./components/CoreComponents/Footer/Footer.jsx";
-import { global_Assets } from "./config.dev.js";
-import { loadImages } from "./services/loadAssets.js";
-import OfflineBanner from "./components/CoreComponents/OfflineBanner/OfflineBanner.jsx";
-import { useOnlineStatus } from "./hooks/useOnlineStatus.js";
-import CustomDrawer from "./components/CoreComponents/CustomDrawer/CustomDrawer.jsx";
 
 //hello
 function App() {
@@ -67,7 +64,7 @@ function App() {
   }
 
   return (
-    <>
+    <React.Fragment>
       {!isOnline ? (
         <OfflineBanner />
       ) : (
@@ -95,10 +92,10 @@ function App() {
             </AnimatePresence>
             <FloatButton.BackTop />
             <Footer />
-          </div>{" "}
+          </div>
         </ConfigProvider>
       )}
-    </>
+    </React.Fragment>
   );
 }
 

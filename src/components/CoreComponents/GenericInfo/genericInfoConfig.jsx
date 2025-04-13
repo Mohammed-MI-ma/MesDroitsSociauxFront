@@ -30,15 +30,19 @@ export const chefMenageInfo = (chefMenage, t, chefMenageRef) => {
 export const conjointInfo = (conjoint, t, conjointRef) => {
   return GenericInfo({
     icon: <IoIosWoman />,
-    text: conjoint ? (
-      <InfoText
-        label={t("simu_foyer.step1.ajouter_conjointe")}
-        value={conjoint.prenom}
-        dateOfBirth={conjoint.dateNaissance}
-      />
-    ) : (
-      t("simu_foyer.step1.ajouter_conjointe")
-    ),
+    text:
+      conjoint &&
+      conjoint?.youLive !== "seul" &&
+      conjoint?.youLive !== "divorce" &&
+      conjoint?.youLive !== "veuf" ? (
+        <InfoText
+          label={t("simu_foyer.step1.ajouter_conjointe")}
+          value={conjoint.prenom}
+          dateOfBirth={conjoint.dateNaissance}
+        />
+      ) : (
+        t("simu_foyer.step1.ajouter_conjointe")
+      ),
     modal: {
       id: "CONJOINT",
       title: t("simu_foyer.step1.situation_matrimoniale"),

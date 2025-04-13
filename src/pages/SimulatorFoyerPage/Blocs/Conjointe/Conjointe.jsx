@@ -18,7 +18,7 @@ const Conjointe = forwardRef((props, ref) => {
 
   // Default form state
   const [formData, setFormData] = useState({
-    youLive: "seul",
+    youLive: conjoint?.youLive || "",
     prenom: conjoint?.prenom || "",
     dateNaissance: conjoint?.dateNaissance || "",
     sexe: conjoint?.sexe || "",
@@ -28,23 +28,30 @@ const Conjointe = forwardRef((props, ref) => {
   const options = [
     { label: t("simu_foyer.step1.seul"), value: "seul" },
     { label: t("simu_foyer.step1.enCouple"), value: "enCouple" },
+    { label: t("simu_foyer.step1.divorced"), value: "divorce" },
+    { label: t("simu_foyer.step1.veuf"), value: "veuf" },
   ];
 
   // Sync formData when chefMenage changes
   useEffect(() => {
     if (conjoint) {
-      setFormData({
+      // Set the form values using Ant Design's setFieldsValue method
+      form.setFieldsValue({
         prenom: conjoint.prenom || "",
-        dateNaissance: conjoint.dateNaissance || "",
+        dateNaissance: conjoint.dateNaissance
+          ? moment(conjoint.dateNaissance)
+          : "",
         sexe: conjoint.sexe || "",
+        youLive: conjoint.youLive || "",
       });
     }
-  }, [conjoint]);
+  }, [conjoint, form]);
   // Expose validateForm function to parent
   useImperativeHandle(ref, () => ({
     validateForm: async () => {
       try {
         await form.validateFields();
+
         return { status: true, body: formData, rangCode: "CJ" };
       } catch (error) {
         console.log("error", error);
@@ -58,8 +65,16 @@ const Conjointe = forwardRef((props, ref) => {
       let value = event?.target ? event.target.value : event;
 
       setFormData((prev) => {
-        if (field === "youLive" && value === "seul") {
-          return { youLive: "seul", prenom: "", sexe: "", dateNaissance: "" };
+        if (
+          field === "youLive" &&
+          (value === "seul" || value === "veuf" || value === "divorce")
+        ) {
+          return {
+            youLive: value,
+            prenom: "skip2025",
+            sexe: "skip2025",
+            dateNaissance: "skip2025",
+          };
         }
 
         return { ...prev, [field]: value };
@@ -73,7 +88,7 @@ const Conjointe = forwardRef((props, ref) => {
   }, [formData]);
 
   return (
-    <Form layout="vertical" form={form} initialValues={{ youLive: "seul" }}>
+    <Form layout="vertical" form={form}>
       <Form.Item
         label={t("simu_foyer.step1.Vousvivez")}
         name="youLive"

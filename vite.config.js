@@ -43,6 +43,8 @@ export default defineConfig({
             "Breadcrumb",
             "Badge",
             "Select",
+            "Carousel",
+            "Statistic",
           ],
           "react-icons/io": [
             "IoIosWoman",
@@ -59,7 +61,7 @@ export default defineConfig({
             "MdModeEdit",
             "MdMarkEmailRead",
           ],
-          "react-icons/fa6": ["FaRegUser"],
+          "react-icons/fa6": ["FaRegMoneyBill1", "FaRegUser"],
           "react-icons/lu": ["LuBaby"],
           "react-icons/fa": ["FaPaperclip", "FaTrash", "FaFacebook", "FaSms"],
           "react-icons/fc": ["FcGoogle"],

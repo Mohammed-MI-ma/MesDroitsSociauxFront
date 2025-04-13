@@ -47,6 +47,11 @@
     "serviceAnalytics": "الخدمة: جوجل أناليتكس",
     "viewGoogleAnalytics": "عرض جوجل أناليتكس"
   },
+  "SIZE_OF_HOUSEHOLD": "حجم الأسرة",
+  "memberCard": {
+    "bornOn": "وُلِد في"
+  },
+
   "disclaimer": "تنويه: هذا التطبيق ليس دقيقًا بنسبة 100٪، فهو مجرد محاكاة وليس الحساب الحقيقي للمؤشر.",
   "sponserShip": {
     "REGISTRE_SOCIAL": "السجل الاجتماعي",
@@ -84,14 +89,18 @@
       "situation_matrimoniale": "الحالة الاجتماعية",
       "Vousvivez": "أنت تعيش",
       "seul": "وحيد",
-      "enCouple": "في زوج",
+      "enCouple": "مع زوج",
+      "divorced": "مطلق",
+      "veuf": "أرمل(ة)",
+
       "InformationsConjoint": "معلومات الزوج",
       "Male": "ذكر",
       "Female": "أنثى",
       "step": "الخطوة {{stepKey}} من 6"
     },
     "step2": {
-      "step2_title": "2.الوضع"
+      "step2_title": "2.الوضع",
+      "step2_desc": "انتقل مباشرة إلى الخطوة التالية إذا لم تكن في أي من هذه الحالات"
     },
     "step3": {
       "step3_title": "3.الإسكان"

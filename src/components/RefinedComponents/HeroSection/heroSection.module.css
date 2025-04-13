@@ -13,14 +13,17 @@
 }
 .leftBloc {
   position: absolute;
-  opacity: 0.95;
+
+
 }
 [dir="rtl"] .leftBloc > .landingPageleftBloc {
   transform: scaleX(-1);
+  
 }
 .rightBloc {
   width: 50%;
   height: 100%;
+  padding: 20px;
 }
 [dir="rtl"] .rightBloc {
   transform: scaleX(-1);

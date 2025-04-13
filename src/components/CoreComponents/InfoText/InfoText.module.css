@@ -1,6 +1,8 @@
 /* InfoText.module.css */
 .textLeft {
   text-align: left;
+  width: 100%;
+  padding: 5px;
 }
 
 .label {
@@ -11,6 +13,10 @@
 .value {
   font-size: var(--font-xl);
   font-weight: 900;
+}
+.value>p {
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 
 .dateOfBirth {

@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import StepTitle from "../../Blocs/StepTitle/StepTitle";
 import styles from "./FoyerStep.module.css";
 import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
 const FoyerStep = ({ stepKey, stepTitle, stepDescription, children }) => {
   const { t } = useTranslation();
 

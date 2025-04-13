@@ -35,12 +35,14 @@
   --border-radius-sm: 0.25rem; /* 4px converted to rem */
   --border-radius-md: 0.5rem; /* 8px converted to rem */
   --border-radius-lg: 0.75rem; /* 12px converted to rem */
+  --border-radius-xl: 4.167rem; /* 12px converted to rem */
 }
 :root {
   --color-primary: #19355c; /* Primary color:Dark */
   --color-text: #2e5077; /* Text color */
   --color-secondary: #47777b;
   --color-muted: #ffffff;
+  --color-red:#cb4b4b;
 }
 :root {
   --spacing-sm: 0.5rem; /* 8px converted to rem */
@@ -94,4 +96,16 @@ body {
 .hide-scrollbar {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+}
+
+ .ant-steps-item-process .ant-steps-item-icon {
+  background-color: #cb4b4b !important;
+  border-color: #cb4b4b!important;
+}
+.ant-steps-item-finish .ant-steps-item-icon {
+  background-color: #eba2a2 !important;
+}
+.ant-btn-variant-solid {
+  color: #fff;
+  background: #cb4b4b !important;
 }

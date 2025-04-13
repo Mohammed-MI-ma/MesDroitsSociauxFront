@@ -6,14 +6,17 @@ import { useTranslation } from "react-i18next";
 import { Button, Steps, message } from "antd";
 import { IoIosArrowForward } from "react-icons/io";
 import onde from "/assets/images/svg/onde-simu-v2.svg";
+import SimulateurView2 from "./Blocs/SimulateurView2/SimulateurView2";
+import { useDispatch } from "react-redux";
+import { setCurrentStep } from "../../reducers/applicationService/applicationSlice";
 const SimulatorFoyerPage = () => {
   const { t } = useTranslation();
   const [current, setCurrent] = useState(0);
-
+  const dispatch = useDispatch();
   // Steps data with internationalization
   const steps = [
     { title: t("simu_foyer.step1.step1_title"), content: <SimulateurView /> },
-    { title: t("simu_foyer.step2.step2_title"), content: t("Second-content") },
+    { title: t("simu_foyer.step2.step2_title"), content: <SimulateurView2 /> },
     { title: t("simu_foyer.step3.step3_title"), content: t("Last-content") },
     { title: t("simu_foyer.step4.step4_title"), content: t("Last-content") },
     { title: t("simu_foyer.step5.step5_title"), content: t("Last-content") },
@@ -21,9 +24,21 @@ const SimulatorFoyerPage = () => {
   ];
 
   // Memoized handlers to prevent unnecessary re-renders
-  const next = useCallback(() => setCurrent((prev) => prev + 1), []);
-  const prev = useCallback(() => setCurrent((prev) => prev - 1), []);
+  const next = useCallback(() => {
+    setCurrent((prev) => {
+      const newStep = prev + 1;
+      dispatch(setCurrentStep(newStep)); // ✅ pass a number, not a function
+      return newStep;
+    });
+  }, [dispatch]);
 
+  const prev = useCallback(() => {
+    setCurrent((prev) => {
+      const newStep = prev - 1;
+      dispatch(setCurrentStep(newStep)); // ✅ pass a number, not a function
+      return newStep;
+    });
+  }, [dispatch]);
   return (
     <main className={styles.container}>
       {/* Steps Navigation */}

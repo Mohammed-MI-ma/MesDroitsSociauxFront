@@ -27,16 +27,28 @@ const SimulatorPage = () => {
     <main style={{ flex: "1", minHeight: "calc(100vh - 200px)" }}>
       <HeroSection illustration={simulateur} without>
         <>
-          <Badge.Ribbon
-            text={t("NEW_FEATURE")}
-            color="pink"
-            placement="start"
-            style={{ top: -10 }}
-          >
-            <h1 className={`${styles.title} `} onClick={scrollToSection}>
-              <ImCalculator /> {t("SEE_SIMULATORS")}
-            </h1>
-          </Badge.Ribbon>
+          <div style={{ position: "ralative" }}>
+            <Badge.Ribbon
+              text={t("NEW_FEATURE")}
+              color="pink"
+              placement="start"
+              style={{ top: -10, zIndex: 2 }}
+            >
+              <h1
+                className={`${styles.title} relative top-[2px]`}
+                onClick={scrollToSection}
+                style={{ zIndex: 1 }}
+              >
+                <ImCalculator /> {t("SEE_SIMULATORS")}
+              </h1>
+              <div
+                className={`${styles.title} absolute top-[10px]`}
+                style={{ background: "black", zIndex: 0 }}
+              >
+                <ImCalculator /> {t("SEE_SIMULATORS")}
+              </div>
+            </Badge.Ribbon>
+          </div>
           <h2>{t("retentionPortalInfo")}</h2>
 
           <h2 className={styles.description}>{t("DECOUVRIR_PRESTATIONS")}:</h2>
