@@ -2,6 +2,7 @@ import React, { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter as Router } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
+import "react-loading-skeleton/dist/skeleton.css";
 
 // i18n and internationalization setup
 import i18n from "i18next";
