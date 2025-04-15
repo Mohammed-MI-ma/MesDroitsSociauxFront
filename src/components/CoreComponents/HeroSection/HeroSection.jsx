@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 import styles from "./HeroSection.module.css";
 import { useTranslation } from "react-i18next";
@@ -18,7 +19,20 @@ const HeroSection = ({ children, illustration, without = false }) => {
       >
         <div className={styles.pageDescription}>{children}</div>
         <div className={styles.pageIllustration}>
-          <img src={illustration} alt="illustration" />
+          <motion.img
+            className="h-full"
+            initial={{ opacity: 0, scale: 0.8, rotate: 10, x: 200 }}
+            animate={{ opacity: 1, scale: 1, rotate: 0, x: 0 }}
+            transition={{
+              duration: 1.25,
+              delay: 0.3,
+              type: "spring",
+              stiffness: 30,
+              damping: 10,
+            }}
+            src={illustration}
+            alt="illustration"
+          />
         </div>
       </div>
     </div>

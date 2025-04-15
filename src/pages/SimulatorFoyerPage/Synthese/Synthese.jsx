@@ -57,13 +57,28 @@ const Synthese = () => {
         {t("SIZE_OF_HOUSEHOLD")}: {filteredMemberList.length}
       </h1>
       {/* Render MemberCard for each member */}
-      {filteredMemberList.map(({ id, prenom, dateNaissance }, idx) => (
-        <MemberCard
-          key={id || `${prenom}-${idx}`} // Use member ID or fallback to combination of prenom and index
-          prenom={prenom}
-          dateNaissance={dateNaissance}
-        />
-      ))}
+      {filteredMemberList
+        .slice() // Clone the array to avoid mutating original state
+        .sort((a, b) => {
+          const getWeight = (rangCode) => {
+            switch (rangCode) {
+              case "CF":
+                return 1;
+              case "CJ":
+                return 2;
+              default:
+                return 3;
+            }
+          };
+          return getWeight(a.rangCode) - getWeight(b.rangCode);
+        })
+        .map(({ id, prenom, dateNaissance }, idx) => (
+          <MemberCard
+            key={id || `${prenom}-${idx}`}
+            prenom={prenom}
+            dateNaissance={dateNaissance}
+          />
+        ))}
     </motion.div>
   );
 };

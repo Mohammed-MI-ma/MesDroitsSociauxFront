@@ -11,6 +11,7 @@
   border-radius: 5px;
   min-height: 8rem; /* Make sure this is respected */
   max-width: 400px;
+  font-size: 1rem;
 }
 
 .ButtonSimulateurAdd > button {
@@ -18,18 +19,18 @@
   width: 100%;
   border: none;
   background: transparent; /* Avoid using white, as it may conflict with other styles */
-  font-size: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-wrap: wrap;
   border-radius: 5px; /* Consistent radius */
   min-height: 8rem; /* Make sure this is respected */
+
+
 }
 
 /* Non-primary button customization */
 .nonPrimary {
-  font-size: 18px !important;
   font-weight: lighter !important;
   background: transparent;
   border: 1px dashed gray !important; /* Avoid using !important unless necessary */

@@ -51,6 +51,7 @@
     "serviceAnalytics": "Service: Google Analytics",
     "viewGoogleAnalytics": "Voir Google Analytics"
   },
+  "SimulerToutesLesPrestations": "Simuler toutes les prestations",
   "SIZE_OF_HOUSEHOLD": "Taille du ménage",
 
   "memberCard": {
@@ -133,7 +134,15 @@
 
   "please_select_dob": "Veuillez sélectionner la date de naissance",
   "please_select_gender": "Veuillez sélectionner le genre",
-  "Suivant": "Suivant",
+  "processing_complete": "Traitement terminé !",
+  "done": "Terminer",
+  "previous": "Précédent",
+  "next": "Suivant",
+  "reset": "Réinitialiser",
+  "attention": "Attention",
+  "cancel_keep_data": "Non, conserver les données et continuer",
+  "confirm_reset": "Oui, supprimer les données et recommencer au début",
+  "reset_warning": "La réinitialisation du simulateur entraînera la perte de toutes les données que vous avez renseignées et le retour à la première étape. Confirmez-vous cette action ?",
   "Reinitialiser": "Réinitialiser",
   "first_name": "Prénom",
   "date_of_birth": "Date de naissance",

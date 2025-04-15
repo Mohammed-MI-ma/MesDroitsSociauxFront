@@ -14,8 +14,8 @@ import LanguageContext from "../../../LanguageContext";
 const Navbar = () => {
   const { t } = useTranslation();
   const location = useLocation();
-  const { isAuthenticated } = useAuth(); // Get authentication status from context
   const { language } = useContext(LanguageContext);
+  const { isAuthenticated, user } = useAuth(); // Get authentication status from context
 
   // Nav items definition
   const navItems = [
@@ -57,10 +57,19 @@ const Navbar = () => {
           ))}
           <li>
             {isAuthenticated && (
-              <Avatar
-                style={{ background: "var(--color-primary)" }}
-                size="large"
-              />
+              <Button type="text" shape="circle">
+                <Badge
+                  status="warning"
+                  placement="start"
+                  dot={!user.email_verified}
+                >
+                  <Avatar
+                    style={{ background: "var(--color-text)" }}
+                    size="small"
+                    icon={<AiOutlineUser />}
+                  />
+                </Badge>
+              </Button>
             )}
           </li>
           <li>{!isAuthenticated ? <LoginButton /> : <LogoutButton />}</li>

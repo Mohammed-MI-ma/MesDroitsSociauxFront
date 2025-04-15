@@ -46,6 +46,7 @@ export default defineConfig({
             "Select",
             "Carousel",
             "Statistic",
+            "Checkbox",
           ],
           "react-icons/io": [
             "IoIosWoman",
@@ -55,6 +56,7 @@ export default defineConfig({
             "IoTrashBin",
             "IoMdShare",
             "IoIosSave",
+            "IoIosArrowBack",
           ],
           "react-icons/ci": ["CiPlay1"],
           "react-icons/md": [

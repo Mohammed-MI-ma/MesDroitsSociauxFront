@@ -56,9 +56,11 @@ const applicationSlice = createSlice({
         // Update only the specified fields, keeping the existing ID
         Object.assign(member, updatedFields);
       } else {
+        // If member is not found, log an error and return an error code
         console.error(`Member with ID "${id}" not found.`);
       }
     },
+    resetApp: () => initialState,
   },
 });
 
@@ -78,6 +80,7 @@ export const {
   addToMemberList,
   deleteFromMemberList,
   updateMember,
+  resetApp,
   setCurrentStep,
 } = applicationSlice.actions;
 

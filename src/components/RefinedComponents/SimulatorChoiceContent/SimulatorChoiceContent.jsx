@@ -38,20 +38,30 @@ const SimulatorChoiceContent = () => {
             <div className={styles.tileInfos}>
               <h1>{t("ToutesLesPrestations")}</h1>
               <div>
-                {" "}
-                <Progress
-                  percent={15}
-                  steps={10}
-                  format={(percent) => formatter(percent, true)}
-                />
+                <ConfigProvider
+                  theme={{
+                    components: {
+                      Progress: {
+                        defaultColor: "white",
+                        remainingColor: "var(--color-secondary)",
+                      },
+                    },
+                  }}
+                >
+                  <Progress
+                    percent={60}
+                    steps={10}
+                    remainingColor="red"
+                    format={(percent) => formatter(percent / 10, true)}
+                  />
+                </ConfigProvider>
               </div>
 
               <div className="mt-10">{t("EstimezLes2Aides")}</div>
             </div>
             <div>
               <Link to={`/${language}/votre-simulateur/simu-foyer`}>
-                <Button type="link">
-                  {" "}
+                <Button type="primary" style={{ width: "100%" }}>
                   {t("SimulerToutesLesPrestations")}{" "}
                 </Button>
               </Link>

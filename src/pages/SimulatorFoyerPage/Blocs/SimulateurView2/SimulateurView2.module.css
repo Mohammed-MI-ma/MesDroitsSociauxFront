@@ -64,6 +64,9 @@
 .situationPersonne{width: 47%;
   margin-bottom: 15px;
   padding-top: 2px;}
+
+
+  
 @media (max-width: 36rem) {
   .simulateurView {
     min-height: calc(100vh - 370px);
@@ -77,6 +80,8 @@
     justify-content: center;
     width: 100%;
   }
+  .situationPersonne{width: 100%;
+ }
 }
 
 @media (min-width: 36.063rem) and (max-width: 48rem) {

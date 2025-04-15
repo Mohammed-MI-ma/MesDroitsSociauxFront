@@ -14,7 +14,8 @@ import { ThemeProvider } from "./ThemeContext";
 import { LanguageProvider } from "./LanguageContext.jsx";
 import { CookieConsentProvider } from "./CookieConsentContext.jsx";
 import { Provider } from "react-redux";
-import Store from "./store";
+import storeModule from "./store"; // Default import
+const { store, persistor } = storeModule;
 
 // Keycloak Authentication
 
@@ -60,7 +61,7 @@ root.render(
       <LanguageProvider>
         <ErrorBoundary>
           <CookieConsentProvider>
-            <Provider store={Store}>
+            <Provider store={store}>
               <AuthProvider>
                 <HelmetProvider>
                   <Router>

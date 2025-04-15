@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import LanguageContext from "../../../../LanguageContext";
-const containerVariants = {
+export const containerVariants = {
   hidden: { opacity: 0, y: 50 },
   visible: {
     opacity: 1,
@@ -19,7 +19,7 @@ const containerVariants = {
   },
 };
 
-const itemVariants = {
+export const itemVariants = {
   hidden: { opacity: 0, scale: 0.95, y: 40 },
   visible: {
     opacity: 1,

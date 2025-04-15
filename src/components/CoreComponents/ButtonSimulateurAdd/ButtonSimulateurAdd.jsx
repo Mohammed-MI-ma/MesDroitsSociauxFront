@@ -23,13 +23,18 @@ const ButtonSimulateurAdd = ({
   delay,
   modal,
   muted,
+  id,
 }) => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const [messageApi, contextHolder] = message.useMessage();
-  const [isLoading, setIsLoading] = useState(false); // ✅ State to track loading
+  const [isLoading, setIsLoading] = useState(false);
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // ✅ State to track loading
   const conjoint = useSelector((state) => findByRangCode(state, "CJ"));
+  const chefMenage = useSelector((state) => findByRangCode(state, "CF"));
 
   const showModal = () => {
     setIsModalOpen(true);
@@ -38,6 +43,7 @@ const ButtonSimulateurAdd = ({
     setIsLoading(true); // Set loading to true when saving
 
     const res = await modal.validate();
+    console.log("res", res);
 
     if (!res.status) {
       console.log("Prevent closing if validation fails");
@@ -53,19 +59,50 @@ const ButtonSimulateurAdd = ({
         duration: 0.5,
       })
       .then(() => {
-        console.log("updated", conjoint?.id, {
+        console.log("updated", res, {
           ...res.body,
           rangCode: res.rangCode,
         });
-        dispatch(
-          conjoint
-            ? updateMember({
-                updatedFields: { ...res.body, rangCode: res.rangCode },
 
-                id: conjoint?.id,
-              })
-            : addToMemberList({ ...res.body, rangCode: res.rangCode })
-        );
+        switch (true) {
+          case res.rangCode === "CF":
+            chefMenage
+              ? dispatch(
+                  updateMember({
+                    updatedFields: { ...res.body },
+                    id: chefMenage?.id,
+                  })
+                )
+              : dispatch(
+                  addToMemberList({ ...res.body, rangCode: res.rangCode })
+                );
+            break;
+          case res.rangCode === "CJ":
+            conjoint
+              ? dispatch(
+                  updateMember({
+                    updatedFields: { ...res.body },
+                    id: conjoint?.id,
+                  })
+                )
+              : dispatch(
+                  addToMemberList({ ...res.body, rangCode: res.rangCode })
+                );
+            break;
+          case res.rangCode === "Au":
+            editing
+              ? dispatch(
+                  updateMember({
+                    updatedFields: { ...res.body },
+                    id: id,
+                  })
+                )
+              : dispatch(
+                  addToMemberList({ ...res.body, rangCode: res.rangCode })
+                );
+            break;
+        }
+
         setIsModalOpen(false);
         setIsLoading(false); // Reset loading after successful save
       }); // ✅ Ensure it's awaited
@@ -74,6 +111,7 @@ const ButtonSimulateurAdd = ({
   const handleCancel = () => {
     setIsModalOpen(false);
   };
+
   // Memoize the icon rendering to avoid unnecessary recalculations
   const renderedIcon = useMemo(() => {
     return editing ? <MdModeEdit /> : <IoIosAdd />;

@@ -1,5 +1,6 @@
 import React from "react";
 import HeroSection from "../../components/CoreComponents/HeroSection/HeroSection";
+import { motion } from "framer-motion";
 
 //__ILLUSTRATION
 import simulateur from "/assets/images/svg/illus-votre-simulateur.svg";
@@ -12,9 +13,13 @@ import {
   Bs3CircleFill,
   Bs4CircleFill,
 } from "react-icons/bs";
-import { ImCalculator } from "react-icons/im";
 import SimulatorChoiceContent from "../../components/RefinedComponents/SimulatorChoiceContent/SimulatorChoiceContent";
 import FAQAccodion from "../../components/CoreComponents/FAQAccodion/FAQAccodion";
+import {
+  containerVariants,
+  itemVariants,
+} from "../../components/RefinedComponents/HeroSection/HeroContent/HeroContent";
+import SponsorshipList from "../../components/CoreComponents/SponsorshipList/SponsorshipList";
 
 const SimulatorPage = () => {
   const { t } = useTranslation();
@@ -23,54 +28,48 @@ const SimulatorPage = () => {
     const section = document.getElementById("targetSection");
     section.scrollIntoView({ behavior: "smooth" });
   };
+
   return (
     <main style={{ flex: "1", minHeight: "calc(100vh - 200px)" }}>
       <HeroSection illustration={simulateur} without>
-        <>
-          <div style={{ position: "ralative" }}>
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          <motion.div
+            className="relative"
+            variants={itemVariants}
+            onClick={scrollToSection}
+          >
             <Badge.Ribbon
               text={t("NEW_FEATURE")}
-              color="pink"
+              color={"var(--color-red)"}
               placement="start"
               style={{ top: -10, zIndex: 2 }}
             >
-              <h1
-                className={`${styles.title} relative top-[2px]`}
-                onClick={scrollToSection}
-                style={{ zIndex: 1 }}
+              <Button
+                className={styles.heroButton}
+                style={{ position: "relative", zIndex: 1 }}
               >
-                <ImCalculator /> {t("SEE_SIMULATORS")}
-              </h1>
-              <div
-                className={`${styles.title} absolute top-[10px]`}
-                style={{ background: "black", zIndex: 0 }}
-              >
-                <ImCalculator /> {t("SEE_SIMULATORS")}
-              </div>
+                {t("SEE_SIMULATORS")}
+              </Button>
             </Badge.Ribbon>
-          </div>
-          <h2>{t("retentionPortalInfo")}</h2>
+            <Button className={styles.heroButton_shadow}>
+              {t("SEE_SIMULATORS")}
+            </Button>
+          </motion.div>
 
-          <h2 className={styles.description}>{t("DECOUVRIR_PRESTATIONS")}:</h2>
-          <ul className={styles.listSponserShip}>
-            <li>
-              <Bs1CircleFill />
-              {t("sponserShip.REGISTRE_SOCIAL")}
-            </li>
-            <li>
-              <Bs2CircleFill />
-              {t("sponserShip.REGISTRE_POPULATION")}
-            </li>
-            <li>
-              <Bs3CircleFill />
-              {t("sponserShip.AIDES_SOCIALES")}
-            </li>
-            <li>
-              <Bs4CircleFill />
-              {t("sponserShip.Assurance_Maladie_Obligatoire")}
-            </li>
-          </ul>
-        </>
+          <motion.h2 variants={itemVariants}>
+            {t("retentionPortalInfo")}
+          </motion.h2>
+
+          <motion.h3 className={styles.description} variants={itemVariants}>
+            {t("DECOUVRIR_PRESTATIONS")}:
+          </motion.h3>
+
+          <SponsorshipList />
+        </motion.div>
       </HeroSection>
       <CardsLandingGroup />
       <div id="targetSection">

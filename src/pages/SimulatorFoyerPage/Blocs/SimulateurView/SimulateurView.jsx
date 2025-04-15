@@ -3,33 +3,27 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 
-//__STYLES
-import styles from "./SimulateurView.module.css";
-
 //__COMPONENTS
 import FoyerStep from "../../Steps/FoyerStep/FoyerStep";
 import ButtonSimulateurAdd from "../../../../components/CoreComponents/ButtonSimulateurAdd/ButtonSimulateurAdd";
 
-import ChefMenage from "../ChefMenage/ChefMenage";
-import Conjointe from "../Conjointe/Conjointe";
 import Others from "../Others/Others";
 
 import {
   findByRangCode,
   findOthers,
 } from "../../../../reducers/applicationService/applicationSlice";
-import GenericInfo from "../../../../components/CoreComponents/GenericInfo/GenericInfo";
 import {
   chefMenageInfo,
   conjointInfo,
 } from "../../../../components/CoreComponents/GenericInfo/genericInfoConfig";
 import Synthese from "../../Synthese/Synthese";
 
-const SimulateurView = () => {
-  // Translation hook
-  const { t } = useTranslation();
+//__STYLES
+import styles from "./SimulateurView.module.css";
 
-  // Refs for managing form or component states
+const SimulateurView = () => {
+  const { t } = useTranslation();
   const chefMenageRef = useRef(null);
   const conjointRef = useRef(null);
   const childRefs = useRef({});
@@ -39,6 +33,8 @@ const SimulateurView = () => {
   const chefMenage = useSelector((state) => findByRangCode(state, "CF"));
   const conjoint = useSelector((state) => findByRangCode(state, "CJ"));
   const others = useSelector((state) => findOthers(state, ["CJ", "CF"]));
+  const tempChildRef = useRef(null); // Temporary ref for adding a new child
+
   const [memberList_Rect, setMemberList_Rect] = useState([]);
 
   useEffect(() => {
@@ -75,7 +71,7 @@ const SimulateurView = () => {
   );
 
   return (
-    <main className={styles.simulateurView}>
+    <section className={styles.simulateurView}>
       <div>
         <div className={styles.etapeSimulateurView}>
           <FoyerStep
@@ -102,13 +98,13 @@ const SimulateurView = () => {
             <div className={styles.individusContainer} id="situation">
               <ButtonSimulateurAdd delay={1.5} editing muted>
                 {conjoint ? (
-                  <div style={{ fontSize: "30px" }}>
+                  <div style={{ fontSize: "1rem", fontWeight: "900" }}>
                     {(() => {
                       switch (conjoint?.youLive) {
                         case "seul":
                           return t("simu_foyer.step1.single");
                         case "enCouple":
-                          return "couple marié";
+                          return t("simu_foyer.step1.enCouple");
                         case "divorce":
                           return t("simu_foyer.step1.divorced");
                         case "veuf":
@@ -130,27 +126,45 @@ const SimulateurView = () => {
                 modal={{
                   id: "Child",
                   title: t("simu_foyer.step1.ajouter_enfant"),
-                  body: <Others ref={chefMenageRef} />,
+                  body: <Others ref={tempChildRef} generic={true} />,
                   validate: async () => {
-                    const isValid = await chefMenageRef.current?.validateForm(); // Ensure it's a boolean value
+                    const isValid = await tempChildRef.current?.validateForm();
                     console.log("Validation ", isValid);
-                    if (!isValid.status) {
+
+                    if (!isValid?.status) {
                       console.log("Validation failed");
                       return isValid;
                     }
-                    // If validation succeeds, reset the form
-                    chefMenageRef.current?.resetForm();
+
+                    // Ensure that tempChildRef is set before calling resetForm()
+                    if (tempChildRef.current) {
+                      try {
+                        console.log("TOPPPP");
+                        tempChildRef.current?.resetForm();
+                      } catch (err) {
+                        console.error("Error while resetting form:", err);
+                      }
+                    } else {
+                      console.warn("tempChildRef is not yet initialized.");
+                    }
+
                     return isValid;
                   },
                 }}
+                delay={1.5}
               >
                 {t("simu_foyer.step1.ajouter_enfant")}
               </ButtonSimulateurAdd>
 
               {/* 🔹 List of Children */}
               {otherMembers.map(({ id, icon, primary }, idx) => {
-                if (!childRefs.current[id])
+                // Initialize ref if it doesn't exist
+                if (!childRefs.current[id]) {
                   childRefs.current[id] = React.createRef();
+                }
+
+                const memberData = others.find((c) => c.id === id);
+
                 return (
                   <div key={id} className={styles.cardWrapper}>
                     <ButtonSimulateurAdd
@@ -158,16 +172,15 @@ const SimulateurView = () => {
                       delay={idx * 0.5}
                       icon={icon}
                       primary={primary}
+                      id={id}
                       editing
                       modal={{
                         id: `Child-${id}`,
                         title: t("simu_foyer.step1.modifier_enfant"),
                         body: (
                           <Others
-                            ref={(el) => {
-                              if (el) childRefs.current[id] = el; // Assign ref dynamically
-                            }}
-                            member={others.find((c) => c.id === id)} // Use `id` instead of `rangCode`
+                            ref={childRefs.current[id]} // ✅ Use created ref directly
+                            member={others.find((c) => c.id === id)}
                           />
                         ),
                         validate: async () => {
@@ -180,16 +193,16 @@ const SimulateurView = () => {
                       }}
                     >
                       <div className="text-left">
-                        <div style={{ fontSize: "12px", fontWeight: "100" }}>
+                        <div style={{ fontSize: "1rem", fontWeight: "900" }}>
                           {t("simu_foyer.step1.modifier_enfant")}
                         </div>
-                        <div style={{ fontSize: "30px" }}>
-                          {others.find((c) => c.id === id).prenom}
+                        <div style={{ fontSize: "1rem" }}>
+                          {memberData?.prenom}
                         </div>
-                        <div style={{ fontSize: "12px" }}>
-                          {others.find((c) => c.id === id).dateNaissance}
+                        <div style={{ fontSize: "1rem" }}>
+                          {memberData?.dateNaissance}
                         </div>
-                      </div>{" "}
+                      </div>
                     </ButtonSimulateurAdd>
                   </div>
                 );
@@ -199,7 +212,7 @@ const SimulateurView = () => {
         </div>
       </div>
       <Synthese />
-    </main>
+    </section>
   );
 };
 

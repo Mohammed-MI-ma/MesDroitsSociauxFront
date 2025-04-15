@@ -12,14 +12,14 @@ import moment from "moment";
 import { useSelector } from "react-redux";
 import { findByRangCode } from "../../../../reducers/applicationService/applicationSlice";
 
-const Others = forwardRef(({ member }, ref) => {
+const Others = forwardRef(({ member, generic, id }, ref) => {
   const { t } = useTranslation();
   const reduxMember = useSelector((state) => findByRangCode(state, "Au"));
   const [form] = Form.useForm();
 
   // Memoize effectiveMember to prevent unnecessary renders
   const effectiveMember = useMemo(
-    () => member || reduxMember || {},
+    () => member || (!generic && reduxMember) || {},
     [member, reduxMember]
   );
 
@@ -61,6 +61,7 @@ const Others = forwardRef(({ member }, ref) => {
     validateForm: async () => {
       try {
         await form.validateFields();
+        console.log("formData", formData);
         return {
           status: true,
           body: {
@@ -76,8 +77,10 @@ const Others = forwardRef(({ member }, ref) => {
       }
     },
     resetForm: () => {
-      form.resetFields(); // This will reset the form fields
-      setFormData({ prenom: "", dateNaissance: null, sexe: "" }); // Reset local state
+      if (form) {
+        form.resetFields();
+      }
+      setFormData({ prenom: "", dateNaissance: null, sexe: "" });
     },
   }));
 

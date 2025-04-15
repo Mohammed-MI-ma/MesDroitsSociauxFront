@@ -22,6 +22,7 @@ import {
   conjointInfo,
 } from "../../../../components/CoreComponents/GenericInfo/genericInfoConfig";
 import Synthese from "../../Synthese/Synthese";
+import RangQuestionnaire from "../RangQuestionnaire/RangQuestionnaire";
 
 const SimulateurView2 = () => {
   // Translation hook
@@ -83,19 +84,22 @@ const SimulateurView2 = () => {
             stepKey={1}
           >
             <div className={styles.situationPersonneContainer}>
-              <div className={`${styles.situationPersonne} shadow`}>
-                <div>Vous etes</div>
-                <form></form>
-              </div>{" "}
-              <div className={`${styles.situationPersonne} shadow`}>
-                <div>Vous etes</div>
-              </div>{" "}
-              <div className={`${styles.situationPersonne} shadow`}>
-                <div>Vous etes</div>
-              </div>{" "}
-              <div className={`${styles.situationPersonne} shadow`}>
-                <div>Vous etes</div>
-              </div>{" "}
+              {memberList_Rect.map((member, index) => (
+                <div
+                  key={member.id || index}
+                  className={`${styles.situationPersonne} shadow`}
+                >
+                  <div
+                    style={{ fontSize: "2rem", fontWeight: "900" }}
+                  >{`${member.prenom} , Vous êtes `}</div>
+                  <form>
+                    <RangQuestionnaire
+                      rangCode={member.rangCode}
+                      memberId={member.id}
+                    />
+                  </form>
+                </div>
+              ))}
             </div>
           </FoyerStep>
         </div>
