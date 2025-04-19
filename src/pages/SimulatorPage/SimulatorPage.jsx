@@ -1,25 +1,22 @@
 import React from "react";
-import HeroSection from "../../components/CoreComponents/HeroSection/HeroSection";
+import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 
 //__ILLUSTRATION
 import simulateur from "/assets/images/svg/illus-votre-simulateur.svg";
-import styles from "./SimulatorPage.module.css";
-import { useTranslation } from "react-i18next";
-import CardsLandingGroup from "../../components/RefinedComponents/CardsLandingGroup/CardsLandingGroup";
-import {
-  Bs1CircleFill,
-  Bs2CircleFill,
-  Bs3CircleFill,
-  Bs4CircleFill,
-} from "react-icons/bs";
-import SimulatorChoiceContent from "../../components/RefinedComponents/SimulatorChoiceContent/SimulatorChoiceContent";
-import FAQAccodion from "../../components/CoreComponents/FAQAccodion/FAQAccodion";
+
+import HeroSection from "@/components/CoreComponents/HeroSection/HeroSection";
+import CardsLandingGroup from "@/components/RefinedComponents/CardsLandingGroup/CardsLandingGroup";
+import SimulatorChoiceContent from "@/components/RefinedComponents/SimulatorChoiceContent/SimulatorChoiceContent";
+import FAQAccodion from "@/components/CoreComponents/FAQAccodion/FAQAccodion";
 import {
   containerVariants,
   itemVariants,
-} from "../../components/RefinedComponents/HeroSection/HeroContent/HeroContent";
-import SponsorshipList from "../../components/CoreComponents/SponsorshipList/SponsorshipList";
+} from "@/components/RefinedComponents/HeroSection/HeroContent/HeroContent";
+import SponsorshipList from "@/components/CoreComponents/SponsorshipList/SponsorshipList";
+
+//__STYLES
+import styles from "./SimulatorPage.module.css";
 
 const SimulatorPage = () => {
   const { t } = useTranslation();

@@ -23,6 +23,7 @@ const BigScreensNewsFeed = lazy(() =>
   import("@/components/RefinedComponents/BigScreensNewsFeed/BigScreensNewsFeed")
 );
 import styles from "./LandingPage.module.css";
+import AdsterraNativeBanner from "../../components/CoreComponents/AdsterraNativeBanner/AdsterraNativeBanner";
 const LandingPage = () => {
   const options = { threshold: 1 };
 
@@ -96,7 +97,8 @@ const LandingPage = () => {
       </div>
 
       <HeroSection />
-
+      {/* ✨ Native Banner in middle of page */}
+      <AdsterraNativeBanner />
       <LazySection fallback="Loading big screen feed...">
         <BigScreensNewsFeed />
       </LazySection>

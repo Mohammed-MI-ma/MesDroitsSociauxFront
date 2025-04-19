@@ -80,7 +80,8 @@ const HeroContent = () => {
             padding: "10px",
           }}
         >
-          <div>15,2k</div> <div>Active user</div>
+          <div>15,2k</div>
+          <div>{t("stats.activeUsers")}</div>
         </div>
         <div
           style={{
@@ -88,7 +89,8 @@ const HeroContent = () => {
             padding: "10px",
           }}
         >
-          <div>15,2k</div> <div>Curretly simulations</div>
+          <div>15,2k</div>
+          <div>{t("stats.currentSimulations")}</div>
         </div>
         <div
           style={{
@@ -101,7 +103,7 @@ const HeroContent = () => {
           <div>
             <FaRegMoneyBill1 />
           </div>
-          <div>Budget-friendly monthly plan</div>
+          <div>{t("stats.budgetPlan")}</div>
         </div>
       </motion.div>
     </motion.div>

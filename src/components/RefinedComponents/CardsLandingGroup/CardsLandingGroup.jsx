@@ -19,6 +19,7 @@ const CardsLandingGroup = () => {
       title: t("simulation.simpleRapideGratuit"),
       desc: t("simulation.votreSimulationMoinsMinutes"),
       link: t("simulation.voirEtapesSimulation"),
+      to: `/${language}/votre-simulateur/accueil/votreSimulationMoins15Minutes`,
     },
     {
       icon: aid,

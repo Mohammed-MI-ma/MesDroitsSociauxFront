@@ -105,6 +105,7 @@ const AppHeader = () => {
           <LanguageSwitcher />
         </div>
       </div>
+
       <div className={`${style.navBarMobile}`}>
         <div className="flex flex-col items-center">
           <Dropdown

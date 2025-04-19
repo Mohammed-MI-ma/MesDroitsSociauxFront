@@ -64,7 +64,11 @@
     "AIDES_SOCIALES": "AIDES SOCIALES",
     "Assurance_Maladie_Obligatoire": "ASSURANCE MALADIE OBLIGATOIRE"
   },
-
+  "stats": {
+    "activeUsers": "Utilisateurs actifs",
+    "currentSimulations": "Simulations en cours",
+    "budgetPlan": "Formule mensuelle économique"
+  },
   "simulation": {
     "simpleRapideGratuit": "Simple, rapide, gratuit",
     "votreSimulationMoinsMinutes": "Votre simulation en moins de 5 minutes",

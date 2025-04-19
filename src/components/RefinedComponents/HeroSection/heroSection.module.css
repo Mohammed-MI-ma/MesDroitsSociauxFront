@@ -24,10 +24,9 @@
   width: 50%;
   height: 100%;
   padding: 20px;
+
 }
-[dir="rtl"] .rightBloc {
-  transform: scaleX(-1);
-}
+
 .rightBloc > div {
   background-position: right;
 }
