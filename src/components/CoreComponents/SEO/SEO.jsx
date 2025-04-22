@@ -29,8 +29,10 @@ const SEO = () => {
       title: t("seo.SimulateurFoyer"),
       description: t("seo.descriptionSimulateurFoyer"),
       keywords: t("seo.keywordsSimulateurFoyer"),
+
       image:
         "https://weconnectmaroc.com/assets/images/simulateur-foyer-image.png", // Fallback image
+
       structuredData: {
         "@context": "https://schema.org",
         "@type": "WebPage",
@@ -38,7 +40,42 @@ const SEO = () => {
         name: t("seo.SimulateurFoyer"),
         description: t("seo.descriptionSimulateurFoyer"),
       },
+
+      alternateLinks: [
+        {
+          hrefLang: "fr",
+          href: "https://www.weconnectmaroc.com/fr/votre-simulateur/simu-foyer",
+        },
+        {
+          hrefLang: "ar",
+          href: "https://www.weconnectmaroc.com/ar/votre-simulateur/simu-foyer",
+        },
+        {
+          hrefLang: "x-default",
+          href: "https://www.weconnectmaroc.com/fr/votre-simulateur/simu-foyer",
+        },
+      ],
+
+      openGraph: {
+        type: "website",
+        title: t("seo.SimulateurFoyer"),
+        description: t("seo.descriptionSimulateurFoyer"),
+        image:
+          "https://weconnectmaroc.com/assets/images/simulateur-foyer-image.png",
+        url: `https://www.weconnectmaroc.com/${language}/votre-simulateur/simu-foyer`,
+      },
+
+      twitterCard: {
+        card: "summary_large_image",
+        title: t("seo.SimulateurFoyer"),
+        description: t("seo.descriptionSimulateurFoyer"),
+        image:
+          "https://weconnectmaroc.com/assets/images/simulateur-foyer-image.png",
+      },
+
+      canonical: `https://www.weconnectmaroc.com/${language}/votre-simulateur/simu-foyer`,
     },
+
     [`/${language}/votre-simulateur/accueil/Preparez_vos_infos`]: {
       title: t("seo.PreparezVosInfos"),
       description: t("seo.descriptionPreparezVosInfos"),

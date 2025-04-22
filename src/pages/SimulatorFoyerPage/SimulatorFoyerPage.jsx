@@ -3,8 +3,6 @@ import React, { useState, useCallback, useContext } from "react";
 import styles from "./SimulatorFoyerPage.module.css";
 import SimulateurView from "./Blocs/SimulateurView/SimulateurView";
 import { useTranslation } from "react-i18next";
-import { Button, Steps, message } from "antd";
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import onde from "/assets/images/svg/onde-simu-v2.svg";
 import SimulateurView2 from "./Blocs/SimulateurView2/SimulateurView2";
 import { useDispatch } from "react-redux";
@@ -12,6 +10,7 @@ import LanguageContext from "../../LanguageContext";
 
 import { setCurrentStep } from "../../reducers/applicationService/applicationSlice";
 import StepperFooter from "./StepperFooter/StepperFooter";
+import AdBannerAdult from "../../components/CoreComponents/AdBannerAdult/AdBannerAdult";
 const SimulatorFoyerPage = () => {
   const { t } = useTranslation();
   const [current, setCurrent] = useState(0);
@@ -46,6 +45,28 @@ const SimulatorFoyerPage = () => {
   }, [dispatch]);
   return (
     <main className={styles.container}>
+      <h1
+        style={{
+          fontSize: "1.6rem",
+          fontWeight: 900,
+          textAlign: "center",
+          color: "var(--color-primary)",
+        }}
+      >
+        {t("SEE_SIMULATORS")}
+      </h1>
+      <h2
+        style={{
+          fontSize: "1rem",
+          fontWeight: 900,
+          textAlign: "center",
+          color: "var(--color-primary)",
+          marginBottom: "calc( 3 * var(--gap-xl) )",
+        }}
+      >
+        {t("DISCOVER_SOCIAL_BENEFITS")}
+      </h2>
+      <AdBannerAdult />
       {/* Steps Navigation */}
       <div className="relative">
         <Steps

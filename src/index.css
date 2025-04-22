@@ -42,7 +42,7 @@
   --color-text: #2e5077; /* Text color */
   --color-secondary: #47777b;
   --color-muted: #ffffff;
-  --color-red:#cb4b4b;
+  --color-red: #cb4b4b;
 }
 :root {
   --spacing-sm: 0.5rem; /* 8px converted to rem */
@@ -63,7 +63,7 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 5px;
   height: 10px;
 }
 
@@ -90,6 +90,7 @@ body {
   color: #fff;
   background: #cb4b4b !important;
 }
+
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
 }
@@ -98,9 +99,9 @@ body {
   scrollbar-width: none; /* Firefox */
 }
 
- .ant-steps-item-process .ant-steps-item-icon {
+.ant-steps-item-process .ant-steps-item-icon {
   background-color: #cb4b4b !important;
-  border-color: #cb4b4b!important;
+  border-color: #cb4b4b !important;
 }
 .ant-steps-item-finish .ant-steps-item-icon {
   background-color: #eba2a2 !important;
@@ -108,4 +109,40 @@ body {
 .ant-btn-variant-solid {
   color: #fff;
   background: #cb4b4b !important;
+}
+/* Default styles for desktop */
+#adContainer iframe {
+  width: 468px;
+  height: 60px;
+}
+
+@media (max-width: 36rem) {
+  #adContainer iframe {
+    width: 100vw; /* Mobile width */
+    height: 50px; /* Mobile height */
+  }
+}
+
+@media (min-width: 36.063rem) and (max-width: 48rem) {
+  #adContainer iframe {
+    width: 100vw; /* Mobile width */
+    height: 50px; /* Mobile height */
+  }
+}
+
+@media (min-width: 48.063rem) and (max-width: 62rem) {
+  #adContainer iframe {
+    width: 100vw; /* Mobile width */
+    height: 50px; /* Mobile height */
+  }
+}
+
+@media (min-width: 62.063rem) and (max-width: 75rem) {
+  #adContainer iframe {
+    width: 100vw; /* Mobile width */
+    height: 50px; /* Mobile height */
+  }
+}
+
+@media (min-width: 75.063rem) {
 }

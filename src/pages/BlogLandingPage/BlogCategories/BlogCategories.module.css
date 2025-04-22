@@ -1,0 +1,59 @@
+.blogCategories {
+  display: flex;
+  gap: var(--gap-md);
+  width: 100%;
+  border-bottom: 3px solid black;
+}
+
+.blogCategories > button {
+  padding: var(--gap-xl);
+  color: white;
+  font-size: 1rem;
+}
+.stickyButton {
+  flex-shrink: 0; /* prevents shrinking */
+}
+
+.scrollableBar {
+  display: flex;
+  overflow-x: auto;
+  gap: var(--gap-xl);
+  scroll-behavior: smooth;
+  padding-left: 8px;
+  padding-right: 8px;
+  scrollbar-width: thin;
+  align-items: center;
+}
+.scrollableBar > button {
+  color: white !important;
+  font-size: 1rem;
+}
+
+.scrollableBar::-webkit-scrollbar {
+  height: 6px;
+}
+
+.scrollableBar::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+}
+@media (max-width: 36rem) {
+  .blogCategories {
+    display: flex;
+    gap: var(--gap-md);
+    width: 100%;
+    background-color: var(--color-primary);
+  }
+}
+
+@media (min-width: 36.063rem) and (max-width: 48rem) {
+}
+
+@media (min-width: 48.063rem) and (max-width: 62rem) {
+}
+
+@media (min-width: 62.063rem) and (max-width: 75rem) {
+}
+
+@media (min-width: 75.063rem) {
+}

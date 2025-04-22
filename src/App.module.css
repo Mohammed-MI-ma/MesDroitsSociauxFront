@@ -4,7 +4,6 @@
   margin: 0 auto;
   position: relative;
   height: 100vh;
-  padding: 0 1rem; /* Adds horizontal padding on smaller screens */
   max-width: 1150px; /* Default for large screens */
 }
 

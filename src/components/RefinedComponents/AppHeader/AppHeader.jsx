@@ -15,15 +15,17 @@ import Navbar from "../Navbar/Navbar";
 import PropTypes from "prop-types";
 import LoginButton from "../../CoreComponents/LoginButton/LoginButton";
 import LanguageSwitcher from "../../CoreComponents/LanguageSwitcher/LanguageSwitcher";
-import { Divider, Progress } from "antd";
+import { Badge, Divider, Progress } from "antd";
 import { useTranslation } from "react-i18next";
 import { useAuth } from "../../AuthProvider";
 import LogoutButton from "../../CoreComponents/LogoutButton/LogoutButton";
 import LanguageContext from "../../../LanguageContext";
+import QuickActionMenu from "../../CoreComponents/QuickActionMenu/QuickActionMenu";
 const AppHeader = () => {
   const { t } = useTranslation();
   const { isAuthenticated, user } = useAuth(); // Get authentication status from context
   const { language } = useContext(LanguageContext);
+  const { Search } = Input;
 
   const headerVariants = {
     hidden: { opacity: 0, y: -20 },
@@ -148,6 +150,15 @@ const AppHeader = () => {
           <LanguageSwitcher />
         </div>
         {!isAuthenticated ? <LoginButton /> : <LogoutButton />}
+      </div>
+      <QuickActionMenu />
+      <div className="w-full">
+        <Search
+          placeholder={t("search.placeholder")}
+          enterButton={t("search.button")}
+          allowClear
+          style={{ width: "100%" }}
+        />
       </div>
     </motion.header>
   );

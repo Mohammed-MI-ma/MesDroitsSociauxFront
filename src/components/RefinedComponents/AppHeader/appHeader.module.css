@@ -16,6 +16,13 @@
   font-weight: 900;
   text-transform: uppercase;
 }
+.quickActionMenu {
+  display: flex;
+  width: 100%;
+  padding: var(--gap-sm);
+  justify-content: space-around;
+  color: var(--color-primary);
+}
 .navBarContainer {
   display: flex;
   gap: var(--gap-lg);

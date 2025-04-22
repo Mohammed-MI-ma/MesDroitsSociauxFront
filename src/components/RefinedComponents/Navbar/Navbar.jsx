@@ -29,6 +29,10 @@ const Navbar = () => {
       title: t("SEE_SIMULATORS"),
       key: `/${language}/votre-simulateur/accueil`,
     },
+    {
+      title: t("quickActions.news"),
+      key: `/${language}/Blog/News`,
+    },
   ];
 
   // Check if current path matches the key for active state

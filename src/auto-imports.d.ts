@@ -6,6 +6,7 @@
 // biome-ignore lint: disable
 export {}
 declare global {
+  const AiFillCalculator: typeof import('react-icons/ai')['AiFillCalculator']
   const AiOutlineComment: typeof import('react-icons/ai')['AiOutlineComment']
   const AiOutlineUser: typeof import('react-icons/ai')['AiOutlineUser']
   const Avatar: typeof import('antd')['Avatar']
@@ -20,11 +21,13 @@ declare global {
   const DatePicker: typeof import('antd')['DatePicker']
   const Dropdown: typeof import('antd')['Dropdown']
   const FaFacebook: typeof import('react-icons/fa')['FaFacebook']
+  const FaHome: typeof import('react-icons/fa')['FaHome']
   const FaPaperclip: typeof import('react-icons/fa')['FaPaperclip']
   const FaRegMoneyBill1: typeof import('react-icons/fa6')['FaRegMoneyBill1']
   const FaRegUser: typeof import('react-icons/fa6')['FaRegUser']
   const FaSms: typeof import('react-icons/fa')['FaSms']
   const FaTrash: typeof import('react-icons/fa')['FaTrash']
+  const FaVideo: typeof import('react-icons/fa')['FaVideo']
   const FcGoogle: typeof import('react-icons/fc')['FcGoogle']
   const Flex: typeof import('antd')['Flex']
   const FloatButton: typeof import('antd')['FloatButton']
@@ -59,6 +62,7 @@ declare global {
   const Statistic: typeof import('antd')['Statistic']
   const Steps: typeof import('antd')['Steps']
   const TbLogout2: typeof import('react-icons/tb')['TbLogout2']
+  const TiNews: typeof import('react-icons/ti')['TiNews']
   const Tooltip: typeof import('antd')['Tooltip']
   const message: typeof import('antd')['message']
   const theme: typeof import('antd')['theme']

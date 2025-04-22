@@ -1,0 +1,44 @@
+.quickActionMenu {
+  display: none;
+  width: 100%;
+  padding: var(--gap-sm);
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--color-background, #fff);
+  color: var(--color-primary);
+}
+
+/* Icon Styling */
+.iconStyle {
+  font-size: 2rem;
+  color: var(--color-primary);
+  transition: transform 0.2s ease-in-out;
+}
+
+.iconStyle:hover {
+  transform: scale(1.1);
+}
+
+/* Show the menu only on mobile */
+@media (max-width: 36rem) {
+  .quickActionMenu {
+    display: flex;
+  }
+}
+
+/* Future-proofed breakpoints (currently unused but ready for expansion) */
+@media (min-width: 36.063rem) and (max-width: 48rem) {
+  /* Tablet Portrait */
+}
+
+@media (min-width: 48.063rem) and (max-width: 62rem) {
+  /* Tablet Landscape / Small Laptops */
+}
+
+@media (min-width: 62.063rem) and (max-width: 75rem) {
+  /* Medium Laptops */
+}
+
+@media (min-width: 75.063rem) {
+  /* Desktop */
+}

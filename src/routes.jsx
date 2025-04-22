@@ -4,6 +4,7 @@ import CustomSuspense from "./components/CoreComponents/CustomSuspense/CustomSus
 import LanguageLayout from "./components/CoreComponents/LanguageLayout/LanguageLayout";
 import PreparezVosInfosPage from "./pages/PreparezVosInfosPage/PreparezVosInfosPage";
 import OurServicePage from "./pages/OurServicePage/OurServicePage";
+import BlogLandingPage from "./pages/BlogLandingPage/BlogLandingPage";
 
 const LandingPage = lazy(() => import("./pages/LandingPage/LandingPage"));
 const SimulatorPage = lazy(() => import("./pages/SimulatorPage/SimulatorPage"));
@@ -74,6 +75,14 @@ const routes = [
         element: (
           <CustomSuspense id="signInPage">
             <SignInPage />
+          </CustomSuspense>
+        ),
+      },
+      {
+        path: "blog/News",
+        element: (
+          <CustomSuspense id="BlogLandingPage">
+            <BlogLandingPage />
           </CustomSuspense>
         ),
       },

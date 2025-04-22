@@ -191,6 +191,7 @@
     "VosServices": "Vos services",
     "descriptionLandingPage": "Mes Droits Sociaux est une application marocaine permettant aux citoyens de calculer leur Indice Socio-Économique (ISE) et d'évaluer leur éligibilité aux aides sociales. Obtenez un score personnalisé grâce à notre calculateur intuitif et précis.",
     "keywordsLandingPage": "Mes Droits Sociaux, Indice Socio-Économique, ISE, aides sociales, calculateur ISE, score socio-économique, citoyens marocains, éligibilité aides, services sociaux, calcul des droits sociaux",
+
     "descriptionAboutPage": "Découvrez l'application qui aide les citoyens à mieux comprendre leurs droits sociaux.",
     "keywordsAboutPage": "application, droits sociaux, citoyens, ISE, maroc",
     "descriptionVosServices": "Découvrez les services disponibles pour vous. Apprenez comment maximiser vos droits sociaux et accédez à une assistance dédiée pour mieux gérer vos démarches sociales.",
@@ -201,9 +202,11 @@
     "SimulateurAccueil": "Page d'accueil du simulateur",
     "descriptionSimulateurAccueil": "Accédez à la page d'accueil de votre outil de simulation et explorez les options disponibles.",
     "keywordsSimulateurAccueil": "simulateur, accueil, outil, options",
+
     "SimulateurFoyer": "Simulateur Foyer",
-    "descriptionSimulateurFoyer": "Simulez et calculez votre score RSU en fonction de la situation de votre foyer pour déterminer votre éligibilité aux prestations sociales.",
-    "keywordsSimulateurFoyer": "score RSU, simulation foyer, prestations sociales, éligibilité, calcul des aides",
+    "descriptionSimulateurFoyer": "Utilisez gratuitement notre simulateur de score RSU (Registre Social Unifié) au Maroc pour estimer votre éligibilité aux aides sociales. Ce simulateur en ligne vous permet de calculer facilement votre score RSU, évaluer vos droits aux prestations sociales, et comprendre les critères d'éligibilité pour les aides CNSS et AMO. Disponible en français et arabe, ce service vous offre des résultats rapides et fiables, pour vous aider à mieux comprendre vos droits sociaux et à accéder aux aides auxquelles vous avez droit.",
+    "keywordsSimulateurFoyer": "tns, amo achamil, tns cnss, asd ma, macnss, cnss amo, score RSU, simulation foyer, prestations sociales, éligibilité, calcul des aides, simulation des aides sociales, calcul score RSU Maroc, comment calculer score RSU, RSU simulation, simulation d'éligibilité CNSS, aides sociales Maroc, simulateur prestations sociales, تسجيل في برنامج الدعم, حساب نقاط RSU, مساعدات اجتماعية, طريقة حساب نقاط RSU, simulateur aides sociales, simulation d’éligibilité au RSU, programme social Maroc, استحقاق الدعم الاجتماعي, كيف احسب نقاط الدعم الاجتماعي, خدمات الضمان الاجتماعي, كيف تحسب نقاط برنامج الدعم الاجتماعي",
+
     "PreparezVosInfos": "Préparez vos informations pour la simulation RSU - Simplifiez votre démarche avec WeConnect Maroc",
     "descriptionPreparezVosInfos": "Préparez facilement toutes les informations nécessaires pour votre simulation RSU avec WeConnect Maroc. Simplifiez votre processus administratif et optimisez vos démarches.",
     "keywordsPreparezVosInfos": "simulation RSU, préparation information RSU, simulateur RSU, démarches administratives Maroc, WeConnect Maroc, préparation dossier RSU",
@@ -216,5 +219,25 @@
   "emailAddress": "Adresse électronique",
   "gmail": "GMAIL",
   "comingSoon": "Prochainement",
-  "Simplify_your_life_info": "Simplifiez-vous la vie ! Si vous vous connectez via weConnectMaroc, des informations connues des organismes sociaux vous concernant sont déjà remplies : aides, etc."
+  "Simplify_your_life_info": "Simplifiez-vous la vie ! Si vous vous connectez via weConnectMaroc, des informations connues des organismes sociaux vous concernant sont déjà remplies : aides, etc.",
+
+  "quickActions": {
+    "home": "Accueil",
+    "news": "Actualités",
+    "notifications": "Notifications",
+    "calculator": "Calculateur"
+  },
+  "categories": {
+    "rnp": "Registre National de la Population",
+    "rsu": "Registre Social Unifié",
+    "amo": "Assurance Maladie Obligatoire",
+    "stories": "Histoires",
+    "economy": "Économie",
+    "jobs": "Emplois",
+    "tech": "Technologie"
+  },
+  "search": {
+    "placeholder": "Rechercher...",
+    "button": "Rechercher"
+  }
 }

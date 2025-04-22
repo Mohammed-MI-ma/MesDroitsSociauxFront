@@ -20,6 +20,10 @@ export default function initializeI18n() {
                   ar: { translation: arTranslations },
                   fr: { translation: frTranslations },
                 },
+                detection: {
+                  order: ["querystring", "cookie", "localStorage", "navigator"],
+                  caches: ["cookie"],
+                },
               },
               (error, t) => {
                 if (error) {

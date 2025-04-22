@@ -9,9 +9,8 @@
   background-color: var(--color-primary);
   color: white;
   padding: 15px;
-  border-radius:50px;
+  border-radius: 50px;
   width: fit-content;
-
 }
 .title:hover {
   cursor: pointer;
@@ -31,19 +30,17 @@
 
 .heroButton,
 .heroButton_shadow {
-  font-size:1rem;
+  font-size: 1rem;
   color: var(--color-muted);
-  background: var(--color-primary)!important;
+  background: var(--color-primary) !important;
   border-radius: var(--border-radius-xl);
-  padding: var(--gap-xl) ;
+  padding: var(--gap-xl);
   margin-bottom: var(--gap-lg);
-
 }
-.heroButton_shadow { 
+.heroButton_shadow {
   position: absolute;
   top: 5px;
   z-index: 0;
-
 }
 /* Shadow variant RTL */
 [dir="rtl"] .heroButton_shadow {
@@ -55,7 +52,9 @@
   left: 0;
 }
 
-.heroButton:hover{  color:white!important}
+.heroButton:hover {
+  color: white !important;
+}
 .heroContent small {
   margin-top: var(--gap-lg);
 }
@@ -65,7 +64,7 @@
     display: none;
   }
   .pageHeader {
-    margin-top: 50px;
+    margin-top: 200px;
   }
   .title {
     font-size: 20px;

@@ -1,45 +1,44 @@
 .container {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  /* Wrapper to control minimum height responsively */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Wrapper to control minimum height responsively */
+.mobileTopNewsFeedWrapper {
+  min-height: 0;
+}
+
+@media (max-width: 36rem) {
   .mobileTopNewsFeedWrapper {
-    min-height: 0;
-  }
-  
-  @media (max-width: 36rem) {
-    .mobileTopNewsFeedWrapper {
-      min-height: 400px;
-    }
-  }
-  
-  /* Fallback Skeleton Wrapper for loading state */
-  .skeletonWrapper {
-    width: 100%;
-    height: 100%;
     min-height: 400px;
-    margin-top: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
-  
-  /* Optional media queries: prep structure for responsiveness if needed later */
-  @media (min-width: 36.063rem) and (max-width: 48rem) {
-    /* Tablet Small */
-  }
-  
-  @media (min-width: 48.063rem) and (max-width: 62rem) {
-    /* Tablet Large */
-  }
-  
-  @media (min-width: 62.063rem) and (max-width: 75rem) {
-    /* Desktop Medium */
-  }
-  
-  @media (min-width: 75.063rem) {
-    /* Desktop Large */
-  }
-  
+}
+
+/* Fallback Skeleton Wrapper for loading state */
+.skeletonWrapper {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  margin-top: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Optional media queries: prep structure for responsiveness if needed later */
+@media (min-width: 36.063rem) and (max-width: 48rem) {
+  /* Tablet Small */
+}
+
+@media (min-width: 48.063rem) and (max-width: 62rem) {
+  /* Tablet Large */
+}
+
+@media (min-width: 62.063rem) and (max-width: 75rem) {
+  /* Desktop Medium */
+}
+
+@media (min-width: 75.063rem) {
+  /* Desktop Large */
+}

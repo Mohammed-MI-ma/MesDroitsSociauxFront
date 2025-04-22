@@ -52,7 +52,6 @@
   flex-direction: column;
   justify-content: center;
   position: relative;
-  border: 1px solid var(--color-primary);
 }
 .button {
   width: 226px;
@@ -67,7 +66,6 @@
   flex-direction: column;
   justify-content: center;
   position: relative;
-  border: 1px solid var(--color-primary);
 }
 .mainWrapper {
   margin-top: 2rem !important;
